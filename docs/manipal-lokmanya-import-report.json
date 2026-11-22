@@ -1,7 +1,7 @@
 {
   "branch": "cursor/manipal-lokmanya-pune-doctors-hospitals-6064",
   "baseline": "2b49d2cfcef57427c3ade02852cb7efe27d25473",
-  "deploymentRestriction": "PR only — no merge, R2 upload, stamp, or Worker deploy",
+  "deploymentRestriction": "PR only \u2014 no merge, R2 upload, stamp, or Worker deploy",
   "manipal": {
     "source": "https://www.manipalhospitals.com/baner/doctors-list/",
     "discovered": 91,
@@ -67,7 +67,11 @@
   },
   "images": {
     "verified_imported": 81,
-    "avatar_fallback": 12
+    "avatar_fallback": 12,
+    "page3_verified_portraits": 6,
+    "page3_avatar_fallback": 1,
+    "disk_portraits_manipal_baner_plus_lokmanya": 87,
+    "note": "81+12 cover the 93 this-batch doctors (85 new + 8 merges). Page-3 cohort is separate. Merges retain live Sahyadri portraits; Manipal/Lok assets remain on disk."
   },
   "locales": {
     "english_doctors": 2602,
@@ -86,13 +90,64 @@
     "docs/manipal-lokmanya-doctor-procedure-audit.csv",
     "docs/manipal-lokmanya-image-audit.csv",
     "docs/manipal-lokmanya-multicampus-audit.csv",
-    "docs/manipal-lokmanya-import-report.json"
+    "docs/manipal-lokmanya-campus-verification.csv",
+    "docs/manipal-lokmanya-import-report.json",
+    "docs/manipal-lokmanya-implementation-report.md"
   ],
-  "commitSha": "a3e96bcbec020d8a76452209ff9c27b0d7981bee",
+  "commitSha": "a5a520be8ccccaa5b6e2e4157c14d1c560b57c6c",
   "prUrl": "https://github.com/azimjmi-bot/Gaf-healthcare/pull/42",
   "tests": {
     "tsc": "pass",
-    "focusedImportPublicationOverlaySuite": "74/74 pass",
-    "productionBuild": "pass (next build --webpack)"
+    "focusedImportPublicationOverlaySuite": "61/61 pass",
+    "testUnit": "561 pass; 3 pre-existing fails (pune city editorials missing in radiation/surgical oncology; arabic-place-quality Chennai comma-repeat on baseline)",
+    "testStorage": "8/8 pass",
+    "testSpecialtyEngine": "pre-existing: EN blog URLs intentionally absent from buildLocaleSitemap (sitemap-blogs.xml only); unrelated glossary/overlay/hub pins also fail on baseline patterns",
+    "productionBuild": "pass (next build --webpack)",
+    "prIntroducedFixesThisAudit": [
+      "cleared AR specialty-as-procedure overlays when EN empty",
+      "overlay generator no longer invents specialty label procedures",
+      "seed-r2 static upload pin 719\u2192839",
+      "server-only stub in ignore-css.cjs for unit tests"
+    ]
+  },
+  "reconciliation": {
+    "discovered_manipal": 91,
+    "discovered_lokmanya": 67,
+    "eligible_manipal": 61,
+    "eligible_lokmanya": 39,
+    "eligible_total": 100,
+    "already_present_page3": 7,
+    "added_new_manipal": 49,
+    "added_new_lokmanya": 36,
+    "added_new_total": 85,
+    "updated_multicampus_manipal": 5,
+    "updated_multicampus_lokmanya": 3,
+    "updated_multicampus_total": 8,
+    "excluded_manipal": 30,
+    "excluded_lokmanya": 28,
+    "equation": "100 eligible = 7 already_present (page-3) + 85 new additions + 8 multi-campus updates",
+    "equation_check": 100
+  },
+  "finalDataQualityAudit": {
+    "specialties_all_in_gaf_taxonomy": true,
+    "procedures_removed_unsupported": 0,
+    "procedures_verified_associations": 261,
+    "procedures_empty_by_design": 31,
+    "lokmanya_campuses_verified_against_official_sources": 3,
+    "en_ar_doctor_profiles_complete": 100,
+    "en_ar_hospital_profiles_complete": 4,
+    "hreflang_reciprocal_doctor_failures": 0,
+    "hreflang_reciprocal_hospital_failures": 0,
+    "faculty_specialty_city_facets_noindex": true,
+    "faculty_hospital_specialty_sitemap_paths": 0,
+    "duplicate_doctor_slugs": 0,
+    "duplicate_hospital_slugs": 0,
+    "sahyadri_primary_count_unchanged": 110,
+    "limitations": [
+      "English /hospitals/{slug}/procedures profile subpages remain in the EN sitemap for faculty campuses (same pattern as Sahyadri); these are not specialty landings.",
+      "Arabic hospital specialty/procedure landings under faculty campuses remain missing (404), not noindex \u2014 city-level faculty-only facets are noindex in both locales.",
+      "Lokmanya procedure evidence is text-match against official profile description/designation; associations without distinctive individual evidence stay empty.",
+      "Multi-campus merges retain the existing Sahyadri primary portrait rather than replacing with Manipal/Lokmanya downloads."
+    ]
   }
 }

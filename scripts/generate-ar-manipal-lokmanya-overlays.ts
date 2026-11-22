@@ -252,12 +252,13 @@ function taxonomyLabel(name: string) {
   return TAXONOMY_AR[name] ?? name;
 }
 
-function translatedProcedures(doctor: Doctor, specialty: string) {
-  const mapped = doctor.procedures
+function translatedProcedures(doctor: Doctor, _specialty: string) {
+  // Evidence-gated: never invent a specialty label as a procedure when EN is empty.
+  // Empty EN proceduresExpertise must stay empty in AR overlays too.
+  return doctor.procedures
     .map((name) => TAXONOMY_AR[name] ?? name)
-    .filter(Boolean);
-  if (mapped.length > 0) return mapped.slice(0, 8);
-  return [SPECIALTY_META[specialty]?.label ?? taxonomyLabel(specialty)];
+    .filter(Boolean)
+    .slice(0, 8);
 }
 
 function isTargetDoctor(doctor: Doctor) {
@@ -275,8 +276,11 @@ function arabicBio(doctor: Doctor, name: string, title: string, hospital: string
   const first = procedures[0] ?? meta.label;
   const second = procedures[1] ?? first;
   const third = procedures[2] ?? second;
-  const hierarchy = `يُنظَّم الملف في دليل GAF Healthcare تحت الهند / ${city} / ${meta.label} / ${first}، مع الحفاظ على مفاتيح البلد والمدينة والتخصص والإجراء للبحث والمقارنة.`;
-  const safety = `${meta.records}، ثم رأي طبي عن بُعد قبل تثبيت المستشفى أو خطة السفر. ملاءمة ${first} أو ${second} قرار سريري بعد مراجعة طبيب مرخّص؛ والإدراج معلوماتي وليس ترتيبًا للأطباء أو ضمانًا للنتيجة.`;
+  const hierarchy =
+    procedures.length > 0
+      ? `يُنظَّم الملف في دليل GAF Healthcare تحت الهند / ${city} / ${meta.label} / ${first}، مع الحفاظ على مفاتيح البلد والمدينة والتخصص والإجراء للبحث والمقارنة.`
+      : `يُنظَّم الملف في دليل GAF Healthcare تحت الهند / ${city} / ${meta.label}، مع الحفاظ على مفاتيح البلد والمدينة والتخصص للبحث والمقارنة دون إجراءات فردية موثّقة بعد.`;
+  const safety = `${meta.records}، ثم رأي طبي عن بُعد قبل تثبيت المستشفى أو خطة السفر. ملاءمة خطة ${meta.label}${procedures.length > 0 ? ` أو ${first}` : ""} قرار سريري بعد مراجعة طبيب مرخّص؛ والإدراج معلوماتي وليس ترتيبًا للأطباء أو ضمانًا للنتيجة.`;
   const templates = [
     `${name} هو ${title} في ${hospital}، ${city}، الهند، ${yearsCopy}. تشمل الإجراءات المرتبطة بخبرته ${first} و${second} و${third}. يساعد ملفه ${meta.patient} على فهم الخبرة المنشورة وتجهيز السجلات اللازمة للرأي الطبي. ${hierarchy} ${safety}`,
     `يقدم الدليل العربي ملف ${name} بصفته ${title} في ${hospital} بمدينة ${city}، الهند، ${yearsCopy}. ترتبط صفحته بخيارات مثل ${first} و${second} و${third} ضمن رعاية متعددة التخصصات. صُممت المعلومات لخدمة ${meta.patient} من دون ادعاء أفضلية. ${hierarchy} ${safety}`,
@@ -300,6 +304,11 @@ let wroteDoctors = 0;
 for (const doctor of targets) {
   const existing = overlays[doctor.slug];
   if (existing && translationStatus(existing) === "published" && existing.bio && existing.name) {
+    // Keep AR procedure lists length-aligned with evidence-gated EN expertise.
+    const syncedProcedures = translatedProcedures(doctor, doctor.specialty);
+    if ((existing.proceduresExpertise || []).length !== syncedProcedures.length) {
+      existing.proceduresExpertise = syncedProcedures;
+    }
     // Refresh affiliations note for multi-campus merges if Lokmanya/Manipal missing in AR affiliations.
     const aff = existing.affiliations ?? [];
     const needsLok = doctor.hospitalSlugs.some(isLokmanyaCampus) && !aff.some((line) => /لوكمانيا/.test(line));
@@ -340,7 +349,9 @@ for (const doctor of targets) {
     specializations: [
       meta.label,
       `تقييم وعلاج ${meta.patient}`,
-      `إجراءات مختارة: ${procedures.slice(0, 3).join("، ")}`,
+      ...(procedures.length > 0
+        ? [`إجراءات مختارة: ${procedures.slice(0, 3).join("، ")}`]
+        : [`تخصص ${meta.label} دون إجراءات فردية موثّقة في الدليل بعد`]),
     ],
     proceduresExpertise: procedures,
     education: [`المؤهلات المنشورة: ${qualifications}`],
