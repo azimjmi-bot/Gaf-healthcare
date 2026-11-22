@@ -1,0 +1,185 @@
+{
+  "source_directory": "https://www.manipalhospitals.com/baner/doctors-list/3/",
+  "source_api": {
+    "endpoint": "https://www.manipalhospitals.com/baner/fetch-search_doctors",
+    "hospital_id": 28,
+    "current_page": 3
+  },
+  "hospital": {
+    "official_name": "Manipal Hospitals, Baner",
+    "address": "Baner-Mhalunge Main Road, Baner, Pune - 411045, Maharashtra",
+    "postal_code": "411045",
+    "phone_published": "020 6813 8888",
+    "official_url": "https://www.manipalhospitals.com/baner/",
+    "proposed_gaf_slug": "manipal-hospitals-baner",
+    "city": "Pune",
+    "country": "India",
+    "independent_of": [
+      "sahyadri-super-speciality-hospital-nagar-road",
+      "sahyadri-super-speciality-hospital-hadapsar",
+      "sahyadri-super-speciality-hospital-deccan-gymkhana"
+    ]
+  },
+  "page3_doctors_discovered": 10,
+  "doctors": [
+    {
+      "name": "Dr. Aniket Payagude",
+      "profile_url": "https://www.manipalhospitals.com/baner/doctors/dr-aniket-payagude-surgical-gastroenterologist/",
+      "card_specialty": "Gastrointestinal Science",
+      "profile_designation": "Surgical Gastroenterologist",
+      "qualifications": "MBBS | MS | M.Ch Surgical Gastroenterology | FMAS",
+      "experience_years_published": "14",
+      "expertise": [
+        "Gastrointestinal Laparoscopic & Minimal Access Surgery",
+        "Gastrointestinal & Hepato-Pancreatic-Biliary Cancer Surgery",
+        "Colorectal Surgery (Benign & Cancer Surgery)",
+        "Pancreatic Surgery (Cancer, Cystic Neoplasms, Pancreatitis)",
+        "Gall Bladder, Bile Duct and Liver Disorders"
+      ],
+      "languages_published": ["Marathi", "Hindi", "English", "Tamil"],
+      "image_source": "card",
+      "image_url": "https://www.manipalhospitals.com/uploads/doctors_photo/surgical-gastroenterologist-in-baner-Pune-dr-aniket-payagude.png"
+    },
+    {
+      "name": "Dr. Ashish Pathak",
+      "profile_url": "https://www.manipalhospitals.com/baner/doctors/dr-ashish-pathak-anesthesiology-specialist/",
+      "card_specialty": "Anesthesiology",
+      "qualifications": "MBBS | MD | PDCC | FRCA",
+      "expertise": ["Anesthesia"],
+      "languages_published": ["Hindi", "English", "Marathi"],
+      "image_source": "card",
+      "image_url": "https://www.manipalhospitals.com/uploads/doctors_photo/anesthesiologist-in-baner-pune-dr-ashish-pathak.png"
+    },
+    {
+      "name": "Dr. Ashutosh Pakale",
+      "profile_url": "https://www.manipalhospitals.com/baner/doctors/dr-ashutosh-pakale-internal-medicine-and-diabetes-specialist/",
+      "card_specialty": "Diabetes and Endocrinology",
+      "qualifications": "MBBS, MD Medicine | Postgraduate Diploma in Diabetes | ACMDC",
+      "languages_published": ["English", "Marathi", "Hindi", "Kannada"],
+      "image_source": "card",
+      "image_url": "https://www.manipalhospitals.com/uploads/doctors_photo/dr-ashutosh-pakale-internal-medicine-diabetes-specialist.png"
+    },
+    {
+      "name": "Dr. Balaji Nalwad",
+      "profile_url": "https://www.manipalhospitals.com/baner/doctors/dr-balaji-nalwad-gynecologist/",
+      "card_specialty": "Obstetrics and Gynaecology",
+      "qualifications": "MBBS | DNB (OBGY) | FCPS | DGO | FICMCH | Fellowship in Minimal Access Surgery | Advanced Endoscopy Training",
+      "experience_years_published": "21",
+      "expertise": [
+        "Robotic Gynaecologic Surgery",
+        "Advanced Laparoscopy (Keyhole)",
+        "Endometriosis Management",
+        "Fibroid (Myomectomy)",
+        "Laparoscopic & Hysteroscopic Surgery"
+      ],
+      "languages_published": ["English", "Hindi", "Marathi"],
+      "image_source": "card",
+      "image_url": "https://www.manipalhospitals.com/uploads/doctors_photo/top-gynaecologist-in-baner-pune-dr-balaji-nalwad.png"
+    },
+    {
+      "name": "Dr. Bhavana Mangal",
+      "profile_url": "https://www.manipalhospitals.com/baner/doctors/dr-bhavana-mangal-obstetrician-and-gynaecologist/",
+      "card_specialty": "Obstetrics and Gynaecology",
+      "qualifications": "MBBS | MD | DNB | CCT | FRCOG",
+      "experience_years_published": "25",
+      "expertise": [
+        "Laparoscopy: cystectomy, BSO, LAVH, TLH",
+        "Open surgery: TAH + BSO for fibroids, myomectomy",
+        "Vaginal surgery: vaginal hysterectomy and pelvic floor repairs, uro-gynaecology procedures",
+        "Outpatient hysteroscopy, coil insertion, colposcopy",
+        "Gynae cancer diagnosis and management"
+      ],
+      "languages_published": ["English", "Hindi", "Marathi"],
+      "image_source": "card",
+      "image_url": "https://www.manipalhospitals.com/uploads/doctors_photo/dr-bhavana-mangal-gynaecologist-baner.png"
+    },
+    {
+      "name": "Dr. Borde Mandar Deepak",
+      "profile_url": "https://www.manipalhospitals.com/baner/doctors/dr-borde-mandar-deepak-orthopedic-spine-surgeon/",
+      "card_specialty": "Orthopaedics",
+      "profile_designation": "Consultant Orthopedic Spine Surgeon",
+      "qualifications": "MBBS | MS (Orthopaedics)",
+      "experience_years_published": "10",
+      "expertise": [
+        "Complex spinal deformity surgeries-- scoliosis, kyphosis, kyphoscoliosis",
+        "Minimally invasive spine surgeries-- microscopic and endoscopic procedures",
+        "Advanced navigation based complex spinal surgeries",
+        "Complex revision surgeries with instrumentation",
+        "Spinal tumour surgeries"
+      ],
+      "languages_published": ["English", "Hindi"],
+      "image_source": "placeholder_on_source",
+      "image_url": "https://www.manipalhospitals.com/uploads/doctors_photo/Doctor_copy.png"
+    },
+    {
+      "name": "Dr. Chinmay Kumbhar",
+      "profile_url": "https://www.manipalhospitals.com/baner/doctors/dr-chinmay-kumbhar-neurologist/",
+      "card_specialty": "Neurology",
+      "profile_designation": "Consultant Neurologist",
+      "qualifications": "MBBS | MD | DrNB (Neurology)",
+      "experience_years_published": "11+ medical / 7+ neurology (profile narrative)",
+      "expertise": [
+        "Headache",
+        "Neuro-Otology (Vertigo)",
+        "Epilepsy",
+        "Peripheral Neuropathy",
+        "Paediatric Neurology"
+      ],
+      "languages_published": ["Hindi", "English", "Marathi"],
+      "image_source": "card",
+      "image_url": "https://www.manipalhospitals.com/uploads/doctors_photo/best-neurologist-in-pune-brain-doctor--dr-chinmay-kumbhar_(1).png"
+    },
+    {
+      "name": "Dr. Divya Chaudhary",
+      "profile_url": "https://www.manipalhospitals.com/baner/doctors/dr-divya-chaudhary-radiologist/",
+      "card_specialty": "Radiology",
+      "qualifications": "MBBS | MD Radio-diagnosis | DNB Radio-diagnosis",
+      "expertise": [
+        "General Radiology",
+        "Breast Imaging",
+        "Fetal Anomaly & Doppler",
+        "Obstetric Scans",
+        "Paediatric Neuroimaging"
+      ],
+      "languages_published": ["Hindi", "English", "Maithili", "Bengali", "Marathi"],
+      "image_source": "card",
+      "image_url": "https://www.manipalhospitals.com/uploads/doctors_photo/best-radiologist-in-baner-pune-dr-divya-chaudhary_1680255565.png"
+    },
+    {
+      "name": "Dr. Gaurav Chamania",
+      "profile_url": "https://www.manipalhospitals.com/baner/doctors/dr-gaurav-chamania-ent-specialist/",
+      "card_specialty": "Ear Nose Throat",
+      "profile_designation": "Consultant ENT, Head-Neck and Skull Base Surgeon",
+      "qualifications": "MBBS | MS (ENT)",
+      "experience_years_published": "11",
+      "expertise_from_overview": [
+        "Head and neck oncology",
+        "Skull base surgery",
+        "Microvascular reconstruction"
+      ],
+      "languages_published": ["English", "Hindi", "Marathi"],
+      "image_source": "card",
+      "image_url": "https://www.manipalhospitals.com/uploads/doctors_photo/dr-gaurav-chamania-best-ent-specialist-in-baner-manipal-hospitals.png"
+    },
+    {
+      "name": "Dr. Girija Ghate",
+      "profile_url": "https://www.manipalhospitals.com/baner/doctors/dr-girija-ghate-consultant-ent/",
+      "card_specialty": "Ear Nose Throat",
+      "profile_designation": "Consultant ENT and Head-Neck Surgeon",
+      "qualifications": "MBBS | DORL | MS | DNB",
+      "experience_years_published": "over two decades (profile narrative)",
+      "expertise": [
+        "Otorhinolaryngology (Ear, Nose, Throat Surgery)",
+        "Head and Neck Surgery including Thyroid, Parotid Salivary glands, Neck, Oral, and Head Neck Malignancies"
+      ],
+      "languages_published": ["English", "Marathi", "Hindi"],
+      "image_source": "card",
+      "image_url": "https://www.manipalhospitals.com/uploads/doctors_photo/ent-doctor-in-baner-pune-dr-girija-ghate.png"
+    }
+  ],
+  "duplicate_audit": {
+    "existing_manipal_hospitals_in_gaf": [],
+    "existing_doctor_slug_collisions": [],
+    "notes": "No prior Manipal Baner hospital or matching doctor slugs found in ginger-catalog.json at import time."
+  }
+}

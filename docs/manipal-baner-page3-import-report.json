@@ -1,0 +1,53 @@
+{
+  "source": "https://www.manipalhospitals.com/baner/doctors-list/3/",
+  "branch": "cursor/manipal-baner-doctors-pune-6064",
+  "hospital": {
+    "slug": "manipal-hospitals-baner",
+    "name": "Manipal Hospitals, Baner",
+    "city": "Pune",
+    "address": "Baner-Mhalunge Main Road, Baner, Pune - 411045, Maharashtra",
+    "phone": "020 6813 8888",
+    "serviceLineEvidence": "faculty-affiliated",
+    "independentOf": [
+      "sahyadri-super-speciality-hospital-nagar-road",
+      "sahyadri-super-speciality-hospital-hadapsar",
+      "sahyadri-super-speciality-hospital-deccan-gymkhana"
+    ]
+  },
+  "discovered": 10,
+  "eligible": 7,
+  "excluded": 3,
+  "excludedReasons": {
+    "specialty_not_in_gaf_taxonomy": [
+      "Dr. Ashish Pathak (Anesthesiology)",
+      "Dr. Ashutosh Pakale (Diabetes and Endocrinology)",
+      "Dr. Divya Chaudhary (Radiology)"
+    ]
+  },
+  "specialtyMapping": {
+    "Dr. Aniket Payagude": "Surgical Gastroenterology",
+    "Dr. Balaji Nalwad": "Gynecology",
+    "Dr. Bhavana Mangal": "Gynecology",
+    "Dr. Borde Mandar Deepak": "Spine Surgery",
+    "Dr. Chinmay Kumbhar": "Neurology",
+    "Dr. Gaurav Chamania": "ENT",
+    "Dr. Girija Ghate": "ENT"
+  },
+  "images": {
+    "verifiedWebp": 6,
+    "avatarFallback": ["dr-borde-mandar-deepak"],
+    "hospitalImage": "avatar_fallback_empty"
+  },
+  "locales": {
+    "english": "ginger-catalog.json",
+    "arabic": "content/ar/catalog-cms.json overrides + hospital-names-ar.json"
+  },
+  "inventoryAfter": {
+    "hospitals": 46,
+    "doctors": 2517,
+    "puneDoctors": 117,
+    "puneHospitals": 4,
+    "sahyadriDoctorsUnchanged": 110,
+    "sahyadriHospitalsUnchanged": 3
+  }
+}

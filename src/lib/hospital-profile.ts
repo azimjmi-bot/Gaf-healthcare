@@ -127,6 +127,15 @@ export function isSahyadriFacultyCampus(hospital: Hospital) {
   return hospital.slug.startsWith("sahyadri-super-speciality-hospital-");
 }
 
+export function isManipalBanerFacultyCampus(hospital: Hospital) {
+  return hospital.slug === "manipal-hospitals-baner";
+}
+
+/** Faculty-scoped campuses (Sahyadri Pune + Manipal Baner) share publication/copy rules. */
+export function isFacultyAffiliatedHospital(hospital: Hospital) {
+  return isSahyadriFacultyCampus(hospital) || isManipalBanerFacultyCampus(hospital);
+}
+
 export type AccreditationMark = {
   id: string;
   label: string;
@@ -194,6 +203,9 @@ export function heroLede(hospital: Hospital) {
   if (isSahyadriFacultyCampus(hospital)) {
     return `${hospital.name} is an independent Sahyadri campus in ${hospital.city}, India${beds ? ` with ${beds.toLowerCase()}` : ""}.${year} Specialty and procedure relationships on GAF reflect verified affiliated faculty for this campus — not a claim that every listed item is a separately confirmed campus service line.`;
   }
+  if (isManipalBanerFacultyCampus(hospital)) {
+    return `${hospital.name} is an independent Manipal Hospitals campus in Baner, ${hospital.city}, India${beds ? ` with ${beds.toLowerCase()}` : ""}.${year} Specialty and procedure relationships on GAF reflect verified affiliated faculty for this campus — not a claim that every listed item is a separately confirmed campus service line.`;
+  }
   return `${hospital.name} is a multi-speciality campus in ${hospital.city}, India${beds ? ` with ${beds.toLowerCase()}` : ""}.${year} Coordinators here already know how to hold an international stay — from the first video consult through the week after you fly home.`;
 }
 
@@ -216,7 +228,7 @@ export function pullQuote(hospital: Hospital) {
 
 export function whyChoose(hospital: Hospital, facultyCount: number) {
   const eye = isEyeCampus(hospital);
-  const sahyadri = isSahyadriFacultyCampus(hospital);
+  const facultyCampus = isFacultyAffiliatedHospital(hospital);
   return [
     {
       title: eye ? "Named ophthalmologists" : "Named consultants",
@@ -228,7 +240,7 @@ export function whyChoose(hospital: Hospital, facultyCount: number) {
       title: "Accreditation you can check",
       body: `${hospital.accreditation} sits on the file. We do not invent a plaque to dress a corridor.`,
     },
-    sahyadri
+    facultyCampus
       ? {
           title: "Faculty-linked specialties",
           body: "Specialties and procedures on this page reflect verified affiliated doctors for this campus — not an independently audited campus service catalogue.",
@@ -256,7 +268,7 @@ export function whyChoose(hospital: Hospital, facultyCount: number) {
 
 export function featureBar(hospital: Hospital) {
   const eye = isEyeCampus(hospital);
-  if (isSahyadriFacultyCampus(hospital)) {
+  if (isFacultyAffiliatedHospital(hospital)) {
     return [
       { label: "Named faculty on file" },
       { label: "Independent Pune campus" },
@@ -416,6 +428,30 @@ export function infrastructure(hospital: Hospital) {
       },
     ];
   }
+  if (isManipalBanerFacultyCampus(hospital)) {
+    return [
+      {
+        title: "Independent campus record",
+        body: "Manipal Hospitals, Baner is listed as its own Pune campus, separate from Sahyadri Hospitals campuses and from other Manipal Hospitals sites.",
+      },
+      {
+        title: "Accreditation on file",
+        body: `${hospital.accreditation} is recorded from published Manipal Hospitals framing for this campus. Additional plaques beyond that are not invented here.`,
+      },
+      {
+        title: "Faculty-linked departments",
+        body: "Specialties and procedures shown for this campus come from verified affiliated doctor profiles — not a separate campus service inventory.",
+      },
+      {
+        title: "Published address",
+        body: "Official campus address used for directory matching: Baner-Mhalunge Main Road, Baner, Pune - 411045, Maharashtra.",
+      },
+      {
+        title: "International coordination",
+        body: "GAF coordinates records review and a video consult before any deposit or ticket.",
+      },
+    ];
+  }
   return [
     { title: "Modular theatres", body: "Lists that already mix oncology, heart, gut and joints without chaos." },
     { title: "Advanced ICU", body: hospital.icu },
@@ -444,11 +480,11 @@ export function internationalServices() {
 export function hospitalFaqs(hospital: Hospital, faculty: Doctor[], groups: FacultyGroup[]) {
   const listed = groups.filter((g) => g.doctors.length > 0).map((g) => g.name);
   const names = faculty.filter((d) => d.featured).slice(0, 3).map((d) => d.name);
-  const sahyadri = isSahyadriFacultyCampus(hospital);
+  const facultyCampus = isFacultyAffiliatedHospital(hospital);
   const specLine =
     listed.length === 0
       ? "Named consultants for this campus are still being matched. A coordinator will say so plainly."
-      : sahyadri
+      : facultyCampus
         ? listed.length <= 4
           ? `Verified affiliated faculty specialties currently include ${joinHuman(listed)}. These are directory relationships from named doctors, not a separate campus service audit.`
           : `Verified affiliated faculty specialties currently include ${joinHuman(listed.slice(0, 4))} and ${listed.length - 4} further departments. These are directory relationships from named doctors, not a separate campus service audit.`
@@ -468,7 +504,7 @@ export function hospitalFaqs(hospital: Hospital, faculty: Doctor[], groups: Facu
         : "Bed numbers sit on the hospital file; a coordinator confirms the ward once a date is real.",
     },
     {
-      q: sahyadri ? "Which specialties have named affiliated doctors here?" : "Which specialties have named doctors here?",
+      q: facultyCampus ? "Which specialties have named affiliated doctors here?" : "Which specialties have named doctors here?",
       a: specLine,
     },
     {

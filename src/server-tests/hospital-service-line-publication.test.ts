@@ -41,7 +41,7 @@ test("Infertility-IVF stays noindex under the hospital overlap gate after Sahyad
   const displayMatches = filterHospitals(query, rows).length;
   const displayParent = filterHospitals(parent, rows).length;
   assert.equal(displayMatches, 40);
-  assert.equal(displayParent, 45);
+  assert.equal(displayParent, 46);
 
   const matches = hospitalsForServiceLinePublication(query, rows, true).length;
   const parentMatches = hospitalsForServiceLinePublication(parent, rows, true).length;

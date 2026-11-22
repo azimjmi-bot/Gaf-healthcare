@@ -99,13 +99,13 @@ test("populated Pune doctor and hospital facets enter inventory, candidates and 
 
 test("Sahyadri Pune inventory is positive across doctors and hospitals", () => {
   assert.deepEqual(INDIA_CITIES.slice(-1), ["Pune"]);
-  assert.equal(filterDoctors({ destination: "India", city: "Pune" }).length, 110);
-  assert.equal(filterHospitals({ destination: "India", city: "Pune" }).length, 3);
+  assert.equal(filterDoctors({ destination: "India", city: "Pune" }).length, 117);
+  assert.equal(filterHospitals({ destination: "India", city: "Pune" }).length, 4);
   assert.ok(filterTreatments({ destination: "India", city: "Pune" }).length > 0);
 
   const doctors = cityResultCounts("doctors", { destination: "India" });
   for (const city of ["Delhi NCR", "Mumbai", "Bengaluru", "Chennai", "Hyderabad", "Pune"]) {
     assert.ok((doctors.counts[city] ?? 0) > 0, city);
   }
-  assert.equal(doctors.counts.Pune, 110);
+  assert.equal(doctors.counts.Pune, 117);
 });

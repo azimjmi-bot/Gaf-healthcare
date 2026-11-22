@@ -57,7 +57,8 @@ function everyArabicCandidate() {
  */
 const STAGE_FACETS: Record<PseoPageType, number> = {
   // +74 from Sahyadri / Pune doctor specialty+procedure facets (PR #37).
-  doctorFacet: 1382,
+  // +7 from Manipal Baner page-3 eligible doctors (new Pune specialty/procedure facets).
+  doctorFacet: 1389,
   // +1 from the populated Pune hospital city hub (PR #37); faculty-only
   // specialty/procedure landings stay noindex (PR #38).
   hospitalFacet: 107,
@@ -67,7 +68,7 @@ const STAGE_FACETS: Record<PseoPageType, number> = {
 };
 
 /** Every facet URL that renders in Arabic, published or not. */
-const FACET_CANDIDATES = 5631;
+const FACET_CANDIDATES = 5656;
 
 function expectedPublishedFacets() {
   return (Object.keys(STAGE_FACETS) as PseoPageType[])
@@ -96,11 +97,11 @@ test("a published facet that duplicates its parent stays out of the sitemap", ()
   const listed = new Set(publishedFacetPaths("ar"));
 
   assert.equal(published.length, expectedPublishedFacets());
-  // One hundred twenty-two doctor facets return exactly their parent's roster.
+  // One hundred twenty-one doctor facets return exactly their parent's roster.
   // Reviewed specialties make most specialty and procedure facets narrow their
   // parent naturally. They remain published and reachable, but name the parent
   // as canonical, so advertising them would contradict their own head.
-  assert.equal(listed.size, expectedPublishedFacets() - 122);
+  assert.equal(listed.size, expectedPublishedFacets() - 121);
   for (const path of published) {
     if (listed.has(path)) continue;
     assert.notEqual(
@@ -261,15 +262,15 @@ test("the live Arabic overlays stay published", () => {
   const hospitalRows = Object.values(cms.hospitalOverrides);
   const treatmentRows = Object.values(cms.treatmentOverrides);
   // +110 Sahyadri eligible doctors and +3 Sahyadri Pune campuses (PR #37).
-  assert.equal(doctorRows.length, 2510);
-  assert.equal(hospitalRows.length, 45);
+  assert.equal(doctorRows.length, 2517);
+  assert.equal(hospitalRows.length, 46);
   assert.equal(treatmentRows.length, 419);
   for (const patch of [...doctorRows, ...hospitalRows, ...treatmentRows]) {
     assert.equal(translationStatus(patch), "published");
   }
 
-  assert.equal(doctorsForLocale("ar").length, 2510);
-  assert.equal(hospitalsForLocale("ar").length, 45);
+  assert.equal(doctorsForLocale("ar").length, 2517);
+  assert.equal(hospitalsForLocale("ar").length, 46);
   assert.equal(treatmentsForLocale("ar").length, 419);
   assert.equal(localePathIsPublished("ar", "/doctors/dr-anil-kumar-anand"), true);
   assert.equal(localePathIsPublished("ar", "/doctors/dr-anil-k-d-cruz"), true);

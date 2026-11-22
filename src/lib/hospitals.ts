@@ -178,6 +178,18 @@ export function isSahyadriCampus(slug: string) {
   return slug.startsWith("sahyadri-super-speciality-hospital-");
 }
 
+/** Manipal Hospitals Baner, Pune — independent campus; faculty-scoped specialties/procedures only. */
+export const MANIPAL_BANER_SLUG = "manipal-hospitals-baner";
+
+export function isManipalBanerCampus(slug: string) {
+  return slug === MANIPAL_BANER_SLUG;
+}
+
+/** Campuses whose specialty/procedure lists are derived only from affiliated doctors. */
+export function isFacultyAffiliatedCampus(slug: string) {
+  return isSahyadriCampus(slug) || isManipalBanerCampus(slug);
+}
+
 function doctorSeedAffiliated(
   doctor: CatalogSeed["doctors"][number],
   hospitalSlug: string,
@@ -260,14 +272,14 @@ const buildHospital = (seed: HospitalSeed, catalog: CatalogSeed): Hospital => {
   );
   const eyeCampus = isEyeCampus(seed.slug);
   const fertilityCampus = isFertilityCampus(seed.slug);
-  const sahyadriCampus = isSahyadriCampus(seed.slug);
-  const facultySpecialties = sahyadriCampus ? facultyDerivedSpecialties(faculty) : null;
+  const facultyCampus = isFacultyAffiliatedCampus(seed.slug);
+  const facultySpecialties = facultyCampus ? facultyDerivedSpecialties(faculty) : null;
   const procedures = resolveProcedures(
     eyeCampus
       ? [...OPHTHALMOLOGY_PROCEDURES]
       : fertilityCampus
         ? [...INFERTILITY_IVF_PROCEDURES]
-        : sahyadriCampus
+        : facultyCampus
           ? facultyDerivedProcedureNames(faculty)
           : [
               ...radiationNames,
@@ -317,31 +329,31 @@ const buildHospital = (seed: HospitalSeed, catalog: CatalogSeed): Hospital => {
       ? ophthalmology.name
       : fertilityCampus
         ? infertilityIvf.name
-        : sahyadriCampus
+        : facultyCampus
           ? facultySpecialties!.focus
           : `${radiation.name} · ${surgical.name} · ${medical.name} · ${hematology.name} · ${pediatricHematology.name} · ${cardiacSurgery.name} · ${pediatricCardiacSurgery.name} · ${cardiology.name} · ${bariatric.name} · ${cosmetic.name} · ${ent.name} · ${gastroenterology.name} · ${surgicalGastroenterology.name} · ${urology.name} · ${spineSurgery.name} · ${pulmonology.name} · ${pediatricOrthopaedic.name} · ${orthopedics.name} · ${ophthalmology.name} · ${gynecology.name} · ${infertilityIvf.name} · ${dentistry.name} · ${neurosurgery.name} · ${neurology.name} · ${nephrology.name}`,
     specialty: eyeCampus
       ? ophthalmology.name
       : fertilityCampus
         ? infertilityIvf.name
-        : sahyadriCampus
+        : facultyCampus
           ? facultySpecialties!.primaryName
           : radiation.name,
     specialtySlug: eyeCampus
       ? ophthalmology.slug
       : fertilityCampus
         ? infertilityIvf.slug
-        : sahyadriCampus
+        : facultyCampus
           ? facultySpecialties!.primarySlug
           : radiation.slug,
     // Sahyadri specialty/procedure arrays are faculty-derived only. Eye and
     // fertility campuses, and the legacy multi-specialty set, remain campus-verified.
-    serviceLineEvidence: sahyadriCampus ? "faculty-affiliated" : "campus-verified",
+    serviceLineEvidence: facultyCampus ? "faculty-affiliated" : "campus-verified",
     specialties: eyeCampus
       ? [ophthalmology.name]
       : fertilityCampus
         ? [infertilityIvf.name]
-        : sahyadriCampus
+        : facultyCampus
           ? facultySpecialties!.names
           : [
               radiation.name,
@@ -374,7 +386,7 @@ const buildHospital = (seed: HospitalSeed, catalog: CatalogSeed): Hospital => {
       ? [ophthalmology.slug]
       : fertilityCampus
         ? [infertilityIvf.slug]
-        : sahyadriCampus
+        : facultyCampus
           ? facultySpecialties!.slugs
           : [
               radiation.slug,
@@ -412,7 +424,7 @@ const buildHospital = (seed: HospitalSeed, catalog: CatalogSeed): Hospital => {
       ? "Ophthalmic theatre"
       : fertilityCampus
         ? "Embryology laboratory"
-        : sahyadriCampus
+        : facultyCampus
           ? // No campus-specific ICU publication verified for Nagar Road, Hadapsar
             // or Deccan Gymkhana; leave unspecified rather than inventing capacity.
             ""

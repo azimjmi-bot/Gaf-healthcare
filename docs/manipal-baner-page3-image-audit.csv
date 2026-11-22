@@ -1,0 +1,12 @@
+doctor_slug,eligible,source_image_url,gaf_image_path,status,notes
+dr-aniket-payagude,YES,https://www.manipalhospitals.com/uploads/doctors_photo/surgical-gastroenterologist-in-baner-Pune-dr-aniket-payagude.png,/doctors/manipal-baner/dr-aniket-payagude.webp,verified_imported,Official directory card photograph converted to WebP
+dr-ashish-pathak,NO,https://www.manipalhospitals.com/uploads/doctors_photo/anesthesiologist-in-baner-pune-dr-ashish-pathak.png,,excluded_not_imported,Ineligible specialty
+dr-ashutosh-pakale,NO,https://www.manipalhospitals.com/uploads/doctors_photo/dr-ashutosh-pakale-internal-medicine-diabetes-specialist.png,,excluded_not_imported,Ineligible specialty
+dr-balaji-nalwad,YES,https://www.manipalhospitals.com/uploads/doctors_photo/top-gynaecologist-in-baner-pune-dr-balaji-nalwad.png,/doctors/manipal-baner/dr-balaji-nalwad.webp,verified_imported,Official directory card photograph converted to WebP
+dr-bhavana-mangal,YES,https://www.manipalhospitals.com/uploads/doctors_photo/dr-bhavana-mangal-gynaecologist-baner.png,/doctors/manipal-baner/dr-bhavana-mangal.webp,verified_imported,Official directory card photograph converted to WebP
+dr-borde-mandar-deepak,YES,https://www.manipalhospitals.com/uploads/doctors_photo/Doctor_copy.png,,avatar_fallback,Source uses generic Doctor_copy placeholder; GAF stores empty image for DoctorPhoto/HospitalCampusVisual avatar fallback
+dr-chinmay-kumbhar,YES,https://www.manipalhospitals.com/uploads/doctors_photo/best-neurologist-in-pune-brain-doctor--dr-chinmay-kumbhar_(1).png,/doctors/manipal-baner/dr-chinmay-kumbhar.webp,verified_imported,Official directory card photograph converted to WebP
+dr-divya-chaudhary,NO,https://www.manipalhospitals.com/uploads/doctors_photo/best-radiologist-in-baner-pune-dr-divya-chaudhary_1680255565.png,,excluded_not_imported,Ineligible specialty
+dr-gaurav-chamania,YES,https://www.manipalhospitals.com/uploads/doctors_photo/dr-gaurav-chamania-best-ent-specialist-in-baner-manipal-hospitals.png,/doctors/manipal-baner/dr-gaurav-chamania.webp,verified_imported,Official directory card photograph converted to WebP
+dr-girija-ghate,YES,https://www.manipalhospitals.com/uploads/doctors_photo/ent-doctor-in-baner-pune-dr-girija-ghate.png,/doctors/manipal-baner/dr-girija-ghate.webp,verified_imported,Official directory card photograph converted to WebP
+manipal-hospitals-baner,hospital,n/a,,hospital_avatar_fallback,No approved campus hero imported; hospital image left empty for existing campus visual fallback

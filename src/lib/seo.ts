@@ -147,7 +147,9 @@ export function doctorMetadata(d: Doctor, locale: AppLocale = "en"): Metadata {
 }
 
 export function hospitalMetadata(h: Hospital, locale: AppLocale = "en"): Metadata {
-  const sahyadri = h.slug.startsWith("sahyadri-super-speciality-hospital-");
+  const facultyCampus =
+    h.slug.startsWith("sahyadri-super-speciality-hospital-") || h.slug === "manipal-hospitals-baner";
+  const manipalBaner = h.slug === "manipal-hospitals-baner";
   if (locale === "ar") {
     const city = taxonomyLabel(h.city, "ar");
     const country = taxonomyLabel(h.country, "ar");
@@ -158,7 +160,7 @@ export function hospitalMetadata(h: Hospital, locale: AppLocale = "en"): Metadat
       ? `${h.name} — مستشفى عيون في ${city}، ${country}`
       : `${h.name} — مستشفى معتمد في ${city}، ${country}`;
     const description = clip(
-      sahyadri
+      facultyCampus
         ? `${h.name} في ${city}، ${country}. تخصصات الهيئة الطبية المنتسبة: ${specs}. ${h.accreditation}. العلاقات على GAF Healthcare مبنية من الأطباء الموثّقين لهذا الحرم وليست كتالوج خدمات مستقلًا. مراجعة السجلات ثم فيديو قبل السفر. ${displayBio(h.bio)}`
         : `${h.name} في ${city}، ${country}. ${specs}. ${h.accreditation}. مصنّف على GAF Healthcare حسب البلد والمدينة والتخصص والإجراء. مراجعة السجلات ثم فيديو قبل السفر. ${displayBio(h.bio)}`,
     );
@@ -194,11 +196,13 @@ export function hospitalMetadata(h: Hospital, locale: AppLocale = "en"): Metadat
       ? `${h.name} — eye hospital in ${h.city}, India`
       : h.specialtySlug === "infertility-ivf" && h.specialtySlugs.length === 1
         ? `${h.name} — fertility centre in ${h.city}, India`
-        : sahyadri
-          ? `${h.name} — independent Sahyadri campus in ${h.city}, India`
-          : `${h.name} — oncology, ENT and GI hospital in ${h.city}, India`;
+        : manipalBaner
+          ? `${h.name} — independent Manipal Hospitals campus in Baner, ${h.city}, India`
+          : facultyCampus
+            ? `${h.name} — independent Sahyadri campus in ${h.city}, India`
+            : `${h.name} — oncology, ENT and GI hospital in ${h.city}, India`;
   const description = clip(
-    sahyadri
+    facultyCampus
       ? `${h.name} in ${h.city}, India. Affiliated faculty specialties on GAF: ${h.specialties.join(", ")}. ${h.accreditation}. Relationships reflect verified campus faculty, not an independently audited campus service catalogue. ${displayBio(h.bio)}`
       : `${h.name} in ${h.city}, India lists ${h.specialties.join(", ")}. ${h.accreditation}. ${displayBio(h.bio)}`,
   );
@@ -334,8 +338,9 @@ export function doctorProfilePageJsonLd(
 
 export function hospitalJsonLd(h: Hospital, locale: AppLocale = "en") {
   const path = `/hospitals/${h.slug}`;
-  const sahyadri = h.slug.startsWith("sahyadri-super-speciality-hospital-");
-  const description = sahyadri
+  const facultyCampus =
+    h.slug.startsWith("sahyadri-super-speciality-hospital-") || h.slug === "manipal-hospitals-baner";
+  const description = facultyCampus
     ? clip(
         locale === "ar"
           ? `${h.name}: تخصصات وإجراءات الدليل مبنية من الهيئة الطبية المنتسبة الموثّقة لهذا الحرم في بونه، وليست كتالوج خدمات مستقلًا للحرم. ${displayBio(h.bio)}`
