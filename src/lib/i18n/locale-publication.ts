@@ -25,6 +25,7 @@ import { facetIsPublished, localeIsPublished } from "@/lib/i18n/locale-gating";
 // the hreflang set needs to know what canonicalises away. Both are function
 // declarations used at call time, so neither sees a half-initialised module.
 import { canonicalFacetPath } from "@/lib/i18n/facet-canonical";
+import { arPathIsIndexedPublished, hasArPublicationIndex } from "@/lib/i18n/ar-publication-index";
 import { stripLocalePrefix } from "@/lib/i18n/path";
 
 /**
@@ -282,6 +283,12 @@ export function publishedLocalesForPath(path: string) {
   // would force the Worker to hydrate editions that hreflang will discard.
   return LOCALES.filter((locale) => {
     if (isTargetLocale(locale) && !localeIsPublished(locale)) return false;
+    // When the build-time AR publication index is loaded (Workers), English
+    // catalogue hreflang must not force a full Arabic R2 hydrate. The index
+    // already stores only published + self-canonical AR paths.
+    if (locale === "ar" && hasArPublicationIndex()) {
+      return arPathIsIndexedPublished(path);
+    }
     return localePathIsPublished(locale, path) && canonicalFacetPath(path, locale) === path;
   });
 }

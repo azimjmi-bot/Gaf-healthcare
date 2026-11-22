@@ -33,6 +33,11 @@
 import { COST_ARTICLES_KEY } from "@/data/cost-articles/asset";
 import { CATALOG_SEED_KEY } from "@/lib/catalog-seed";
 import { SOURCE_LOCALE, TARGET_LOCALES } from "@/lib/i18n/languages";
+import {
+  AR_PUBLICATION_INDEX_ASSET_PATH,
+  hasArPublicationIndex,
+  installArPublicationIndex,
+} from "@/lib/i18n/ar-publication-index";
 import { localeIsPublished } from "@/lib/i18n/locale-gating";
 import { stripLocalePrefix } from "@/lib/i18n/path";
 import { SITEMAP_HEADERS } from "@/lib/i18n/sitemap-xml";
@@ -786,14 +791,37 @@ export function groupsForRequest(pathname: string): readonly EditionGroup[] {
 
   const head = stripped.split("/").filter(Boolean)[0];
   if (CROSS_LOCALE_CATALOG_ROOTS.has(head ?? "")) {
+    // English catalogue routes: when the AR publication index is loaded,
+    // hreflang uses that index and must not pull the multi-MB Arabic edition.
+    // Arabic (and other target) catalogue URLs still hydrate their own edition.
+    const skipArHydrateForEnglishHreflang =
+      locale === SOURCE_LOCALE && hasArPublicationIndex() && localeIsPublished("ar");
     for (const target of TARGET_LOCALES) {
-      if (localeIsPublished(target) && isEditionGroup(target) && !groups.includes(target)) {
-        groups.push(target);
-      }
+      if (!localeIsPublished(target) || !isEditionGroup(target) || groups.includes(target)) continue;
+      if (skipArHydrateForEnglishHreflang && target === "ar") continue;
+      groups.push(target);
     }
   }
 
   return groups;
+}
+
+/** Best-effort load of the packed AR publication index from Worker assets. */
+export async function ensureArPublicationIndexLoaded(
+  assets: AssetFetcherLike | undefined,
+  log: (message: string) => void = () => {},
+) {
+  if (hasArPublicationIndex() || !assets) return;
+  try {
+    const response = await assets.fetch(new URL(AR_PUBLICATION_INDEX_ASSET_PATH, "https://assets.invalid"));
+    if (!response.ok) {
+      log(`ar publication index asset missing (${response.status}); English routes keep full AR hydrate`);
+      return;
+    }
+    installArPublicationIndex(await response.text());
+  } catch (error) {
+    log(`ar publication index load failed: ${error instanceof Error ? error.message : String(error)}`);
+  }
 }
 
 /** Deploy-time files the Worker reads itself (`ASSET_KEYS`) and must not serve. */
@@ -982,6 +1010,9 @@ export function createWorker(next: FetchHandler, options: WorkerRuntimeOptions =
     // Next's image optimizer resolves `/`-rooted sources through ASSETS; make
     // it see media that lives only in the static bucket.
     envForNext = { ...env, ASSETS: assetsWithUploads(env) };
+    // Fire-and-forget index load: first document still works if this races;
+    // subsequent English catalogue misses skip AR hydrate once loaded.
+    void ensureArPublicationIndexLoaded(env.ASSETS, log);
     return { storage, envForNext };
   }
 
@@ -1226,6 +1257,9 @@ export function createWorker(next: FetchHandler, options: WorkerRuntimeOptions =
       const redirect = sameHostHttpsRedirect(request);
       if (redirect) return withStagingRobots(redirect, env);
       const { storage, envForNext } = install(env);
+      // Ensure the AR publication index is ready before groupsForRequest runs
+      // so English catalogue misses can skip full Arabic hydration.
+      await ensureArPublicationIndexLoaded(env.ASSETS, log);
       const url = new URL(request.url);
 
       if (isUploadPath(url.pathname)) return withStagingRobots(await serveUpload(request, env, ctx, url), env);
