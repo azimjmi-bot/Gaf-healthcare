@@ -1,0 +1,143 @@
+old_url,locale,specialty,leaf,proposed_destination,destination_slug,clinical_equivalence,search_intent_equivalence,confidence,recommendation,evidence,backlinks
+https://gaf.healthcare/ar/treatments/bone-marrow/fanconi-anemia-treatment,ar,bone-marrow,fanconi-anemia-treatment,https://gaf.healthcare/ar/treatments/fanconi-anemia-treatment-in-india,fanconi-anemia-treatment-in-india,UNVERIFIED,UNVERIFIED,CANDIDATE,manual_verify,single flat slug match: fanconi-anemia-treatment-in-india,UNKNOWN
+https://gaf.healthcare/ar/treatments/bone-marrow/stem-cell-therapy,ar,bone-marrow,stem-cell-therapy,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/ar/treatments/cardiology/aortic-valve-repair,ar,cardiology,aortic-valve-repair,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/ar/treatments/cardiology/aortopulmonary-window,ar,cardiology,aortopulmonary-window,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/ar/treatments/cardiology/atherosclerosis-treatment,ar,cardiology,atherosclerosis-treatment,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/ar/treatments/cardiology/cardioversion-treatment,ar,cardiology,cardioversion-treatment,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/ar/treatments/cardiology/coronary-artery-angiography,ar,cardiology,coronary-artery-angiography,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/ar/treatments/cardiology/heart-transplant,ar,cardiology,heart-transplant,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/ar/treatments/cardiology/hypertension-treatment,ar,cardiology,hypertension-treatment,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/ar/treatments/cardiology/pericarditis-treatment,ar,cardiology,pericarditis-treatment,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/ar/treatments/cardiology/roemheld-syndrome-treatment,ar,cardiology,roemheld-syndrome-treatment,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/ar/treatments/ent/adenoidectomy-surgery,ar,ent,adenoidectomy-surgery,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/ar/treatments/gastro/alcoholic-hepatitis-treatment,ar,gastro,alcoholic-hepatitis-treatment,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/ar/treatments/gastro/cholecystectomy-surgery,ar,gastro,cholecystectomy-surgery,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/ar/treatments/gastro/colonoscopy-polypectomy,ar,gastro,colonoscopy-polypectomy,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/ar/treatments/gastro/gastric-sleeve-surgery,ar,gastro,gastric-sleeve-surgery,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/ar/treatments/gastro/hepatitis-b-treatment,ar,gastro,hepatitis-b-treatment,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/ar/treatments/gastro/pancreas-transplant,ar,gastro,pancreas-transplant,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/ar/treatments/gynaecology/cervical-cerclage,ar,gynaecology,cervical-cerclage,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/ar/treatments/gynaecology/cervical-conization,ar,gynaecology,cervical-conization,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/ar/treatments/gynaecology/cervical-polyp-removal,ar,gynaecology,cervical-polyp-removal,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/ar/treatments/gynaecology/cesarean-section,ar,gynaecology,cesarean-section,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/ar/treatments/gynaecology/microdochectomy,ar,gynaecology,microdochectomy,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/ar/treatments/gynaecology/molar-pregnancy-treatment,ar,gynaecology,molar-pregnancy-treatment,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/ar/treatments/gynaecology/oophorectomy,ar,gynaecology,oophorectomy,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/ar/treatments/gynaecology/robotic-hysterectomy,ar,gynaecology,robotic-hysterectomy,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/ar/treatments/gynaecology/tubal-ligation-reversal,ar,gynaecology,tubal-ligation-reversal,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/ar/treatments/gynaecology/vaginal-hysterectomy,ar,gynaecology,vaginal-hysterectomy,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/ar/treatments/neurology/brain-tumor-surgery,ar,neurology,brain-tumor-surgery,https://gaf.healthcare/ar/treatments/brain-tumor-surgery-in-india,brain-tumor-surgery-in-india,UNVERIFIED,UNVERIFIED,CANDIDATE,manual_verify,single flat slug match: brain-tumor-surgery-in-india,UNKNOWN
+https://gaf.healthcare/ar/treatments/neurology/epilepsy-surgery,ar,neurology,epilepsy-surgery,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/ar/treatments/oncology/bone-cancer-treatment,ar,oncology,bone-cancer-treatment,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/ar/treatments/oncology/chemotherapy,ar,oncology,chemotherapy,https://gaf.healthcare/ar/treatments/chemotherapy-in-india,chemotherapy-in-india,UNVERIFIED,UNVERIFIED,CANDIDATE,manual_verify,single flat slug match: chemotherapy-in-india,UNKNOWN
+https://gaf.healthcare/ar/treatments/oncology/endoscopy-surgery-oncology,ar,oncology,endoscopy-surgery-oncology,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/ar/treatments/oncology/thoracic-surgery-oncology,ar,oncology,thoracic-surgery-oncology,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/ar/treatments/ophthalmology/cataract-surgery,ar,ophthalmology,cataract-surgery,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/ar/treatments/ophthalmology/cornea-transplant,ar,ophthalmology,cornea-transplant,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/ar/treatments/orthopedics/ankle-arthroscopy,ar,orthopedics,ankle-arthroscopy,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/ar/treatments/orthopedics/carpal-tunnel-syndrome-treatment,ar,orthopedics,carpal-tunnel-syndrome-treatment,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/ar/treatments/orthopedics/elbow-replacement-surgery,ar,orthopedics,elbow-replacement-surgery,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/ar/treatments/orthopedics/knee-arthroscopy-surgery,ar,orthopedics,knee-arthroscopy-surgery,https://gaf.healthcare/ar/treatments/knee-arthroscopy-surgery-in-india,knee-arthroscopy-surgery-in-india,UNVERIFIED,UNVERIFIED,CANDIDATE,manual_verify,single flat slug match: knee-arthroscopy-surgery-in-india,UNKNOWN
+https://gaf.healthcare/ar/treatments/orthopedics/kyphoplasty-surgery,ar,orthopedics,kyphoplasty-surgery,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/ar/treatments/orthopedics/osteoarthritis-surgery,ar,orthopedics,osteoarthritis-surgery,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/ar/treatments/orthopedics/shoulder-arthroscopy,ar,orthopedics,shoulder-arthroscopy,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/ar/treatments/orthopedics/spine-tumor-surgery,ar,orthopedics,spine-tumor-surgery,https://gaf.healthcare/ar/treatments/spine-tumor-surgery-in-india,spine-tumor-surgery-in-india,UNVERIFIED,UNVERIFIED,CANDIDATE,manual_verify,single flat slug match: spine-tumor-surgery-in-india,UNKNOWN
+https://gaf.healthcare/ar/treatments/orthopedics/total-knee-replacement,ar,orthopedics,total-knee-replacement,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/ar/treatments/pediatric-cardiology/coarctation-of-the-aorta,ar,pediatric-cardiology,coarctation-of-the-aorta,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/ar/treatments/pediatric-cardiology/fetal-cardiology,ar,pediatric-cardiology,fetal-cardiology,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/ar/treatments/pediatric-cardiology/fontan-procedure,ar,pediatric-cardiology,fontan-procedure,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/ar/treatments/pediatric-cardiology/right-heart-catheterization-pediatric,ar,pediatric-cardiology,right-heart-catheterization-pediatric,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/ar/treatments/plastic/blepharoplasty-eyelid-surgery,ar,plastic,blepharoplasty-eyelid-surgery,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/ar/treatments/plastic/breast-augmentation,ar,plastic,breast-augmentation,https://gaf.healthcare/ar/treatments/breast-augmentation-in-india,breast-augmentation-in-india,UNVERIFIED,UNVERIFIED,CANDIDATE,manual_verify,single flat slug match: breast-augmentation-in-india,UNKNOWN
+https://gaf.healthcare/ar/treatments/plastic/breast-reduction-surgery,ar,plastic,breast-reduction-surgery,https://gaf.healthcare/ar/treatments/breast-reduction-in-india,breast-reduction-in-india,UNVERIFIED,UNVERIFIED,CANDIDATE,manual_verify,single flat slug match: breast-reduction-in-india,UNKNOWN
+https://gaf.healthcare/ar/treatments/plastic/calf-implant,ar,plastic,calf-implant,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/ar/treatments/plastic/mommy-makeover,ar,plastic,mommy-makeover,https://gaf.healthcare/ar/treatments/mommy-makeover-in-india,mommy-makeover-in-india,UNVERIFIED,UNVERIFIED,CANDIDATE,manual_verify,single flat slug match: mommy-makeover-in-india,UNKNOWN
+https://gaf.healthcare/ar/treatments/plastic/rhinoplasty-nose-job,ar,plastic,rhinoplasty-nose-job,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/ar/treatments/transplant/face-transplant-surgery,ar,transplant,face-transplant-surgery,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/ar/treatments/transplant/kidney-transplant,ar,transplant,kidney-transplant,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/ar/treatments/urology/kidney-stone-treatment,ar,urology,kidney-stone-treatment,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/ar/treatments/urology/nephrectomy-surgery,ar,urology,nephrectomy-surgery,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/ar/treatments/urology/penile-prosthesis,ar,urology,penile-prosthesis,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/ar/treatments/urology/peyronies-disease-treatment,ar,urology,peyronies-disease-treatment,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/ar/treatments/urology/undescended-testicle-surgery,ar,urology,undescended-testicle-surgery,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/treatments/bone-marrow/blood-transfusion-therapy,en,bone-marrow,blood-transfusion-therapy,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/treatments/bone-marrow/leukemia-treatment,en,bone-marrow,leukemia-treatment,https://gaf.healthcare/treatments/leukemia-treatment-in-india,leukemia-treatment-in-india,UNVERIFIED,UNVERIFIED,CANDIDATE,manual_verify,single flat slug match: leukemia-treatment-in-india,UNKNOWN
+https://gaf.healthcare/treatments/cardiology/angioplasty-stenting,en,cardiology,angioplasty-stenting,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/treatments/cardiology/aortopulmonary-window,en,cardiology,aortopulmonary-window,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/treatments/cardiology/atherosclerosis-treatment,en,cardiology,atherosclerosis-treatment,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/treatments/cardiology/balloon-mitral-valvuloplasty,en,cardiology,balloon-mitral-valvuloplasty,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/treatments/cardiology/balloon-pulmonary-valvuloplasty,en,cardiology,balloon-pulmonary-valvuloplasty,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/treatments/cardiology/cardioversion-treatment,en,cardiology,cardioversion-treatment,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/treatments/cardiology/electrophysiology-study,en,cardiology,electrophysiology-study,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/treatments/cardiology/heart-valve-repair,en,cardiology,heart-valve-repair,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/treatments/cardiology/myocardial-bridge-treatment,en,cardiology,myocardial-bridge-treatment,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/treatments/cardiology/myocardial-infarction-treatment,en,cardiology,myocardial-infarction-treatment,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/treatments/cardiology/pacemaker-implantation,en,cardiology,pacemaker-implantation,https://gaf.healthcare/treatments/pacemaker-implantation-in-india,pacemaker-implantation-in-india,same procedure flat curated treatment,same procedure flat curated treatment,VERIFIED,redirect,same procedure flat curated treatment,UNKNOWN
+https://gaf.healthcare/treatments/cardiology/rastelli-procedure,en,cardiology,rastelli-procedure,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/treatments/cardiology/robotic-heart-bypass-surgery,en,cardiology,robotic-heart-bypass-surgery,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/treatments/cardiology/roemheld-syndrome-treatment,en,cardiology,roemheld-syndrome-treatment,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/treatments/ent/auditory-brainstem-implant,en,ent,auditory-brainstem-implant,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/treatments/ent/balloon-sinuplasty,en,ent,balloon-sinuplasty,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/treatments/ent/endoscopic-septoplasty,en,ent,endoscopic-septoplasty,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/treatments/ent/sinus-surgery-fess,en,ent,sinus-surgery-fess,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/treatments/ent/thyroidectomy-surgery,en,ent,thyroidectomy-surgery,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/treatments/gastro/alcoholic-hepatitis-treatment,en,gastro,alcoholic-hepatitis-treatment,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/treatments/gastro/alpha-1-antitrypsin-deficiency-treatment,en,gastro,alpha-1-antitrypsin-deficiency-treatment,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/treatments/gastro/crohns-disease-treatment,en,gastro,crohns-disease-treatment,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/treatments/gastro/liver-cirrhosis-treatment,en,gastro,liver-cirrhosis-treatment,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/treatments/gastro/pancreas-transplant,en,gastro,pancreas-transplant,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/treatments/gastro/pulmonary-fibrosis-treatment,en,gastro,pulmonary-fibrosis-treatment,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/treatments/gynaecology/antenatal-care,en,gynaecology,antenatal-care,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/treatments/gynaecology/cervical-cautery,en,gynaecology,cervical-cautery,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/treatments/gynaecology/cervical-polyp-removal,en,gynaecology,cervical-polyp-removal,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/treatments/gynaecology/contraceptive-implant,en,gynaecology,contraceptive-implant,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/treatments/gynaecology/dilation-curettage,en,gynaecology,dilation-curettage,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/treatments/gynaecology/female-sterilization,en,gynaecology,female-sterilization,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/treatments/gynaecology/fetal-echocardiography,en,gynaecology,fetal-echocardiography,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/treatments/gynaecology/hysterectomy,en,gynaecology,hysterectomy,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/treatments/gynaecology/ovarian-cyst-removal,en,gynaecology,ovarian-cyst-removal,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/treatments/gynaecology/ovarian-transposition-surgery,en,gynaecology,ovarian-transposition-surgery,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/treatments/gynaecology/pelvic-floor-repair,en,gynaecology,pelvic-floor-repair,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/treatments/gynaecology/uterosacral-nerve-ablation,en,gynaecology,uterosacral-nerve-ablation,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/treatments/gynaecology/vaginal-vault-prolapse-surgery,en,gynaecology,vaginal-vault-prolapse-surgery,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/treatments/neurology/brain-tumor-surgery,en,neurology,brain-tumor-surgery,https://gaf.healthcare/treatments/brain-tumor-surgery-in-india,brain-tumor-surgery-in-india,UNVERIFIED,UNVERIFIED,CANDIDATE,manual_verify,single flat slug match: brain-tumor-surgery-in-india,UNKNOWN
+https://gaf.healthcare/treatments/neurology/deep-brain-stimulation,en,neurology,deep-brain-stimulation,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/treatments/neurology/epilepsy-surgery,en,neurology,epilepsy-surgery,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/treatments/oncology/bile-duct-cancer-treatment,en,oncology,bile-duct-cancer-treatment,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/treatments/oncology/bladder-cancer-treatment,en,oncology,bladder-cancer-treatment,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/treatments/oncology/cryosurgery,en,oncology,cryosurgery,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/treatments/oncology/uterine-cancer-treatment,en,oncology,uterine-cancer-treatment,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/treatments/orthopedics/acl-reconstruction,en,orthopedics,acl-reconstruction,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/treatments/orthopedics/arthrodesis-surgery,en,orthopedics,arthrodesis-surgery,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/treatments/orthopedics/avascular-necrosis-treatment,en,orthopedics,avascular-necrosis-treatment,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/treatments/orthopedics/bilateral-hip-replacement,en,orthopedics,bilateral-hip-replacement,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/treatments/orthopedics/carpal-tunnel-syndrome-treatment,en,orthopedics,carpal-tunnel-syndrome-treatment,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/treatments/orthopedics/cervical-spondylosis-treatment,en,orthopedics,cervical-spondylosis-treatment,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/treatments/orthopedics/corpectomy-surgery,en,orthopedics,corpectomy-surgery,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/treatments/orthopedics/elbow-replacement-surgery,en,orthopedics,elbow-replacement-surgery,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/treatments/orthopedics/ewing-sarcoma-treatment,en,orthopedics,ewing-sarcoma-treatment,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/treatments/orthopedics/exostosis-treatment,en,orthopedics,exostosis-treatment,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/treatments/orthopedics/meniscus-tear-surgery,en,orthopedics,meniscus-tear-surgery,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/treatments/orthopedics/osteoarthritis-surgery,en,orthopedics,osteoarthritis-surgery,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/treatments/orthopedics/osteoporosis-treatment,en,orthopedics,osteoporosis-treatment,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/treatments/orthopedics/shoulder-arthroscopy,en,orthopedics,shoulder-arthroscopy,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/treatments/pediatric-cardiology/arrhythmias-pediatric,en,pediatric-cardiology,arrhythmias-pediatric,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/treatments/pediatric-cardiology/atrial-septal-defect-closure,en,pediatric-cardiology,atrial-septal-defect-closure,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/treatments/pediatric-cardiology/atrial-septal-defect-treatment,en,pediatric-cardiology,atrial-septal-defect-treatment,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/treatments/pediatric-cardiology/atrioventricular-canal-defect,en,pediatric-cardiology,atrioventricular-canal-defect,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/treatments/pediatric-cardiology/fontan-procedure,en,pediatric-cardiology,fontan-procedure,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/treatments/pediatric-cardiology/patent-ductus-arteriosus-closure,en,pediatric-cardiology,patent-ductus-arteriosus-closure,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/treatments/pediatric-cardiology/pediatric-heart-surgery,en,pediatric-cardiology,pediatric-heart-surgery,https://gaf.healthcare/treatments/pediatric-heart-surgery-in-india,pediatric-heart-surgery-in-india,UNVERIFIED,UNVERIFIED,CANDIDATE,manual_verify,single flat slug match: pediatric-heart-surgery-in-india,UNKNOWN
+https://gaf.healthcare/treatments/pediatric-cardiology/right-heart-catheterization-pediatric,en,pediatric-cardiology,right-heart-catheterization-pediatric,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/treatments/pediatric-cardiology/tapvc-repair,en,pediatric-cardiology,tapvc-repair,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/treatments/plastic/breast-reconstruction-implant,en,plastic,breast-reconstruction-implant,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/treatments/plastic/facelift-surgery,en,plastic,facelift-surgery,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/treatments/plastic/mole-removal,en,plastic,mole-removal,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/treatments/plastic/nipple-correction-surgery,en,plastic,nipple-correction-surgery,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/treatments/plastic/rosacea-treatment,en,plastic,rosacea-treatment,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/treatments/transplant/intestine-transplant,en,transplant,intestine-transplant,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/treatments/transplant/liver-transplant,en,transplant,liver-transplant,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/treatments/urology/kidney-stone-treatment,en,urology,kidney-stone-treatment,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN
+https://gaf.healthcare/treatments/urology/turp-surgery,en,urology,turp-surgery,https://gaf.healthcare/treatments/turp-surgery-in-india,turp-surgery-in-india,UNVERIFIED,UNVERIFIED,CANDIDATE,manual_verify,single flat slug match: turp-surgery-in-india,UNKNOWN
+https://gaf.healthcare/treatments/urology/undescended-testicle-surgery,en,urology,undescended-testicle-surgery,,,UNVERIFIED,UNVERIFIED,NO_MATCH,404_or_410,no flat catalogue equivalent,UNKNOWN

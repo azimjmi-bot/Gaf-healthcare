@@ -103,6 +103,9 @@ test("approved Batch J/K obsolete plural profiles are gone", () => {
     "/doctors/dr-mohd-qaleem",
     "/doctors/dr-vineet-goel",
     "/hospitals/wockhardt-hospital-mumbai",
+    // Pacemaker nested→flat (PR #45): redirect must win; never answer 410 here.
+    "/treatments/cardiology/pacemaker-implantation",
+    "/treatments/pacemaker-implantation-in-india",
   ]) {
     assert.equal(isLegacyGonePath(path), false, path);
   }

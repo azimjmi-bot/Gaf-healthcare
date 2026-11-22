@@ -104,3 +104,24 @@ test("the sitemap index lists each locale file once with a valid lastmod", () =>
     assert.ok(item.lastmod === undefined || parseLastmod(item.lastmod) !== null, `${item.loc} lastmod`);
   }
 });
+
+test("nested pacemaker legacy path is absent from EN sitemap; flat successor is listed", () => {
+  const locs = new Set(parseSitemap(build("en")).items.map((item) => item.loc));
+  assert.equal(
+    locs.has(`${ORIGIN}/treatments/cardiology/pacemaker-implantation`),
+    false,
+    "redirected nested path must not appear in the sitemap",
+  );
+  assert.ok(
+    locs.has(`${ORIGIN}/treatments/pacemaker-implantation-in-india`),
+    "verified flat successor must remain sitemap-listed when published",
+  );
+});
+
+test("Arabic sitemap excludes nested pacemaker paths and does not advertise unpublished AR flat successor", () => {
+  const locs = new Set(parseSitemap(build("ar")).items.map((item) => item.loc));
+  assert.equal(locs.has(`${ORIGIN}/ar/treatments/cardiology/pacemaker-implantation`), false);
+  assert.equal(locs.has(`${ORIGIN}/treatments/cardiology/pacemaker-implantation`), false);
+  // Live probe 2026-11-22: AR flat pacemaker is unpublished (404). Must not be sitemap-listed.
+  assert.equal(locs.has(`${ORIGIN}/ar/treatments/pacemaker-implantation-in-india`), false);
+});

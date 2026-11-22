@@ -108,3 +108,32 @@ test("approved Batch J/K orphan profiles redirect to live catalogue equivalents"
     permanent: true,
   });
 });
+
+test("verified nested pacemaker treatment redirects once to the flat curated page", () => {
+  assert.deepEqual(resolve("/treatments/cardiology/pacemaker-implantation"), {
+    destination: "/treatments/pacemaker-implantation-in-india",
+    permanent: true,
+  });
+  // Destination and other flat treatments must not be caught by legacy rules
+  // (single-hop: no chain or loop via a second legacy rule).
+  assert.equal(resolve("/treatments/pacemaker-implantation-in-india"), null);
+  assert.equal(resolve("/treatments/breast-cancer-treatment-in-india"), null);
+  // Unverified nested siblings stay unmatched here (404/410 handled elsewhere).
+  assert.equal(resolve("/treatments/bone-marrow/leukemia-treatment"), null);
+  assert.equal(resolve("/treatments/neurology/brain-tumor-surgery"), null);
+});
+
+test("pacemaker redirect is a single exact rule with no overlapping legacy sources", () => {
+  const pacemakerRules = legacyRedirects.filter(
+    (rule) =>
+      rule.source === "/treatments/cardiology/pacemaker-implantation" ||
+      rule.destination === "/treatments/pacemaker-implantation-in-india" ||
+      rule.source.includes("pacemaker"),
+  );
+  assert.equal(pacemakerRules.length, 1);
+  assert.equal(pacemakerRules[0].destination, "/treatments/pacemaker-implantation-in-india");
+  assert.equal(pacemakerRules[0].permanent, true);
+  // Next.js permanent redirects preserve request query unless destination sets its own.
+  // Document expected query-safe destination path (no embedded query that would drop params).
+  assert.doesNotMatch(pacemakerRules[0].destination, /[?#]/);
+});
