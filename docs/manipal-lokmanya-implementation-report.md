@@ -3,6 +3,7 @@
 **Branch:** `cursor/manipal-lokmanya-pune-doctors-hospitals-6064`  
 **Baseline:** `2b49d2cfcef57427c3ade02852cb7efe27d25473`  
 **PR:** https://github.com/azimjmi-bot/Gaf-healthcare/pull/42  
+**HEAD:** `f8aa9fa27961b4d7ab1f3643d05d0e4d995c5afb`  
 **Restriction:** PR only — no merge, R2 upload, version stamp, or Worker deploy.
 
 ## Reconciliation (why 100 eligible → 85 additions + 8 updates)

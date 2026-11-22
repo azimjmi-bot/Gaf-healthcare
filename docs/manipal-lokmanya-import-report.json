@@ -94,7 +94,7 @@
     "docs/manipal-lokmanya-import-report.json",
     "docs/manipal-lokmanya-implementation-report.md"
   ],
-  "commitSha": "a5a520be8ccccaa5b6e2e4157c14d1c560b57c6c",
+  "commitSha": "f8aa9fa27961b4d7ab1f3643d05d0e4d995c5afb",
   "prUrl": "https://github.com/azimjmi-bot/Gaf-healthcare/pull/42",
   "tests": {
     "tsc": "pass",
