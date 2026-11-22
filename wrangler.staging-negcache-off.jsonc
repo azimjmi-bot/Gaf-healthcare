@@ -1,0 +1,33 @@
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	// Isolated staging control Worker: same content bindings, negative cache OFF.
+	"name": "gaf-healthcare-staging-negcache-off",
+	"main": "src/worker.ts",
+	"compatibility_date": "2026-10-01",
+	"compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+	"workers_dev": true,
+	"preview_urls": false,
+	"observability": { "enabled": true },
+	"minify": true,
+	"alias": { "gaf-open-next-worker": "./.open-next/worker.js" },
+	"assets": {
+		"directory": ".open-next/assets",
+		"binding": "ASSETS",
+		"run_worker_first": ["/_gaf/*"],
+		"html_handling": "none",
+		"not_found_handling": "none"
+	},
+	"services": [
+		{ "binding": "WORKER_SELF_REFERENCE", "service": "gaf-healthcare-staging-negcache-off" }
+	],
+	"r2_buckets": [
+		{ "binding": "CONTENT", "bucket_name": "gaf-content-staging" },
+		{ "binding": "STATIC", "bucket_name": "gaf-static-staging" },
+		{ "binding": "NEXT_INC_CACHE_R2_BUCKET", "bucket_name": "gaf-static-staging" }
+	],
+	"vars": {
+		"GAF_STORAGE": "r2",
+		"NEXT_INC_CACHE_R2_PREFIX": "incremental-cache",
+		"GAF_INDEXING": "off"
+	}
+}
