@@ -1,6 +1,6 @@
 # PR #45 — Production Readiness
 
-**Release candidate SHA:** `d87a5fe19bc2fb6a52768280fa0c2f02dd3e5a10` (update if follow-up commits land)  
+**Release candidate SHA:** `816e706538d99ade5a5ad8247e36a2cd6b173fe4` (update if follow-up commits land)  
 **PR:** https://github.com/azimjmi-bot/Gaf-healthcare/pull/45  
 **Base:** `release/stage4-rsc-prod` @ `8eabd88`  
 **Verdict:** **APPROVE for owner-controlled merge/deploy** after local validation below. Agent must not merge or deploy.
