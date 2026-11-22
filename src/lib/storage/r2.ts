@@ -604,7 +604,11 @@ export class R2ContentStorage implements ContentStorage {
     }
   }
 
+  /** Diagnostic counter for sampled Worker perf logs (P5). Not a public API. */
+  r2ReadCount = 0;
+
   private async fetchObject(bucket: R2BucketLike, bucketKey: string): Promise<Entry | null> {
+    this.r2ReadCount += 1;
     const object = await bucket.get(bucketKey);
     if (!hasBody(object)) return null;
     return {
@@ -618,6 +622,7 @@ export class R2ContentStorage implements ContentStorage {
     const keys: string[] = [];
     let cursor: string | undefined;
     do {
+      this.r2ReadCount += 1;
       const page = await this.content.list({ prefix, cursor, limit: 1000 });
       for (const object of page.objects) keys.push(object.key);
       cursor = page.truncated ? page.cursor : undefined;

@@ -49,6 +49,14 @@ import {
   type R2ObjectLike,
 } from "@/lib/storage/r2";
 import { isCrossRequestPromiseError } from "@/worker/singleflight";
+import {
+  classifyPerfRoute,
+  DEFAULT_PERF_SAMPLE_RATE,
+  formatPerfSample,
+  shouldSamplePerf,
+  timeHydration,
+  type PerfCacheOutcome,
+} from "@/worker/perf-telemetry";
 
 export interface ExecutionContextLike {
   waitUntil(promise: Promise<unknown>): void;
@@ -976,11 +984,28 @@ export function createWorker(next: FetchHandler, options: WorkerRuntimeOptions =
     active: WorkerContent,
     nextEnv: WorkerEnv,
     ctx: ExecutionContextLike,
+    perf?: { hydrateMs?: number; hydrateEnMs?: number; hydrateArMs?: number; r2Reads?: number; groups?: string; ssrMs?: number },
   ) {
     const url = new URL(request.url);
     try {
-      await Promise.all(groupsForRequest(url.pathname).map((group) => active.ensureHydrated(group)));
+      const groups = groupsForRequest(url.pathname);
+      const readCounter =
+        "r2ReadCount" in active && typeof (active as { r2ReadCount?: number }).r2ReadCount === "number"
+          ? (active as { r2ReadCount: number })
+          : undefined;
+      const hydrate = await timeHydration(
+        groups,
+        (group) => active.ensureHydrated(group as EditionGroup),
+        readCounter,
+      );
       await active.refreshIfStale();
+      if (perf) {
+        perf.hydrateMs = hydrate.totalMs;
+        perf.hydrateEnMs = hydrate.byGroup.en;
+        perf.hydrateArMs = hydrate.byGroup.ar;
+        perf.r2Reads = hydrate.r2Reads;
+        perf.groups = groups.join("+");
+      }
     } catch (error) {
       if (error instanceof StorageHydrationError) return hydrationUnavailable(error, log);
       // Defence in depth: a stranded cross-request Promise must not become CF 1101.
@@ -995,7 +1020,34 @@ export function createWorker(next: FetchHandler, options: WorkerRuntimeOptions =
       }
       throw error;
     }
-    return next(request, nextEnv, ctx);
+    const ssrStarted = Date.now();
+    const response = await next(request, nextEnv, ctx);
+    if (perf) perf.ssrMs = Date.now() - ssrStarted;
+    return response;
+  }
+
+  function maybeLogPerf(
+    pathname: string,
+    status: number,
+    cache: PerfCacheOutcome,
+    workerMs: number,
+    detail?: { hydrateMs?: number; hydrateEnMs?: number; hydrateArMs?: number; r2Reads?: number; groups?: string; ssrMs?: number },
+  ) {
+    if (!shouldSamplePerf(pathname, DEFAULT_PERF_SAMPLE_RATE)) return;
+    log(
+      formatPerfSample({
+        route: classifyPerfRoute(pathname),
+        status,
+        cache,
+        worker_ms: workerMs,
+        hydrate_ms: detail?.hydrateMs,
+        hydrate_en_ms: detail?.hydrateEnMs,
+        hydrate_ar_ms: detail?.hydrateArMs,
+        r2_reads: detail?.r2Reads,
+        ssr_ms: detail?.ssrMs,
+        groups: detail?.groups,
+      }),
+    );
   }
 
   async function serveUpload(request: Request, env: WorkerEnv, ctx: ExecutionContextLike, url: URL) {
@@ -1116,11 +1168,18 @@ export function createWorker(next: FetchHandler, options: WorkerRuntimeOptions =
     ctx: ExecutionContextLike,
     normalized: URL,
     variant: DocumentCacheVariant,
+    perf?: { hydrateMs?: number; hydrateEnMs?: number; hydrateArMs?: number; r2Reads?: number; groups?: string; ssrMs?: number },
   ): Promise<Response> {
     const reused = await readDocumentCache(normalized, variant);
     if (reused) return reused;
     const generation = active.contentGeneration();
-    const rendered = await renderDocument(requestForRender(request, variant, normalized), active, nextEnv, ctx);
+    const rendered = await renderDocument(
+      requestForRender(request, variant, normalized),
+      active,
+      nextEnv,
+      ctx,
+      perf,
+    );
     const restored = restoreLocaleHomeCache(normalized.pathname, rendered);
     const marked = copyResponse(restored, (headers) => headers.set(cacheStatusHeader(variant), "miss"));
     const cache = cacheFor();
@@ -1141,12 +1200,15 @@ export function createWorker(next: FetchHandler, options: WorkerRuntimeOptions =
 
   return {
     async fetch(request: Request, env: WorkerEnv, ctx: ExecutionContextLike): Promise<Response> {
+      const workerStarted = Date.now();
       const wwwRedirect = wwwToApexRedirect(request);
       if (wwwRedirect) return withStagingRobots(wwwRedirect, env);
       const redirect = sameHostHttpsRedirect(request);
       if (redirect) return withStagingRobots(redirect, env);
       const { storage, envForNext } = install(env);
       const url = new URL(request.url);
+      // Path only — never pass search into route classification or sample keys.
+      const pathname = url.pathname;
 
       if (isUploadPath(url.pathname)) return withStagingRobots(await serveUpload(request, env, ctx, url), env);
       if (isPrivateAssetPath(url.pathname)) {
@@ -1179,7 +1241,11 @@ export function createWorker(next: FetchHandler, options: WorkerRuntimeOptions =
       if (variant) {
         try {
           const hit = await readDocumentCache(normalized, variant);
-          if (hit) return withStagingRobots(hit, env);
+          if (hit) {
+            const response = withStagingRobots(hit, env);
+            maybeLogPerf(pathname, response.status, "hit", Date.now() - workerStarted);
+            return response;
+          }
         } catch (error) {
           if (error instanceof StorageHydrationError) return withStagingRobots(hydrationUnavailable(error, log), env);
           if (isCrossRequestPromiseError(error)) {
@@ -1191,6 +1257,14 @@ export function createWorker(next: FetchHandler, options: WorkerRuntimeOptions =
         }
       }
 
+      const perf: {
+        hydrateMs?: number;
+        hydrateEnMs?: number;
+        hydrateArMs?: number;
+        r2Reads?: number;
+        groups?: string;
+        ssrMs?: number;
+      } = {};
       const subrequest = isRenderSubrequest(request);
       if (request.method === "HEAD" || subrequest) {
         const rendered = await renderDocument(
@@ -1198,14 +1272,15 @@ export function createWorker(next: FetchHandler, options: WorkerRuntimeOptions =
           storage,
           envForNext,
           ctx,
+          perf,
         );
         return withStagingRobots(restoreLocaleHomeCache(url.pathname, rendered), env);
       }
       const rendered = await withRenderSlot(
         () =>
           variant
-            ? renderCacheableDocument(request, storage, envForNext, ctx, normalized, variant)
-            : renderDocument(request, storage, envForNext, ctx).then((response) =>
+            ? renderCacheableDocument(request, storage, envForNext, ctx, normalized, variant, perf)
+            : renderDocument(request, storage, envForNext, ctx, perf).then((response) =>
                 restoreLocaleHomeCache(url.pathname, response),
               ),
         () => {
@@ -1213,7 +1288,10 @@ export function createWorker(next: FetchHandler, options: WorkerRuntimeOptions =
           return renderBusyResponse();
         },
       );
-      return withStagingRobots(rendered, env);
+      const response = withStagingRobots(rendered, env);
+      const cacheOutcome: PerfCacheOutcome = variant ? "miss" : "bypass";
+      maybeLogPerf(pathname, response.status, cacheOutcome, Date.now() - workerStarted, perf);
+      return response;
     },
     /** For tests and diagnostics. */
     storage: () => storage,
