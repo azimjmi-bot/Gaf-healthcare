@@ -49,6 +49,12 @@ import {
   type R2ObjectLike,
 } from "@/lib/storage/r2";
 import { isCrossRequestPromiseError } from "@/worker/singleflight";
+import {
+  decideNegativeCache,
+  isNegativeCacheEnabled,
+  NEGATIVE_CACHE_SUFFIX,
+  parseNegativeCacheTtlSeconds,
+} from "@/worker/negative-cache";
 
 export interface ExecutionContextLike {
   waitUntil(promise: Promise<unknown>): void;
@@ -72,6 +78,13 @@ export interface WorkerEnv {
    * Unset uses {@link DEFAULT_RENDER_QUEUE_TIMEOUT_MS}. Invalid values do too.
    */
   GAF_RENDER_QUEUE_MS?: string;
+  /**
+   * Opt-in short-TTL HTML 404 caching (P1). Unset/off in production until
+   * explicitly approved. Values: "1" | "true" | "on".
+   */
+  GAF_NEGATIVE_CACHE?: string;
+  /** Optional TTL seconds for negative cache entries (default 120, max 300). */
+  GAF_NEGATIVE_CACHE_TTL?: string;
   [binding: string]: unknown;
 }
 
@@ -415,11 +428,18 @@ export function publicHtmlCacheRequest(
   page: URL,
   generation: string,
   variant: DocumentCacheVariant = { kind: "html" },
+  options: { negative?: boolean } = {},
 ): Request {
   const key = new URL(HTML_CACHE_KEY_ORIGIN);
   key.searchParams.set("origin", page.origin);
   const suffix =
-    variant.kind === "rsc" ? RSC_CACHE_SUFFIX : variant.kind === "rsc-prefetch" ? RSC_PREFETCH_CACHE_SUFFIX : "";
+    variant.kind === "rsc"
+      ? RSC_CACHE_SUFFIX
+      : variant.kind === "rsc-prefetch"
+        ? RSC_PREFETCH_CACHE_SUFFIX
+        : options.negative
+          ? NEGATIVE_CACHE_SUFFIX
+          : "";
   key.searchParams.set("path", `${page.pathname}${suffix}`);
   key.searchParams.set("query", page.search.startsWith("?") ? page.search.slice(1) : page.search);
   key.searchParams.set("generation", generation);
@@ -482,6 +502,7 @@ async function storePublicDocument(
   log: (message: string) => void,
   stillCurrent: () => boolean,
   remember: (url: string) => void,
+  options: { ttlSeconds?: number; storeStatus?: number } = {},
 ): Promise<void> {
   try {
     const bytes = new Uint8Array(await response.arrayBuffer());
@@ -491,10 +512,12 @@ async function storePublicDocument(
     if (!stillCurrent()) return;
     const headers = new Headers(response.headers);
     headers.set("x-gaf-stored-cache-control", headers.get("cache-control") ?? "");
-    headers.set("cache-control", `public, max-age=${PUBLIC_HTML_SHARED_TTL_SECONDS}`);
+    const ttl = options.ttlSeconds ?? PUBLIC_HTML_SHARED_TTL_SECONDS;
+    headers.set("cache-control", `public, max-age=${ttl}`);
     headers.set(cacheStatusHeader(variant), "hit");
     headers.delete("set-cookie");
-    await cache.put(key, new Response(bytes, { status: 200, headers }));
+    const status = options.storeStatus ?? 200;
+    await cache.put(key, new Response(bytes, { status, headers }));
     if (!stillCurrent()) {
       await cache.delete(key);
       return;
@@ -1020,14 +1043,32 @@ export function createWorker(next: FetchHandler, options: WorkerRuntimeOptions =
     return response;
   }
 
-  async function readDocumentCache(normalized: URL, variant: DocumentCacheVariant): Promise<Response | undefined> {
+  async function readDocumentCache(
+    normalized: URL,
+    variant: DocumentCacheVariant,
+    nextEnv?: WorkerEnv,
+  ): Promise<Response | undefined> {
     const cache = cacheFor();
     if (!cache || !storage) return undefined;
     try {
       await storage.refreshIfStale();
       const generation = await storage.ensureContentGeneration();
       const hit = await cache.match(publicHtmlCacheRequest(normalized, generation, variant));
-      return hit ? presentCachedDocument(hit, cacheStatusHeader(variant)) : undefined;
+      if (hit) return presentCachedDocument(hit, cacheStatusHeader(variant));
+      // Optional short-TTL 404 entries live on a separate key (`.404` suffix) so
+      // they never overwrite a 200 document. Generation changes invalidate both.
+      if (
+        variant.kind === "html" &&
+        isNegativeCacheEnabled(typeof nextEnv?.GAF_NEGATIVE_CACHE === "string" ? nextEnv.GAF_NEGATIVE_CACHE : undefined)
+      ) {
+        const negative = await cache.match(
+          publicHtmlCacheRequest(normalized, generation, variant, { negative: true }),
+        );
+        if (negative && negative.status === 404) {
+          return presentCachedDocument(negative, cacheStatusHeader(variant));
+        }
+      }
+      return undefined;
     } catch (error) {
       if (error instanceof StorageHydrationError) throw error;
       log(`html cache read failed: ${error instanceof Error ? error.message : String(error)}`);
@@ -1117,7 +1158,7 @@ export function createWorker(next: FetchHandler, options: WorkerRuntimeOptions =
     normalized: URL,
     variant: DocumentCacheVariant,
   ): Promise<Response> {
-    const reused = await readDocumentCache(normalized, variant);
+    const reused = await readDocumentCache(normalized, variant, nextEnv);
     if (reused) return reused;
     const generation = active.contentGeneration();
     const rendered = await renderDocument(requestForRender(request, variant, normalized), active, nextEnv, ctx);
@@ -1135,6 +1176,37 @@ export function createWorker(next: FetchHandler, options: WorkerRuntimeOptions =
         () => active.contentGeneration() === generation,
         (stored) => htmlCacheKeys.add(stored),
       );
+    } else if (cache && generation && active.contentGeneration() === generation && variant.kind === "html") {
+      const negative = decideNegativeCache({
+        enabled: isNegativeCacheEnabled(
+          typeof (nextEnv as WorkerEnv).GAF_NEGATIVE_CACHE === "string"
+            ? (nextEnv as WorkerEnv).GAF_NEGATIVE_CACHE
+            : undefined,
+        ),
+        status: marked.status,
+        contentType: marked.headers.get("content-type"),
+        cacheControl: marked.headers.get("cache-control"),
+        hasSetCookie: marked.headers.has("set-cookie"),
+        authorization: request.headers.has("authorization"),
+        cmsCookie: hasCmsCookie(request),
+        ttlSeconds: parseNegativeCacheTtlSeconds(
+          typeof (nextEnv as WorkerEnv).GAF_NEGATIVE_CACHE_TTL === "string"
+            ? (nextEnv as WorkerEnv).GAF_NEGATIVE_CACHE_TTL
+            : undefined,
+        ),
+      });
+      if (negative.cache) {
+        await storePublicDocument(
+          cache,
+          publicHtmlCacheRequest(normalized, generation, variant, { negative: true }),
+          marked.clone(),
+          variant,
+          log,
+          () => active.contentGeneration() === generation,
+          (stored) => htmlCacheKeys.add(stored),
+          { ttlSeconds: negative.ttlSeconds, storeStatus: 404 },
+        );
+      }
     }
     return marked;
   }
@@ -1178,7 +1250,7 @@ export function createWorker(next: FetchHandler, options: WorkerRuntimeOptions =
       const normalized = variant ? normalizedPublicUrl(url) : url;
       if (variant) {
         try {
-          const hit = await readDocumentCache(normalized, variant);
+          const hit = await readDocumentCache(normalized, variant, envForNext);
           if (hit) return withStagingRobots(hit, env);
         } catch (error) {
           if (error instanceof StorageHydrationError) return withStagingRobots(hydrationUnavailable(error, log), env);

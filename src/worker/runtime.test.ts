@@ -12,6 +12,7 @@ import {
   MAX_INFLIGHT_RENDERS,
   bakedSitemapAssetPath,
   createWorker,
+  publicHtmlCacheRequest,
   sameHostHttpsRedirect,
   wwwToApexRedirect,
   groupsForRequest,
@@ -1814,4 +1815,180 @@ test("replacing an upload purges the cached file and its optimized derivatives",
   assert.deepEqual([...new Uint8Array(await reoptimized.arrayBuffer())], [2]);
   assert.equal(optimized, 2, "the derivative of the replaced upload was rendered again");
   await reoptimizedContext.settle();
+});
+
+// -------------------------------------------------------- negative HTML cache (P1)
+
+function htmlNotFound(label = "missing") {
+  const seen: string[] = [];
+  const handler = async (request: Request) => {
+    seen.push(request.url);
+    return new Response(pageDocument(label), {
+      status: 404,
+      headers: {
+        "content-type": "text/html; charset=utf-8",
+        "cache-control": "public, s-maxage=60",
+      },
+    });
+  };
+  return { seen, handler };
+}
+
+test("negative HTML cache stays off by default so genuine 404s still miss", async () => {
+  const env = makeEnv();
+  const cache = new FakeCache();
+  const next = htmlNotFound();
+  const worker = createWorker(next.handler, { ...quiet, cache: () => cache });
+  const firstContext = ctx();
+  const first = await worker.fetch(new Request("https://gaf.healthcare/treatments/does-not-exist"), env, firstContext);
+  assert.equal(first.status, 404);
+  assert.equal(first.headers.get("x-gaf-html-cache"), "miss");
+  await firstContext.settle();
+  assert.equal(cache.store.size, 0, "404 bodies are not stored unless GAF_NEGATIVE_CACHE is enabled");
+
+  const second = await worker.fetch(new Request("https://gaf.healthcare/treatments/does-not-exist"), env, ctx());
+  assert.equal(second.status, 404);
+  assert.equal(second.headers.get("x-gaf-html-cache"), "miss");
+  assert.equal(next.seen.length, 2);
+});
+
+test("when enabled, a genuine HTML 404 is stored on a .404 key with short TTL and served as a hit", async () => {
+  const env = makeEnv({ GAF_NEGATIVE_CACHE: "1", GAF_NEGATIVE_CACHE_TTL: "90" });
+  const cache = new FakeCache();
+  const next = htmlNotFound("gone");
+  const worker = createWorker(next.handler, { ...quiet, cache: () => cache });
+  const firstContext = ctx();
+  const first = await worker.fetch(new Request("https://gaf.healthcare/hospitals/unknown-campus"), env, firstContext);
+  assert.equal(first.status, 404);
+  assert.equal(first.headers.get("x-gaf-html-cache"), "miss");
+  await firstContext.settle();
+  assert.deepEqual(cachedPaths(cache), ["/hospitals/unknown-campus.404"]);
+  const stored = [...cache.store.values()][0];
+  assert.equal(stored.status, 404);
+  assert.equal(stored.headers.get("cache-control"), "public, max-age=90");
+
+  const second = await worker.fetch(new Request("https://gaf.healthcare/hospitals/unknown-campus"), env, ctx());
+  assert.equal(second.status, 404);
+  assert.equal(second.headers.get("x-gaf-html-cache"), "hit");
+  assert.equal(await second.text(), pageDocument("gone"));
+  assert.equal(next.seen.length, 1, "the cached 404 did not re-render");
+});
+
+test("negative cache never stores 5xx, auth failures, or CMS-authenticated requests", async () => {
+  const env = makeEnv({ GAF_NEGATIVE_CACHE: "true" });
+  const cache = new FakeCache();
+  const worker = createWorker(
+    async (request: Request) => {
+      const path = new URL(request.url).pathname;
+      if (path.endsWith("/boom")) {
+        return new Response(pageDocument("boom"), {
+          status: 503,
+          headers: { "content-type": "text/html; charset=utf-8", "cache-control": "no-store" },
+        });
+      }
+      if (path.endsWith("/deny")) {
+        return new Response(pageDocument("deny"), {
+          status: 403,
+          headers: { "content-type": "text/html; charset=utf-8", "cache-control": "public, s-maxage=60" },
+        });
+      }
+      return new Response(pageDocument("missing"), {
+        status: 404,
+        headers: { "content-type": "text/html; charset=utf-8", "cache-control": "public, s-maxage=60" },
+      });
+    },
+    { ...quiet, cache: () => cache },
+  );
+
+  for (const path of ["/treatments/boom", "/treatments/deny"]) {
+    const context = ctx();
+    const response = await worker.fetch(new Request(`https://gaf.healthcare${path}`), env, context);
+    await context.settle();
+    assert.ok(response.status === 503 || response.status === 403);
+  }
+  const authedContext = ctx();
+  const authed = await worker.fetch(
+    new Request("https://gaf.healthcare/treatments/secret-missing", {
+      headers: { cookie: "gaf_cms=editor-token" },
+    }),
+    env,
+    authedContext,
+  );
+  assert.equal(authed.status, 404);
+  await authedContext.settle();
+  assert.equal(cache.store.size, 0);
+});
+
+test("publishing content invalidates a negative cache entry so a newly published URL can render 200", async () => {
+  const env = makeEnv({ GAF_NEGATIVE_CACHE: "on", GAF_NEGATIVE_CACHE_TTL: "120" });
+  const cache = new FakeCache();
+  let published = false;
+  const worker = createWorker(
+    async (request: Request) => {
+      if (!published) {
+        return new Response(pageDocument("missing"), {
+          status: 404,
+          headers: { "content-type": "text/html; charset=utf-8", "cache-control": "public, s-maxage=60" },
+        });
+      }
+      return new Response(pageDocument("live"), {
+        status: 200,
+        headers: { "content-type": "text/html; charset=utf-8", "cache-control": PUBLIC_HTML_CACHE },
+      });
+    },
+    { ...quiet, cache: () => cache },
+  );
+
+  const missContext = ctx();
+  const miss = await worker.fetch(new Request("https://gaf.healthcare/blogs/new-post"), env, missContext);
+  assert.equal(miss.status, 404);
+  await missContext.settle();
+  assert.deepEqual(cachedPaths(cache), ["/blogs/new-post.404"]);
+  const before = [...cache.store.keys()][0];
+
+  published = true;
+  contentStorage().write("content/cms.json", '{"articles":[{"slug":"new-post","title":"Live"}]}');
+  await flushContentWrites();
+  await new Promise((resolve) => setImmediate(resolve));
+  assert.equal(cache.store.has(before), false, "generation change purges the negative entry");
+
+  const liveContext = ctx();
+  const live = await worker.fetch(new Request("https://gaf.healthcare/blogs/new-post"), env, liveContext);
+  assert.equal(live.status, 200);
+  assert.equal(live.headers.get("x-gaf-html-cache"), "miss");
+  assert.equal(await live.text(), pageDocument("live"));
+  await liveContext.settle();
+  assert.deepEqual(cachedPaths(cache), ["/blogs/new-post"]);
+});
+
+test("TTL expiry (simulated) re-renders a previously negative-cached URL", async () => {
+  const env = makeEnv({ GAF_NEGATIVE_CACHE: "1", GAF_NEGATIVE_CACHE_TTL: "45" });
+  const cache = new FakeCache();
+  const next = htmlNotFound("still-gone");
+  const worker = createWorker(next.handler, { ...quiet, cache: () => cache });
+  const firstContext = ctx();
+  await worker.fetch(new Request("https://gaf.healthcare/costs/missing-slug"), env, firstContext);
+  await firstContext.settle();
+  assert.equal(next.seen.length, 1);
+  const key = [...cache.store.keys()][0];
+  assert.match(key, /\.404/);
+  assert.equal(cache.store.get(key)?.headers.get("cache-control"), "public, max-age=45");
+
+  // FakeCache does not enforce TTL; deleting the entry models Cache API expiry.
+  await cache.delete(key);
+  const after = await worker.fetch(new Request("https://gaf.healthcare/costs/missing-slug"), env, ctx());
+  assert.equal(after.status, 404);
+  assert.equal(after.headers.get("x-gaf-html-cache"), "miss");
+  assert.equal(next.seen.length, 2);
+});
+
+test("negative and positive HTML cache keys stay distinct for the same path", () => {
+  const page = new URL("https://gaf.healthcare/treatments/pacemaker-implantation-in-india");
+  const positive = publicHtmlCacheRequest(page, "gen-1", { kind: "html" });
+  const negative = publicHtmlCacheRequest(page, "gen-1", { kind: "html" }, { negative: true });
+  assert.notEqual(positive.url, negative.url);
+  assert.equal(new URL(positive.url).searchParams.get("path"), page.pathname);
+  assert.equal(new URL(negative.url).searchParams.get("path"), `${page.pathname}.404`);
+  assert.equal(new URL(positive.url).searchParams.get("generation"), "gen-1");
+  assert.equal(new URL(negative.url).searchParams.get("generation"), "gen-1");
 });
