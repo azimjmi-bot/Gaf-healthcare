@@ -6,7 +6,7 @@
 |---|---|
 | Audited tip (verified unchanged at start) | `a33259aca261ed1ac6ddd3d198bed240c0dc0fbc` |
 | Hardening (ancestor) | `930dba05887a3bb32c22b98798a83feb03904087` |
-| Staging fix (Next `no-store` 404 acceptance) | _(this PR tip after validation commits)_ |
+| Staging fix (Next `no-store` 404 acceptance) | `7926e5d2313d9371c896699b9c51a34f3c8c8c04` |
 
 Production remained: release `374f1bb`, Worker `95e74b01-4a90-4a78-b97a-186f52baa74a`, `GAF_NEGATIVE_CACHE` **absent**.
 
