@@ -12,6 +12,7 @@ Genuine HTML 404 responses never entered the Worker HTML Cache API (`allowsPubli
 - `src/worker/negative-cache.ts` — policy: enable flag, TTL parse/clamp (default 120 s, max 300 s), decide whether a response may be stored as a negative entry.
 - `src/worker/runtime.ts` — when `GAF_NEGATIVE_CACHE` is `1`/`true`/`on` and the decision allows it:
   - store complete HTML 404 bodies on a **separate** cache key (`path` + `.404` suffix) with short `max-age`;
+  - **force empty query** on negative keys (path + generation only) so crawler query spam cannot explode cardinality;
   - preserve status **404** on the stored response;
   - look up the negative key only when the flag is enabled and the positive key misses.
 - Generation remains part of the cache key; `onContentPublished` still purges remembered keys (including negatives stored by this isolate).
@@ -21,12 +22,13 @@ Genuine HTML 404 responses never entered the Worker HTML Cache API (`allowsPubli
 | Case | Behaviour |
 |---|---|
 | Flag unset / off | Identical to today — 404 always miss |
+| Status ≠ 404 (incl. 200, 301, 308, 403, 429, 5xx) | Not stored |
 | Status 5xx / 503 | Not stored (`5xx` / `upstream-busy`) |
 | 401 / 403 | Not stored (`auth-status`) |
 | `Authorization` or `gaf_cms` cookie | Not stored (`authenticated`) |
 | `Set-Cookie` on response | Not stored |
 | Non-HTML body | Not stored |
-| `private` / `no-store` Cache-Control | Not stored |
+| `private` / `no-store` / `no-cache` Cache-Control | Not stored |
 | RSC / prefetch variants | Negative path is HTML-only |
 
 ## Env knobs (Worker)
@@ -78,5 +80,5 @@ Cached `.404` entries expire via short TTL / generation rotation.
 
 ## Tests
 
-- `src/worker/negative-cache.test.ts` — enable/TTL/decision matrix.  
-- `src/worker/runtime.test.ts` — default off; enable HIT; reject 5xx/auth; publish invalidation; simulated TTL expiry; key separation.
+- `src/worker/negative-cache.test.ts` — enable/TTL/decision matrix (incl. 301/308/429/5xx/`no-cache`).  
+- `src/worker/runtime.test.ts` — default off; enable HIT; reject non-404; 200 never on `.404`; EN/AR independence; query collapse; header/body SEO markers; concurrency; publish invalidation; simulated TTL expiry; positive HTML/RSC unchanged; lab microbench.

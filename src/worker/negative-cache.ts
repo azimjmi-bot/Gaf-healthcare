@@ -48,7 +48,8 @@ export function decideNegativeCache(input: {
   const type = (input.contentType ?? "").toLowerCase();
   if (!type.includes("text/html")) return { cache: false, reason: "non-html" };
   const cc = (input.cacheControl ?? "").toLowerCase();
-  if (/\b(?:private|no-store)\b/.test(cc)) return { cache: false, reason: "cache-control" };
+  // Align with positive HTML policy: never retain private / no-store / no-cache.
+  if (/\b(?:private|no-store|no-cache)\b/.test(cc)) return { cache: false, reason: "cache-control" };
   const ttl = input.ttlSeconds ?? DEFAULT_NEGATIVE_CACHE_TTL_SECONDS;
   return { cache: true, ttlSeconds: Math.min(MAX_NEGATIVE_CACHE_TTL_SECONDS, Math.max(1, ttl)) };
 }

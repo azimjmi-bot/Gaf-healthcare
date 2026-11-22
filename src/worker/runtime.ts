@@ -441,7 +441,13 @@ export function publicHtmlCacheRequest(
           ? NEGATIVE_CACHE_SUFFIX
           : "";
   key.searchParams.set("path", `${page.pathname}${suffix}`);
-  key.searchParams.set("query", page.search.startsWith("?") ? page.search.slice(1) : page.search);
+  // Negative 404 entries are path+generation only. Ignoring residual query
+  // prevents crawler query spam from exploding Cache API cardinality and
+  // avoids query-keyed poisoning of a generic not-found body.
+  key.searchParams.set(
+    "query",
+    options.negative ? "" : page.search.startsWith("?") ? page.search.slice(1) : page.search,
+  );
   key.searchParams.set("generation", generation);
   if (variant.kind === "rsc-prefetch") {
     key.searchParams.set("prefetch", variant.prefetch);
