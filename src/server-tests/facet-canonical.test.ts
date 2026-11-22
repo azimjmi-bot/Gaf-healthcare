@@ -56,7 +56,9 @@ const arabicSlugs = (path: string) => {
 test("a doctor facet identical to its parent names the parent as canonical", () => {
   withGateOpen("doctorFacet", () => {
     const published = doctorFacets().filter((path) => localePageState("ar", path) === "published");
-    assert.equal(published.length, 1382, "stage 1 + Sahyadri Pune is the population under test");
+    // 1382 after Sahyadri Pune; +6 after Manipal Baner inventory opens new narrowing
+    // doctor facets (and lifts Pune/Spine-Surgery from noindex). No publication-rule change.
+    assert.equal(published.length, 1388, "stage 1 + Sahyadri Pune + Manipal Baner population");
 
     const redirected: string[] = [];
     for (const path of published) {
@@ -74,10 +76,12 @@ test("a doctor facet identical to its parent names the parent as canonical", () 
       assert.equal(localePageState("ar", canonical), "published", canonical);
     }
 
+    // 122 after Sahyadri; −1 when Manipal Payagude joins Pune Surgical Gastroenterology
+    // so Liver-Transplantation no longer equals its parent.
     assert.equal(
       redirected.length,
-      122,
-      "the 122 doctor facets whose Arabic result set equals their parent's",
+      121,
+      "the 121 doctor facets whose Arabic result set equals their parent's",
     );
   });
 });
