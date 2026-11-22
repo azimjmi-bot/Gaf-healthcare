@@ -2,7 +2,8 @@
 
 **PR:** https://github.com/azimjmi-bot/Gaf-healthcare/pull/51  
 **Branch:** `cursor/seo-perf-p1-negative-cache-6064`  
-**Audited SHA:** pending commit tip on `cursor/seo-perf-p1-negative-cache-6064` (updated in PR description after push)  
+**Audited SHA:** `930dba05887a3bb32c22b98798a83feb03904087`  
+
 
 **Auditor role:** Independent Cloudflare Workers + technical SEO review  
 **Production (unchanged):** release `374f1bb`, Worker `95e74b01-4a90-4a78-b97a-186f52baa74a`, `GAF_NEGATIVE_CACHE` absent from `wrangler.production.jsonc` vars
