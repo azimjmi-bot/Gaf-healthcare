@@ -11,13 +11,13 @@ import { doctorsForLocale } from "@/lib/locale-catalog";
 import { doctorProfilePageJsonLd } from "@/lib/seo";
 
 const SPECIALTIES = {
-  Hematology: 41,
+  Hematology: 42,
   "Pediatric Hematology": 21,
-  "Cardiac Surgery": 96,
+  "Cardiac Surgery": 98,
   "Pediatric Cardiac Surgery": 26,
-  Cardiology: 244,
+  Cardiology: 253,
   "Bariatric Surgery": 30,
-  Neurosurgery: 104,
+  Neurosurgery: 112,
 } as const;
 
 type Specialty = keyof typeof SPECIALTIES;
@@ -46,7 +46,7 @@ const source = catalogDoctors.filter((doctor) => specialtyNames.has(doctor.speci
 const localized = doctorsForLocale("ar").filter((doctor) => specialtyNames.has(doctor.specialty));
 
 test("Arabic overlays comprehensively cover the requested doctor specialties", () => {
-  assert.equal(source.length, 562);
+  assert.equal(source.length, 582);
   assert.equal(localized.length, source.length);
 
   for (const [specialty, expected] of Object.entries(SPECIALTIES)) {

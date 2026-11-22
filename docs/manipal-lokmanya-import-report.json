@@ -1,0 +1,91 @@
+{
+  "branch": "cursor/manipal-lokmanya-pune-doctors-hospitals-6064",
+  "baseline": "2b49d2cfcef57427c3ade02852cb7efe27d25473",
+  "deploymentRestriction": "PR only — no merge, R2 upload, stamp, or Worker deploy",
+  "manipal": {
+    "source": "https://www.manipalhospitals.com/baner/doctors-list/",
+    "discovered": 91,
+    "eligible": 61,
+    "already_present_page3": 7,
+    "new_records_added": 49,
+    "multi_campus_merged_into_existing": 5,
+    "excluded": 30,
+    "baner_faculty_after": 61,
+    "specialty_counts": {
+      "Orthopedics": 11,
+      "Hematology": 3,
+      "Neurology": 4,
+      "Surgical Gastroenterology": 2,
+      "Gynecology": 6,
+      "Spine Surgery": 3,
+      "ENT": 2,
+      "Cardiology": 4,
+      "Neurosurgery": 4,
+      "Surgical Oncology": 4,
+      "Gastroenterology": 2,
+      "Cardiac Surgery": 1,
+      "Nephrology": 3,
+      "Radiation Oncology": 1,
+      "Urology": 2,
+      "Dentistry": 1,
+      "Medical Oncology": 2,
+      "Pulmonology": 1,
+      "Ophthalmology": 2,
+      "Cosmetic Surgery": 3
+    }
+  },
+  "lokmanya": {
+    "source": "https://lokmanyahospitals.com/doctors",
+    "discovered": 67,
+    "eligible": 39,
+    "new_records_added": 36,
+    "multi_campus_merged_into_existing": 3,
+    "excluded": 28,
+    "faculty_after": 39,
+    "campuses_added": [
+      "lokmanya-hospital-sb-road",
+      "lokmanya-hospital-nigdi",
+      "lokmanya-hospital-chinchwad"
+    ],
+    "specialty_counts": {
+      "Urology": 2,
+      "Neurology": 3,
+      "Orthopedics": 8,
+      "Cardiac Surgery": 1,
+      "Nephrology": 1,
+      "Gastroenterology": 1,
+      "Neurosurgery": 4,
+      "Medical Oncology": 3,
+      "Dentistry": 1,
+      "Surgical Oncology": 4,
+      "Gynecology": 2,
+      "Spine Surgery": 2,
+      "ENT": 1,
+      "Cardiology": 5,
+      "Pulmonology": 1
+    }
+  },
+  "images": {
+    "verified_imported": 81,
+    "avatar_fallback": 12
+  },
+  "locales": {
+    "english_doctors": 2602,
+    "arabic_doctor_overrides": 2602,
+    "english_hospitals": 49,
+    "arabic_hospital_overrides": 49,
+    "pune_doctors": 202,
+    "pune_hospitals": 7
+  },
+  "publicationSafeguards": {
+    "lokmanya_and_manipal_serviceLineEvidence": "faculty-affiliated",
+    "hospital_specialty_procedure_landings": "noindex when faculty-only"
+  },
+  "audits": [
+    "docs/manipal-lokmanya-eligibility.csv",
+    "docs/manipal-lokmanya-doctor-procedure-audit.csv",
+    "docs/manipal-lokmanya-image-audit.csv",
+    "docs/manipal-lokmanya-multicampus-audit.csv",
+    "docs/manipal-lokmanya-import-report.json"
+  ]
+}

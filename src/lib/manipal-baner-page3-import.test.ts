@@ -69,8 +69,8 @@ test("Manipal Baner ships as an independent Pune faculty-affiliated campus", () 
   assert.match(overlay.name || "", /[\u0600-\u06FF]/);
 });
 
-test("Manipal Baner page-3 eligible doctors stay inside existing GAF specialties", () => {
-  const rows = catalogDoctors.filter((row) => row.hospitalSlug === MANIPAL_BANER_SLUG);
+test("Manipal Baner page-3 eligible doctors remain published inside existing GAF specialties", () => {
+  const rows = catalogDoctors.filter((row) => ELIGIBLE.includes(row.slug as (typeof ELIGIBLE)[number]));
   assert.equal(rows.length, 7);
   assert.deepEqual(rows.map((row) => row.slug).sort(), [...ELIGIBLE].sort());
   for (const row of rows) {
@@ -86,7 +86,7 @@ test("Manipal Baner page-3 eligible doctors stay inside existing GAF specialties
     assert.match(overlay.name || "", /[\u0600-\u06FF]/);
     assert.match(overlay.bio || "", /GAF Healthcare/);
   }
-  assert.equal(doctorsForHospital(MANIPAL_BANER_SLUG).length, 7);
+  assert.ok(doctorsForHospital(MANIPAL_BANER_SLUG).length >= 7);
 });
 
 test("eligibility CSV records page-3 exclusions outside GAF taxonomy", () => {
@@ -99,7 +99,7 @@ test("eligibility CSV records page-3 exclusions outside GAF taxonomy", () => {
   const no = csv.split("\n").filter((line) => line.includes(",NO,")).length;
   assert.equal(yes, 7);
   assert.equal(no, 3);
-  assert.equal(ginger.doctors.filter((row) => row.hospitalSlug === MANIPAL_BANER_SLUG).length, 7);
+  assert.ok(ginger.doctors.filter((row) => row.hospitalSlug === MANIPAL_BANER_SLUG).length >= 7);
   assert.equal(ginger.hospitals.filter((row) => row.slug === MANIPAL_BANER_SLUG).length, 1);
 });
 

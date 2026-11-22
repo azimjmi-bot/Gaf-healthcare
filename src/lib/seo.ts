@@ -148,7 +148,9 @@ export function doctorMetadata(d: Doctor, locale: AppLocale = "en"): Metadata {
 
 export function hospitalMetadata(h: Hospital, locale: AppLocale = "en"): Metadata {
   const facultyCampus =
-    h.slug.startsWith("sahyadri-super-speciality-hospital-") || h.slug === "manipal-hospitals-baner";
+    h.slug.startsWith("sahyadri-super-speciality-hospital-") ||
+    h.slug === "manipal-hospitals-baner" ||
+    h.slug.startsWith("lokmanya-hospital-");
   const manipalBaner = h.slug === "manipal-hospitals-baner";
   if (locale === "ar") {
     const city = taxonomyLabel(h.city, "ar");
@@ -191,6 +193,7 @@ export function hospitalMetadata(h: Hospital, locale: AppLocale = "en"): Metadat
       twitter: { card: "summary_large_image", title, description },
     };
   }
+  const lokmanyaCampus = h.slug.startsWith("lokmanya-hospital-");
   const title =
     h.specialtySlug === "ophthalmology" && h.specialtySlugs.length === 1
       ? `${h.name} — eye hospital in ${h.city}, India`
@@ -198,9 +201,11 @@ export function hospitalMetadata(h: Hospital, locale: AppLocale = "en"): Metadat
         ? `${h.name} — fertility centre in ${h.city}, India`
         : manipalBaner
           ? `${h.name} — independent Manipal Hospitals campus in Baner, ${h.city}, India`
-          : facultyCampus
-            ? `${h.name} — independent Sahyadri campus in ${h.city}, India`
-            : `${h.name} — oncology, ENT and GI hospital in ${h.city}, India`;
+          : lokmanyaCampus
+            ? `${h.name} — independent Lokmanya Hospitals campus in ${h.city}, India`
+            : facultyCampus
+              ? `${h.name} — independent Sahyadri campus in ${h.city}, India`
+              : `${h.name} — oncology, ENT and GI hospital in ${h.city}, India`;
   const description = clip(
     facultyCampus
       ? `${h.name} in ${h.city}, India. Affiliated faculty specialties on GAF: ${h.specialties.join(", ")}. ${h.accreditation}. Relationships reflect verified campus faculty, not an independently audited campus service catalogue. ${displayBio(h.bio)}`
@@ -339,7 +344,9 @@ export function doctorProfilePageJsonLd(
 export function hospitalJsonLd(h: Hospital, locale: AppLocale = "en") {
   const path = `/hospitals/${h.slug}`;
   const facultyCampus =
-    h.slug.startsWith("sahyadri-super-speciality-hospital-") || h.slug === "manipal-hospitals-baner";
+    h.slug.startsWith("sahyadri-super-speciality-hospital-") ||
+    h.slug === "manipal-hospitals-baner" ||
+    h.slug.startsWith("lokmanya-hospital-");
   const description = facultyCampus
     ? clip(
         locale === "ar"

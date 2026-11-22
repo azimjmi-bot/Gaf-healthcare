@@ -35,12 +35,12 @@ test("Pune filter counts reflect Sahyadri inventory without fabricating empty hu
   const hospitals = cityResultCounts("hospitals", { destination: "India" });
   const treatments = cityResultCounts("treatments", { destination: "India" });
 
-  assert.equal(doctors.counts.Pune, 117);
-  assert.equal(hospitals.counts.Pune, 4);
+  assert.equal(doctors.counts.Pune, 202);
+  assert.equal(hospitals.counts.Pune, 7);
   assert.ok((treatments.counts.Pune ?? 0) > 0);
 
-  assert.equal(filterDoctors({ destination: "India", city: "Pune" }).length, 117);
-  assert.equal(filterHospitals({ destination: "India", city: "Pune" }).length, 4);
+  assert.equal(filterDoctors({ destination: "India", city: "Pune" }).length, 202);
+  assert.equal(filterHospitals({ destination: "India", city: "Pune" }).length, 7);
   assert.ok(filterTreatments({ destination: "India", city: "Pune" }).length > 0);
 
   for (const city of ["Delhi NCR", "Mumbai", "Bengaluru", "Chennai", "Hyderabad"]) {

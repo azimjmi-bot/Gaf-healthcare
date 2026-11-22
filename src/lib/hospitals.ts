@@ -185,9 +185,20 @@ export function isManipalBanerCampus(slug: string) {
   return slug === MANIPAL_BANER_SLUG;
 }
 
+/** Lokmanya Hospitals Pune campuses — faculty-scoped specialties/procedures only. */
+export const LOKMANYA_PUNE_SLUGS = [
+  "lokmanya-hospital-sb-road",
+  "lokmanya-hospital-nigdi",
+  "lokmanya-hospital-chinchwad",
+] as const;
+
+export function isLokmanyaCampus(slug: string) {
+  return (LOKMANYA_PUNE_SLUGS as readonly string[]).includes(slug);
+}
+
 /** Campuses whose specialty/procedure lists are derived only from affiliated doctors. */
 export function isFacultyAffiliatedCampus(slug: string) {
-  return isSahyadriCampus(slug) || isManipalBanerCampus(slug);
+  return isSahyadriCampus(slug) || isManipalBanerCampus(slug) || isLokmanyaCampus(slug);
 }
 
 function doctorSeedAffiliated(

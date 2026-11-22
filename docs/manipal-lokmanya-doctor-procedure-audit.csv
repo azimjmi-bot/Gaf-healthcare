@@ -1,0 +1,368 @@
+slug,name,specialty,procedure,mapping_status,evidence,source_url
+dr-abhijit-joshi,Dr. Abhijit Joshi,Cardiology,Coronary Angioplasty & Stenting,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-abhijit-joshi-cardiologist/
+dr-abhijit-joshi,Dr. Abhijit Joshi,Cardiology,CTO Angioplasty (Chronic Total Occlusion),verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-abhijit-joshi-cardiologist/
+dr-abhijit-joshi,Dr. Abhijit Joshi,Cardiology,Pacemaker Implantation,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-abhijit-joshi-cardiologist/
+dr-abhijit-joshi,Dr. Abhijit Joshi,Cardiology,CRT/CRT-D Implantation,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-abhijit-joshi-cardiologist/
+dr-abhijit-joshi,Dr. Abhijit Joshi,Cardiology,ICD Implantation (Implantable Cardioverter-Defibrillator),verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-abhijit-joshi-cardiologist/
+dr-abhijit-joshi,Dr. Abhijit Joshi,Cardiology,Balloon Mitral Valvotomy,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-abhijit-joshi-cardiologist/
+dr-abhijit-joshi,Dr. Abhijit Joshi,Cardiology,TAVR/TAVI (Transcatheter Aortic Valve Replacement),verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-abhijit-joshi-cardiologist/
+dr-amit-dhakoji,Dr. Amit Dhakoji,Neurosurgery,Epilepsy Surgery,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-amit-dhakoji-neurosurgeon/
+dr-amit-dhakoji,Dr. Amit Dhakoji,Neurosurgery,Deep Brain Stimulation,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-amit-dhakoji-neurosurgeon/
+dr-amit-dhakoji,Dr. Amit Dhakoji,Neurosurgery,Skull Base Surgery,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-amit-dhakoji-neurosurgeon/
+dr-amit-dhakoji,Dr. Amit Dhakoji,Neurosurgery,Pituitary Tumor Surgery,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-amit-dhakoji-neurosurgeon/
+dr-amit-dhakoji,Dr. Amit Dhakoji,Neurosurgery,Cerebral Bypass,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-amit-dhakoji-neurosurgeon/
+dr-amit-parasnis,Dr. Amit Parasnis,Surgical Oncology,VATS Lung Surgery,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-amit-parasnis-surgical-oncologist/
+dr-ammbalal-gurram,Dr. Ammbalal Gurram,Gynecology,Vaginal Hysterectomy,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-ammbalal-gurram-obstetrician-and-gynecologist/
+dr-nikhil-jayprakash-jillawar,Dr. Nikhil Jayprakash Jillawar,Surgical Gastroenterology,Whipple Procedure (Pancreaticoduodenectomy),verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-nikhil-jayprakash-jillawar-surgical-gastroenterologist/
+dr-nikhil-jayprakash-jillawar,Dr. Nikhil Jayprakash Jillawar,Surgical Gastroenterology,Liver Resection (Hepatectomy),verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-nikhil-jayprakash-jillawar-surgical-gastroenterologist/
+dr-nikhil-jayprakash-jillawar,Dr. Nikhil Jayprakash Jillawar,Surgical Gastroenterology,Esophagectomy,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-nikhil-jayprakash-jillawar-surgical-gastroenterologist/
+dr-nikhil-jayprakash-jillawar,Dr. Nikhil Jayprakash Jillawar,Surgical Gastroenterology,Gastrectomy,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-nikhil-jayprakash-jillawar-surgical-gastroenterologist/
+dr-nikhil-jayprakash-jillawar,Dr. Nikhil Jayprakash Jillawar,Surgical Gastroenterology,Colorectal Resection,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-nikhil-jayprakash-jillawar-surgical-gastroenterologist/
+dr-nikhil-jayprakash-jillawar,Dr. Nikhil Jayprakash Jillawar,Surgical Gastroenterology,Low Anterior Resection (LAR),verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-nikhil-jayprakash-jillawar-surgical-gastroenterologist/
+dr-nikhil-jayprakash-jillawar,Dr. Nikhil Jayprakash Jillawar,Surgical Gastroenterology,Hiatal Hernia Surgery,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-nikhil-jayprakash-jillawar-surgical-gastroenterologist/
+dr-prasad-bhate,Dr. Prasad Bhate,Gastroenterology,Colonoscopy,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-prasad-bhate-gastroenterologist/
+dr-prasad-bhate,Dr. Prasad Bhate,Gastroenterology,ERCP,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-prasad-bhate-gastroenterologist/
+dr-prasad-bhate,Dr. Prasad Bhate,Gastroenterology,Endoscopic Ultrasound (EUS),verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-prasad-bhate-gastroenterologist/
+dr-prasad-bhate,Dr. Prasad Bhate,Gastroenterology,Esophageal Manometry,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-prasad-bhate-gastroenterologist/
+dr-prasad-bhate,Dr. Prasad Bhate,Gastroenterology,Anorectal Manometry,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-prasad-bhate-gastroenterologist/
+dr-sarang-rote,Dr. Sarang Rote,Neurosurgery,Brain Tumor Surgery,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-sarang-rote-neurosurgeon/
+dr-sarang-rote,Dr. Sarang Rote,Neurosurgery,Skull Base Surgery,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-sarang-rote-neurosurgeon/
+dr-sarang-rote,Dr. Sarang Rote,Neurosurgery,Aneurysm Clipping,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-sarang-rote-neurosurgeon/
+dr-sarang-rote,Dr. Sarang Rote,Neurosurgery,AVM Surgery,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-sarang-rote-neurosurgeon/
+dr-sarang-rote,Dr. Sarang Rote,Neurosurgery,Cerebral Bypass,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-sarang-rote-neurosurgeon/
+dr-shrirang-ranade,Dr. Shrirang Ranade,Cardiac Surgery,CABG (Coronary Artery Bypass Grafting),verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-shrirang-ranade-cardiothoracic-and-vascular-surgeon/
+dr-shrirang-ranade,Dr. Shrirang Ranade,Cardiac Surgery,Minimally Invasive Cardiac Surgery,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-shrirang-ranade-cardiothoracic-and-vascular-surgeon/
+dr-shrirang-ranade,Dr. Shrirang Ranade,Cardiac Surgery,Heart Valve Replacement,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-shrirang-ranade-cardiothoracic-and-vascular-surgeon/
+dr-shrirang-ranade,Dr. Shrirang Ranade,Cardiac Surgery,Heart Valve Repair,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-shrirang-ranade-cardiothoracic-and-vascular-surgeon/
+dr-shrirang-ranade,Dr. Shrirang Ranade,Cardiac Surgery,Aortic Valve Replacement,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-shrirang-ranade-cardiothoracic-and-vascular-surgeon/
+dr-shrirang-ranade,Dr. Shrirang Ranade,Cardiac Surgery,Mitral Valve Repair,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-shrirang-ranade-cardiothoracic-and-vascular-surgeon/
+dr-shrirang-ranade,Dr. Shrirang Ranade,Cardiac Surgery,Aortic Aneurysm Surgery,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-shrirang-ranade-cardiothoracic-and-vascular-surgeon/
+dr-shrirang-ranade,Dr. Shrirang Ranade,Cardiac Surgery,Congenital Heart Surgery,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-shrirang-ranade-cardiothoracic-and-vascular-surgeon/
+dr-tarun-jeloka,Dr. Tarun Jeloka,Nephrology,,no_specific_procedure_evidence,,https://www.manipalhospitals.com/baner/doctors/dr-tarun-jeloka-nephrologist/
+dr-aashish-arbat,Dr. Aashish Arbat,Orthopedics,Robotic Knee Replacement,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-aashish-arbat-orthopaedic-surgeon/
+dr-aashish-arbat,Dr. Aashish Arbat,Orthopedics,Total Hip Replacement,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-aashish-arbat-orthopaedic-surgeon/
+dr-aashish-arbat,Dr. Aashish Arbat,Orthopedics,Arthroscopic Surgery,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-aashish-arbat-orthopaedic-surgeon/
+dr-abhijit-agashe,Dr. Abhijit Agashe,Orthopedics,Robotic Knee Replacement,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-abhijit-agashe-orthopaedic-surgeon/
+dr-abhijit-agashe,Dr. Abhijit Agashe,Orthopedics,Total Hip Replacement,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-abhijit-agashe-orthopaedic-surgeon/
+dr-abhijit-agashe,Dr. Abhijit Agashe,Orthopedics,Shoulder Replacement,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-abhijit-agashe-orthopaedic-surgeon/
+dr-abhijit-agashe,Dr. Abhijit Agashe,Orthopedics,Ankle Replacement,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-abhijit-agashe-orthopaedic-surgeon/
+dr-abhijit-giram,Dr. Abhijit Giram,Hematology,Bone Marrow Transplantation,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-abhijit-giram-haemato-oncologist/
+dr-abhijit-giram,Dr. Abhijit Giram,Hematology,Autologous Stem Cell Transplant,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-abhijit-giram-haemato-oncologist/
+dr-abhijit-giram,Dr. Abhijit Giram,Hematology,Allogeneic Stem Cell Transplant,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-abhijit-giram-haemato-oncologist/
+dr-ajita-kendre,Dr. Ajita Kendre,Radiation Oncology,Intensity-Modulated Radiotherapy (IMRT),verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-ajita-kendre-radiation-oncologist/
+dr-ajita-kendre,Dr. Ajita Kendre,Radiation Oncology,Image-Guided Radiotherapy (IGRT),verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-ajita-kendre-radiation-oncologist/
+dr-ajita-kendre,Dr. Ajita Kendre,Radiation Oncology,Stereotactic Body Radiotherapy (SBRT),verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-ajita-kendre-radiation-oncologist/
+dr-ajita-kendre,Dr. Ajita Kendre,Radiation Oncology,Stereotactic Radiosurgery (SRS),verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-ajita-kendre-radiation-oncologist/
+dr-ajita-kendre,Dr. Ajita Kendre,Radiation Oncology,Brachytherapy,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-ajita-kendre-radiation-oncologist/
+dr-akshay-kashid,Dr. Akshay Kashid,Cardiology,Coronary Angioplasty & Stenting,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-akshay-kashid-cardiologist/
+dr-akshay-kashid,Dr. Akshay Kashid,Cardiology,Pacemaker Implantation,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-akshay-kashid-cardiologist/
+dr-akshay-kashid,Dr. Akshay Kashid,Cardiology,ICD Implantation (Implantable Cardioverter-Defibrillator),verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-akshay-kashid-cardiologist/
+dr-akshay-kashid,Dr. Akshay Kashid,Cardiology,ASD Device Closure,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-akshay-kashid-cardiologist/
+dr-akshay-kashid,Dr. Akshay Kashid,Cardiology,Balloon Mitral Valvotomy,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-akshay-kashid-cardiologist/
+dr-anand-dharaskar,Dr. Anand Dharaskar,Urology,HoLEP (Holmium Laser Enucleation),verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-anand-dharaskar-urologist/
+dr-anand-dharaskar,Dr. Anand Dharaskar,Urology,TURP (Transurethral Resection of the Prostate),verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-anand-dharaskar-urologist/
+dr-anand-dharaskar,Dr. Anand Dharaskar,Urology,RIRS (Retrograde Intrarenal Surgery),verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-anand-dharaskar-urologist/
+dr-anand-dharaskar,Dr. Anand Dharaskar,Urology,PCNL (Percutaneous Nephrolithotomy),verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-anand-dharaskar-urologist/
+dr-anand-dharaskar,Dr. Anand Dharaskar,Urology,Ureteroscopy,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-anand-dharaskar-urologist/
+dr-anand-dharaskar,Dr. Anand Dharaskar,Urology,Pyeloplasty,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-anand-dharaskar-urologist/
+dr-anand-dharaskar,Dr. Anand Dharaskar,Urology,Radical Nephrectomy,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-anand-dharaskar-urologist/
+dr-anand-dharaskar,Dr. Anand Dharaskar,Urology,Radical Prostatectomy,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-anand-dharaskar-urologist/
+dr-anand-dharaskar,Dr. Anand Dharaskar,Urology,Radical Cystectomy,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-anand-dharaskar-urologist/
+dr-anand-dharaskar,Dr. Anand Dharaskar,Urology,Kidney Transplantation,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-anand-dharaskar-urologist/
+dr-anand-jadhav,Dr. Anand Jadhav,Orthopedics,Arthroscopic Surgery,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-anand-jadhav-orthopedics-specialist/
+dr-juie-ashish-dhavale,Dr. Juie Ashish Dhavale,Dentistry,Root Canal Treatment,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-juie-ashish-dhavale-dental-surgeon/
+dr-juie-ashish-dhavale,Dr. Juie Ashish Dhavale,Dentistry,Full Mouth Rehabilitation,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-juie-ashish-dhavale-dental-surgeon/
+dr-juie-ashish-dhavale,Dr. Juie Ashish Dhavale,Dentistry,Tooth Extraction,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-juie-ashish-dhavale-dental-surgeon/
+dr-juie-ashish-dhavale,Dr. Juie Ashish Dhavale,Dentistry,Dental Fillings,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-juie-ashish-dhavale-dental-surgeon/
+dr-juie-ashish-dhavale,Dr. Juie Ashish Dhavale,Dentistry,Smile Makeover,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-juie-ashish-dhavale-dental-surgeon/
+dr-kannan-subramanian,Dr. Kannan Subramanian,Hematology,Bone Marrow Transplantation,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-kannan-subramanian-hematologist/
+dr-lakhan-kashyap,Dr. Lakhan Kashyap,Medical Oncology,Chemotherapy,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-lakhan-kashyap-medical-oncologist/
+dr-lakhan-kashyap,Dr. Lakhan Kashyap,Medical Oncology,Immunotherapy,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-lakhan-kashyap-medical-oncologist/
+dr-lakhan-kashyap,Dr. Lakhan Kashyap,Medical Oncology,Targeted Therapy,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-lakhan-kashyap-medical-oncologist/
+dr-mangesh-mekha,Dr. Mangesh Mekha,Medical Oncology,Chemotherapy,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-mangesh-mekha-medical-oncologist/
+dr-mangesh-mekha,Dr. Mangesh Mekha,Medical Oncology,Targeted Therapy,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-mangesh-mekha-medical-oncologist/
+dr-mangesh-mekha,Dr. Mangesh Mekha,Medical Oncology,Immunotherapy,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-mangesh-mekha-medical-oncologist/
+dr-mangesh-mekha,Dr. Mangesh Mekha,Medical Oncology,Precision Oncology,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-mangesh-mekha-medical-oncologist/
+dr-mangesh-udar,Dr. Mangesh U Udar,Neurology,,no_specific_procedure_evidence,,https://www.manipalhospitals.com/baner/doctors/dr-mangesh-u-udar-neurologist/
+dr-manoj-kolhe,Dr. Manoj Kolhe,Gastroenterology,,no_specific_procedure_evidence,,https://www.manipalhospitals.com/baner/doctors/dr-manoj-kolhe-gastroenterologist/
+dr-mrunal-parab,Dr. Mrunal Parab,Surgical Oncology,Breast-Conserving Surgery (Lumpectomy),verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-mrunal-parab-surgical-oncologist/
+dr-mrunal-parab,Dr. Mrunal Parab,Surgical Oncology,Oncoplastic Breast Surgery,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-mrunal-parab-surgical-oncologist/
+dr-mrunal-parab,Dr. Mrunal Parab,Surgical Oncology,Breast Reconstruction,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-mrunal-parab-surgical-oncologist/
+dr-mrunal-parab,Dr. Mrunal Parab,Surgical Oncology,Sentinel Lymph Node Biopsy,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-mrunal-parab-surgical-oncologist/
+dr-mrunal-parab,Dr. Mrunal Parab,Surgical Oncology,Cytoreductive Surgery,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-mrunal-parab-surgical-oncologist/
+dr-mrunal-parab,Dr. Mrunal Parab,Surgical Oncology,Cytoreductive Surgery with HIPEC,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-mrunal-parab-surgical-oncologist/
+dr-mrunal-parab,Dr. Mrunal Parab,Surgical Oncology,Transoral Robotic Surgery (TORS),verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-mrunal-parab-surgical-oncologist/
+dr-mrunal-parab,Dr. Mrunal Parab,Surgical Oncology,Oral Cancer Surgery,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-mrunal-parab-surgical-oncologist/
+dr-mrunal-parab,Dr. Mrunal Parab,Surgical Oncology,Esophagectomy,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-mrunal-parab-surgical-oncologist/
+dr-mrunal-parab,Dr. Mrunal Parab,Surgical Oncology,Gastrectomy,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-mrunal-parab-surgical-oncologist/
+dr-mudit-maheshwari,Dr. Mudit Maheshwari,Urology,Kidney Transplantation,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-mudit-maheshwari-urologist/
+dr-mudit-maheshwari,Dr. Mudit Maheshwari,Urology,PCNL (Percutaneous Nephrolithotomy),verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-mudit-maheshwari-urologist/
+dr-mudit-maheshwari,Dr. Mudit Maheshwari,Urology,RIRS (Retrograde Intrarenal Surgery),verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-mudit-maheshwari-urologist/
+dr-mudit-maheshwari,Dr. Mudit Maheshwari,Urology,TURP (Transurethral Resection of the Prostate),verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-mudit-maheshwari-urologist/
+dr-mudit-maheshwari,Dr. Mudit Maheshwari,Urology,TURBT (Transurethral Resection of Bladder Tumor),verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-mudit-maheshwari-urologist/
+dr-nagesh-dhadge,Dr. Nagesh Dhadge,Pulmonology,Bronchoscopy,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-nagesh-dhadge-pulmonologist/
+dr-nagesh-dhadge,Dr. Nagesh Dhadge,Pulmonology,Medical Thoracoscopy,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-nagesh-dhadge-pulmonologist/
+dr-nikhila-sathe,Dr. Nikhila Sathe,Ophthalmology,Cataract Surgery,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-nikhila-sathe-ophthalmologist/
+dr-nikhila-sathe,Dr. Nikhila Sathe,Ophthalmology,Glaucoma Surgery,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-nikhila-sathe-ophthalmologist/
+dr-nikhila-sathe,Dr. Nikhila Sathe,Ophthalmology,LASIK Eye Surgery,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-nikhila-sathe-ophthalmologist/
+dr-paras-r-borse,Dr. Paras R Borse,Neurology,Deep Brain Stimulation,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-paras-r-borse-neurologist/
+dr-paras-r-borse,Dr. Paras R Borse,Neurology,Botulinum Toxin Therapy,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-paras-r-borse-neurologist/
+dr-rahul-chaudhari,Dr. Rahul Chaudhari,Spine Surgery,Microdiscectomy,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-rahul-chaudhari-spine-surgeon/
+dr-rahul-chaudhari,Dr. Rahul Chaudhari,Spine Surgery,Disc Replacement,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-rahul-chaudhari-spine-surgeon/
+dr-rahul-chaudhari,Dr. Rahul Chaudhari,Spine Surgery,Scoliosis Correction,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-rahul-chaudhari-spine-surgeon/
+dr-rahul-chaudhari,Dr. Rahul Chaudhari,Spine Surgery,Spinal Deformity Correction,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-rahul-chaudhari-spine-surgeon/
+dr-rahul-dalal,Dr. Rahul Dalal,Cosmetic Surgery,Rhinoplasty,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-rahul-dalal-plastic-and-reconstructive-surgeon/
+dr-rahul-dalal,Dr. Rahul Dalal,Cosmetic Surgery,Liposuction,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-rahul-dalal-plastic-and-reconstructive-surgeon/
+dr-rahul-dalal,Dr. Rahul Dalal,Cosmetic Surgery,Tummy Tuck,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-rahul-dalal-plastic-and-reconstructive-surgeon/
+dr-rahul-dalal,Dr. Rahul Dalal,Cosmetic Surgery,Gynecomastia Surgery,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-rahul-dalal-plastic-and-reconstructive-surgeon/
+dr-rahul-dalal,Dr. Rahul Dalal,Cosmetic Surgery,Facelift,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-rahul-dalal-plastic-and-reconstructive-surgeon/
+dr-rahul-dalal,Dr. Rahul Dalal,Cosmetic Surgery,Breast Augmentation,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-rahul-dalal-plastic-and-reconstructive-surgeon/
+dr-rahul-dalal,Dr. Rahul Dalal,Cosmetic Surgery,Breast Reduction,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-rahul-dalal-plastic-and-reconstructive-surgeon/
+dr-rahul-wagh,Dr. Rahul Wagh,Surgical Oncology,Cytoreductive Surgery with HIPEC,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-rahul-wagh-oncologist/
+dr-rahul-wagh,Dr. Rahul Wagh,Surgical Oncology,Sentinel Lymph Node Biopsy,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-rahul-wagh-oncologist/
+dr-rahul-wagh,Dr. Rahul Wagh,Surgical Oncology,Oncoplastic Breast Surgery,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-rahul-wagh-oncologist/
+dr-rahul-wagh,Dr. Rahul Wagh,Surgical Oncology,Breast-Conserving Surgery (Lumpectomy),verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-rahul-wagh-oncologist/
+dr-rajiv-sethi,Dr. Rajiv Sethi,Cardiology,Coronary Angiography,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-rajiv-sethi-cardiologist/
+dr-rajiv-sethi,Dr. Rajiv Sethi,Cardiology,Coronary Angioplasty & Stenting,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-rajiv-sethi-cardiologist/
+dr-rajiv-sethi,Dr. Rajiv Sethi,Cardiology,Pacemaker Implantation,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-rajiv-sethi-cardiologist/
+dr-rashmi-bhamare,Dr. Rashmi Bhamare,Gynecology,,no_specific_procedure_evidence,,https://www.manipalhospitals.com/baner/doctors/dr-rashmi-bhamare-gynaecologist/
+dr-sagar-daiv,Dr. Sagar Daiv,Cosmetic Surgery,,no_specific_procedure_evidence,,https://www.manipalhospitals.com/baner/doctors/dr-sagar-daiv-plastic-surgeon/
+dr-sarang-gotecha,Dr. Sarang Gotecha,Neurosurgery,,no_specific_procedure_evidence,,https://www.manipalhospitals.com/baner/doctors/dr-sarang-gotecha-neurosurgeon/
+dr-satish-mane,Dr. Satish Mane,Orthopedics,Tendon Repair,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-satish-mane-hand-and-upper-limb-surgeon/
+dr-saurabh-khiste,Dr. Saurabh Khiste,Nephrology,Kidney Transplantation,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-saurabh-khiste-nephrologist/
+dr-saurabh-khiste,Dr. Saurabh Khiste,Nephrology,ABO-Incompatible Kidney Transplantation,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-saurabh-khiste-nephrologist/
+dr-saurabh-khiste,Dr. Saurabh Khiste,Nephrology,Hemodialysis,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-saurabh-khiste-nephrologist/
+dr-saurabh-khiste,Dr. Saurabh Khiste,Nephrology,Continuous Renal Replacement Therapy (CRRT),verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-saurabh-khiste-nephrologist/
+dr-saurabh-khiste,Dr. Saurabh Khiste,Nephrology,Sustained Low-Efficiency Dialysis (SLED),verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-saurabh-khiste-nephrologist/
+dr-saurabh-khiste,Dr. Saurabh Khiste,Nephrology,Peritoneal Dialysis,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-saurabh-khiste-nephrologist/
+dr-saurabh-khiste,Dr. Saurabh Khiste,Nephrology,Percutaneous Renal Biopsy,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-saurabh-khiste-nephrologist/
+dr-saurabh-khiste,Dr. Saurabh Khiste,Nephrology,Dialysis Catheter Placement,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-saurabh-khiste-nephrologist/
+dr-shashikant-apte,Dr. Shashikant Apte,Hematology,Bone Marrow Transplantation,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-shashikant-apte-haematologist/
+dr-shashikant-apte,Dr. Shashikant Apte,Hematology,Allogeneic Stem Cell Transplant,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-shashikant-apte-haematologist/
+dr-shilpy-dolas,Dr. Shilpy Dolas,Surgical Oncology,Mastectomy,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-shilpy-dolas-breast-cancer-specialist/
+dr-shilpy-dolas,Dr. Shilpy Dolas,Surgical Oncology,Breast-Conserving Surgery (Lumpectomy),verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-shilpy-dolas-breast-cancer-specialist/
+dr-shilpy-dolas,Dr. Shilpy Dolas,Surgical Oncology,Oncoplastic Breast Surgery,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-shilpy-dolas-breast-cancer-specialist/
+dr-shilpy-dolas,Dr. Shilpy Dolas,Surgical Oncology,Breast Reconstruction,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-shilpy-dolas-breast-cancer-specialist/
+dr-shilpy-dolas,Dr. Shilpy Dolas,Surgical Oncology,Sentinel Lymph Node Biopsy,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-shilpy-dolas-breast-cancer-specialist/
+dr-shruti-satish-vadke,Dr. Shruti Satish Vadke,Neurology,,no_specific_procedure_evidence,,https://www.manipalhospitals.com/baner/doctors/dr-shruti-satish-vadke-neurologist/
+dr-sinukumar-bhaskaran,Dr. Sinukumar Bhaskaran,Orthopedics,Total Knee Replacement,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-sinukumar-bhaskaran-consultant-orthopedics-and-joint-replacement-surgery/
+dr-sinukumar-bhaskaran,Dr. Sinukumar Bhaskaran,Orthopedics,Revision Knee Replacement,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-sinukumar-bhaskaran-consultant-orthopedics-and-joint-replacement-surgery/
+dr-sinukumar-bhaskaran,Dr. Sinukumar Bhaskaran,Orthopedics,Total Hip Replacement,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-sinukumar-bhaskaran-consultant-orthopedics-and-joint-replacement-surgery/
+dr-sinukumar-bhaskaran,Dr. Sinukumar Bhaskaran,Orthopedics,Revision Hip Replacement,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-sinukumar-bhaskaran-consultant-orthopedics-and-joint-replacement-surgery/
+dr-sinukumar-bhaskaran,Dr. Sinukumar Bhaskaran,Orthopedics,Arthroscopic Surgery,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-sinukumar-bhaskaran-consultant-orthopedics-and-joint-replacement-surgery/
+dr-srikanth-madikattu,Dr. Srikanth Madikattu,Orthopedics,Total Knee Replacement,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-srikanth-madikattu-orthopaedician/
+dr-srikanth-madikattu,Dr. Srikanth Madikattu,Orthopedics,Partial Knee Replacement,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-srikanth-madikattu-orthopaedician/
+dr-srikanth-madikattu,Dr. Srikanth Madikattu,Orthopedics,Total Hip Replacement,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-srikanth-madikattu-orthopaedician/
+dr-srikanth-madikattu,Dr. Srikanth Madikattu,Orthopedics,ACL Reconstruction (Anterior Cruciate Ligament),verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-srikanth-madikattu-orthopaedician/
+dr-srikanth-madikattu,Dr. Srikanth Madikattu,Orthopedics,PCL Reconstruction (Posterior Cruciate Ligament),verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-srikanth-madikattu-orthopaedician/
+dr-srikanth-madikattu,Dr. Srikanth Madikattu,Orthopedics,Arthroscopic Surgery,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-srikanth-madikattu-orthopaedician/
+dr-srikanth-madikattu,Dr. Srikanth Madikattu,Orthopedics,Fracture Fixation,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-srikanth-madikattu-orthopaedician/
+dr-suhas-mondhe,Dr. Suhas Mondhe,Nephrology,Hemodialysis,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-suhas-mondhe-nephrologist/
+dr-suhas-mondhe,Dr. Suhas Mondhe,Nephrology,Kidney Transplantation,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-suhas-mondhe-nephrologist/
+dr-surajkumar-lathiya,Dr. Surajkumar Lathiya,Neurosurgery,,no_specific_procedure_evidence,,https://www.manipalhospitals.com/baner/doctors/dr-surajkumar-lathiya-neurosurgeon/
+dr-surendra-patil,Dr. Surendra Patil,Orthopedics,,no_specific_procedure_evidence,,https://www.manipalhospitals.com/baner/doctors/dr-surendra-patil-orthopaedic-surgeon/
+dr-suresh-patil,Dr. Suresh Patil,Orthopedics,Total Hip Replacement,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-suresh-patil-joint-replacement-surgeon/
+dr-suresh-patil,Dr. Suresh Patil,Orthopedics,Total Knee Replacement,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-suresh-patil-joint-replacement-surgeon/
+dr-swaminathan-ravi,Dr. Swaminathan Ravi,Cosmetic Surgery,,no_specific_procedure_evidence,,https://www.manipalhospitals.com/baner/doctors/dr-swaminathan-ravi-plastic-surgeon/
+dr-swatee-gaggare,Dr. Swatee Gaggare,Gynecology,Laparoscopic Hysterectomy,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-swatee-gaggare-obstetrician-and-gynaecologist/
+dr-swatee-gaggare,Dr. Swatee Gaggare,Gynecology,Ovarian Cyst Surgery,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-swatee-gaggare-obstetrician-and-gynaecologist/
+dr-tanmay-kulkarni,Dr. Tanmay Kulkarni,Cardiology,TAVR/TAVI (Transcatheter Aortic Valve Replacement),verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-tanmay-kulkarni-interventional-cardiologist/
+dr-tanmay-kulkarni,Dr. Tanmay Kulkarni,Cardiology,MitraClip,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-tanmay-kulkarni-interventional-cardiologist/
+dr-tanmay-kulkarni,Dr. Tanmay Kulkarni,Cardiology,Coronary Angiography,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-tanmay-kulkarni-interventional-cardiologist/
+dr-tanmay-kulkarni,Dr. Tanmay Kulkarni,Cardiology,Coronary Angioplasty & Stenting,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-tanmay-kulkarni-interventional-cardiologist/
+dr-tushar-deore,Dr. Tushar J. Deore,Spine Surgery,TLIF (Transforaminal Lumbar Interbody Fusion),verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-tushar-j-deore-orthopaedic-spine-surgeon/
+dr-tushar-deore,Dr. Tushar J. Deore,Spine Surgery,Microdiscectomy,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-tushar-j-deore-orthopaedic-spine-surgeon/
+dr-tushar-deore,Dr. Tushar J. Deore,Spine Surgery,Vertebroplasty,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-tushar-j-deore-orthopaedic-spine-surgeon/
+dr-tushar-deore,Dr. Tushar J. Deore,Spine Surgery,Kyphoplasty,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-tushar-j-deore-orthopaedic-spine-surgeon/
+dr-tushar-deore,Dr. Tushar J. Deore,Spine Surgery,Spinal Deformity Correction,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-tushar-j-deore-orthopaedic-spine-surgeon/
+dr-tushar-deore,Dr. Tushar J. Deore,Spine Surgery,Scoliosis Correction,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-tushar-j-deore-orthopaedic-spine-surgeon/
+dr-tushar-deore,Dr. Tushar J. Deore,Spine Surgery,Spinal Fusion,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-tushar-j-deore-orthopaedic-spine-surgeon/
+dr-tushar-deore,Dr. Tushar J. Deore,Spine Surgery,Disc Replacement,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-tushar-j-deore-orthopaedic-spine-surgeon/
+dr-uday-pote,Dr. Uday Pote,Spine Surgery,Vertebroplasty,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-uday-pote-orthopaedics-and-spine-suregon/
+dr-ujwala-patil,Dr. Ujwala Patil,Gynecology,Laparoscopic Hysterectomy,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-ujwala-patil-obstetrician-and-gynaecologist/
+dr-vijay-parbatani,Dr. Vijay Parbatani,Ophthalmology,Cataract Surgery,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-vijay-parbatani-consultant-ophthalmologist/
+dr-vijay-parbatani,Dr. Vijay Parbatani,Ophthalmology,Phacoemulsification Cataract Surgery,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-vijay-parbatani-consultant-ophthalmologist/
+dr-vijay-parbatani,Dr. Vijay Parbatani,Ophthalmology,LASIK Eye Surgery,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-vijay-parbatani-consultant-ophthalmologist/
+dr-vijay-parbatani,Dr. Vijay Parbatani,Ophthalmology,Glaucoma Surgery,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-vijay-parbatani-consultant-ophthalmologist/
+dr-vinay-kumar-gautam,Dr. Vinay Kumar Gautam,Orthopedics,Arthroscopic Surgery,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-vinay-kumar-gautam-consultant-orthopedics/
+dr-vinay-kumar-gautam,Dr. Vinay Kumar Gautam,Orthopedics,ACL Reconstruction (Anterior Cruciate Ligament),verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-vinay-kumar-gautam-consultant-orthopedics/
+dr-vinay-kumar-gautam,Dr. Vinay Kumar Gautam,Orthopedics,Meniscus Repair,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-vinay-kumar-gautam-consultant-orthopedics/
+dr-vinay-kumar-gautam,Dr. Vinay Kumar Gautam,Orthopedics,Rotator Cuff Repair,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-vinay-kumar-gautam-consultant-orthopedics/
+dr-vinay-kumar-gautam,Dr. Vinay Kumar Gautam,Orthopedics,Shoulder Replacement,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-vinay-kumar-gautam-consultant-orthopedics/
+dr-vinayak-ghanate,Dr. Vinayak Ghanate,Orthopedics,Total Hip Replacement,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-vinayak-ghanate-consultant-orthopedics/
+dr-vinayak-ghanate,Dr. Vinayak Ghanate,Orthopedics,Arthroscopic Surgery,verified,manipal_official_profile,https://www.manipalhospitals.com/baner/doctors/dr-vinayak-ghanate-consultant-orthopedics/
+dr-rajesh-kaushish,Dr. Rajesh Kaushish,Cardiac Surgery,Congenital Heart Disease (CHD) Treatment in Children,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-rajesh-kaushish
+dr-rajesh-kaushish,Dr. Rajesh Kaushish,Cardiac Surgery,Congenital Heart Disease Management — Surgery for congenital heart defects,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-rajesh-kaushish
+dr-rajesh-kaushish,Dr. Rajesh Kaushish,Cardiac Surgery,Congenital Heart Surgery,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-rajesh-kaushish
+dr-rajesh-kaushish,Dr. Rajesh Kaushish,Cardiac Surgery,Coronary Artery Bypass Grafting (CABG),verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-rajesh-kaushish
+dr-rajesh-kaushish,Dr. Rajesh Kaushish,Cardiac Surgery,Coronary Artery Bypass Grafting (CABG) — Specialist in beating heart and awake CABG techniques,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-rajesh-kaushish
+dr-rajesh-kaushish,Dr. Rajesh Kaushish,Cardiac Surgery,Coronary Artery Bypass Grafting (CABG) — including off-pump CABG,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-rajesh-kaushish
+dr-manish-mali,Dr. Manish Mali,Nephrology,Acute Kidney Injury,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-manish-mali
+dr-manish-mali,Dr. Manish Mali,Nephrology,Acute Kidney Injury Management,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-manish-mali
+dr-manish-mali,Dr. Manish Mali,Nephrology,Chronic Kidney Disease,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-manish-mali
+dr-manish-mali,Dr. Manish Mali,Nephrology,Chronic Kidney Disease Management,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-manish-mali
+dr-manish-mali,Dr. Manish Mali,Nephrology,Chronic Kidney Disease.,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-manish-mali
+dr-manish-mali,Dr. Manish Mali,Nephrology,Dialysis,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-manish-mali
+dr-chetankumar-oswal,Dr. Chetankumar Oswal,Gastroenterology,Acute Pancreatitis,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-chetankumar-oswal
+dr-chetankumar-oswal,Dr. Chetankumar Oswal,Gastroenterology,Acute Pancreatitis — Comprehensive evaluation and treatment,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-chetankumar-oswal
+dr-chetankumar-oswal,Dr. Chetankumar Oswal,Gastroenterology,Celiac Disease,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-chetankumar-oswal
+dr-chetankumar-oswal,Dr. Chetankumar Oswal,Gastroenterology,Colonoscopy,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-chetankumar-oswal
+dr-chetankumar-oswal,Dr. Chetankumar Oswal,Gastroenterology,"ERCP — Diagnostic and therapeutic endoscopic retrograde cholangiopancreatography, including biliary stent placements",verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-chetankumar-oswal
+dr-chetankumar-oswal,Dr. Chetankumar Oswal,Gastroenterology,Liver Transplant,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-chetankumar-oswal
+dr-charudutt-apte,Dr. Charudutt Apte,Neurosurgery,Epilepsy Surgery,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-charudutt-apte
+dr-charudutt-apte,Dr. Charudutt Apte,Neurosurgery,Epilepsy Treatment,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-charudutt-apte
+dr-charudutt-apte,Dr. Charudutt Apte,Neurosurgery,Minimally Invasive Spine Surgery,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-charudutt-apte
+dr-charudutt-apte,Dr. Charudutt Apte,Neurosurgery,Spinal Trauma Surgery,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-charudutt-apte
+dr-hemant-sant,Dr. Hemant Sant,Neurology,,no_specific_procedure_evidence,,https://lokmanyahospitals.com/doctors/dr-hemant-sant
+dr-shona-nag,Dr. Shona Nag,Medical Oncology,Cancer Immunotherapy,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-shona-nag
+dr-shona-nag,Dr. Shona Nag,Medical Oncology,Chemotherapy,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-shona-nag
+dr-shona-nag,Dr. Shona Nag,Medical Oncology,Chemotherapy (per cycle),verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-shona-nag
+dr-shona-nag,Dr. Shona Nag,Medical Oncology,Chemotherapy for Cancer,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-shona-nag
+dr-shona-nag,Dr. Shona Nag,Medical Oncology,"DM (Medical Oncology) — All India Institute of Medical Sciences (AIIMS), New Delhi",verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-shona-nag
+dr-shona-nag,Dr. Shona Nag,Medical Oncology,DNB — Medical Oncology,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-shona-nag
+dr-narendra-vaidya,Dr. Narendra Vaidya,Orthopedics,Hip Replacement,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-narendra-vaidya
+dr-narendra-vaidya,Dr. Narendra Vaidya,Orthopedics,Knee Replacement,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-narendra-vaidya
+dr-narendra-vaidya,Dr. Narendra Vaidya,Orthopedics,Knee Replacement Surgery,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-narendra-vaidya
+dr-narendra-vaidya,Dr. Narendra Vaidya,Orthopedics,Robotic Knee Replacement,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-narendra-vaidya
+dr-rakesh-patil,Dr. Rakesh Patil,Orthopedics,Degenerative Joint Disease,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-rakesh-patil
+dr-rakesh-patil,Dr. Rakesh Patil,Orthopedics,Degenerative Joint Disease — Comprehensive management of joint degeneration,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-rakesh-patil
+dr-rakesh-patil,Dr. Rakesh Patil,Orthopedics,Hip Replacement,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-rakesh-patil
+dr-rakesh-patil,Dr. Rakesh Patil,Orthopedics,Knee Replacement,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-rakesh-patil
+dr-rakesh-patil,Dr. Rakesh Patil,Orthopedics,Robotic Knee Replacement,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-rakesh-patil
+dr-meetali-vaidya,Dr. Meetali Vaidya,Dentistry,,no_specific_procedure_evidence,,https://lokmanyahospitals.com/doctors/dr-meetali-vaidya
+dr-joy-ghose,Dr. Joy Ghose,Surgical Oncology,Bile Duct Cancer Surgery,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-joy-ghose
+dr-joy-ghose,Dr. Joy Ghose,Surgical Oncology,Bone Cancer Surgery,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-joy-ghose
+dr-joy-ghose,Dr. Joy Ghose,Surgical Oncology,Breast Cancer Surgery,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-joy-ghose
+dr-joy-ghose,Dr. Joy Ghose,Surgical Oncology,Breast Cancer Surgery.,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-joy-ghose
+dr-joy-ghose,Dr. Joy Ghose,Surgical Oncology,Breast Cyst Management,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-joy-ghose
+dr-joy-ghose,Dr. Joy Ghose,Surgical Oncology,Breast Cyst Treatment,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-joy-ghose
+dr-mamta-parade,Dr. Mamta Parade,Gynecology,,no_specific_procedure_evidence,,https://lokmanyahospitals.com/doctors/dr-mamta-parade
+dr-manish-sabnis,Dr. Manish Sabnis,Neurosurgery,Surgery for Movement Disorders,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-manish-sabnis
+dr-gajanan-chaudhari,Dr. Gajanan Chaudhari,Urology,Redo Urological Reconstruction,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-gajanan-chaudhari
+dr-gajanan-chaudhari,Dr. Gajanan Chaudhari,Urology,Urinary Tract Reconstruction,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-gajanan-chaudhari
+dr-amit-pande,Dr. Amit Pande,Neurology,,no_specific_procedure_evidence,,https://lokmanyahospitals.com/doctors/dr-amit-pande
+dr-josna-sabnis,Dr. Josna Sabnis,Neurosurgery,Congenital Brain & Spine Anomaly Surgery,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-josna-sabnis
+dr-josna-sabnis,Dr. Josna Sabnis,Neurosurgery,Craniotomy,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-josna-sabnis
+dr-josna-sabnis,Dr. Josna Sabnis,Neurosurgery,Deep Brain Stimulation,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-josna-sabnis
+dr-josna-sabnis,Dr. Josna Sabnis,Neurosurgery,Deep Brain Stimulation (DBS),verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-josna-sabnis
+dr-josna-sabnis,Dr. Josna Sabnis,Neurosurgery,Endoscopic Brain Surgery,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-josna-sabnis
+dr-josna-sabnis,Dr. Josna Sabnis,Neurosurgery,Endoscopic Skull Base Surgery,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-josna-sabnis
+dr-pallav-bhatia,Dr. Pallav Bhatia,Spine Surgery,Degenerative Spinal Stenosis,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-pallav-bhatia
+dr-pallav-bhatia,Dr. Pallav Bhatia,Spine Surgery,Disc Herniation Surgery,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-pallav-bhatia
+dr-pallav-bhatia,Dr. Pallav Bhatia,Spine Surgery,Endoscopic Spine Surgery,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-pallav-bhatia
+dr-pallav-bhatia,Dr. Pallav Bhatia,Spine Surgery,Minimally Invasive Spine Surgery,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-pallav-bhatia
+dr-pallav-bhatia,Dr. Pallav Bhatia,Spine Surgery,Spinal Stenosis Surgery,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-pallav-bhatia
+dr-shivprakash-mehta,Dr. Shivprakash Mehta,ENT,Advanced Mastoid Surgery,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-shivprakash-mehta
+dr-shivprakash-mehta,Dr. Shivprakash Mehta,ENT,Advanced Mastoid Surgery — for chronic middle ear disease,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-shivprakash-mehta
+dr-shivprakash-mehta,Dr. Shivprakash Mehta,ENT,Head & Neck Cancer Surgery,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-shivprakash-mehta
+dr-shivprakash-mehta,Dr. Shivprakash Mehta,ENT,Mastoidectomy,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-shivprakash-mehta
+dr-shivprakash-mehta,Dr. Shivprakash Mehta,ENT,Oral Cancer Surgery,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-shivprakash-mehta
+dr-annapoorna-kalia,Dr. Annapoorna Kalia,Cardiology,ASD Device Closure,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-annapoorna-kalia
+dr-annapoorna-kalia,Dr. Annapoorna Kalia,Cardiology,ASD Device Closure — Vascular device closure procedures,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-annapoorna-kalia
+dr-annapoorna-kalia,Dr. Annapoorna Kalia,Cardiology,Balloon Mitral Valvotomy,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-annapoorna-kalia
+dr-annapoorna-kalia,Dr. Annapoorna Kalia,Cardiology,CRT / CRT-D Implantation,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-annapoorna-kalia
+dr-annapoorna-kalia,Dr. Annapoorna Kalia,Cardiology,CRT-D / ICD Implantation,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-annapoorna-kalia
+dr-annapoorna-kalia,Dr. Annapoorna Kalia,Cardiology,CRT/CRT-D Implantation,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-annapoorna-kalia
+dr-bhushan-ganvir,Dr. Bhushan Ganvir,Orthopedics,Hip Replacement,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-bhushan-ganvir
+dr-bhushan-ganvir,Dr. Bhushan Ganvir,Orthopedics,Knee Replacement,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-bhushan-ganvir
+dr-bhushan-ganvir,Dr. Bhushan Ganvir,Orthopedics,Knee Replacement Surgery,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-bhushan-ganvir
+dr-satish-sawant,Dr. Satish Sawant,Cardiology,ASD Device Closure,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-satish-sawant
+dr-satish-sawant,Dr. Satish Sawant,Cardiology,ASD Device Closure — Vascular device closure procedures,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-satish-sawant
+dr-satish-sawant,Dr. Satish Sawant,Cardiology,CRT / CRT-D Implantation,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-satish-sawant
+dr-satish-sawant,Dr. Satish Sawant,Cardiology,CRT-D / ICD Implantation,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-satish-sawant
+dr-satish-sawant,Dr. Satish Sawant,Cardiology,CRT/CRT-D Implantation,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-satish-sawant
+dr-satish-sawant,Dr. Satish Sawant,Cardiology,CTO Angioplasty,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-satish-sawant
+dr-ritesh-bhalla,Dr. Ritesh Bhalla,Neurosurgery,Skull Base Surgery,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-ritesh-bhalla
+dr-ritesh-bhalla,Dr. Ritesh Bhalla,Neurosurgery,Skull Base Tumor Surgery,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-ritesh-bhalla
+dr-ritesh-bhalla,Dr. Ritesh Bhalla,Neurosurgery,Spinal Trauma Surgery,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-ritesh-bhalla
+dr-ritesh-bhalla,Dr. Ritesh Bhalla,Neurosurgery,Spinal Tumor Surgery,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-ritesh-bhalla
+dr-shriniwas-kulkarni,Dr. Shriniwas Kulkarni,Medical Oncology,Cancer Immunotherapy,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-shriniwas-kulkarni
+dr-shriniwas-kulkarni,Dr. Shriniwas Kulkarni,Medical Oncology,Chemotherapy,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-shriniwas-kulkarni
+dr-shriniwas-kulkarni,Dr. Shriniwas Kulkarni,Medical Oncology,Chemotherapy (per cycle),verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-shriniwas-kulkarni
+dr-shriniwas-kulkarni,Dr. Shriniwas Kulkarni,Medical Oncology,Chemotherapy for Cancer,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-shriniwas-kulkarni
+dr-shriniwas-kulkarni,Dr. Shriniwas Kulkarni,Medical Oncology,Chemotherapy for Solid Tumors,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-shriniwas-kulkarni
+dr-shriniwas-kulkarni,Dr. Shriniwas Kulkarni,Medical Oncology,DNB — Medical Oncology,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-shriniwas-kulkarni
+dr-chetan-padghan,Dr. Chetan Padghan,Neurology,Epilepsy Management,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-chetan-padghan
+dr-chetan-padghan,Dr. Chetan Padghan,Neurology,IV Thrombolysis,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-chetan-padghan
+dr-chetan-padghan,Dr. Chetan Padghan,Neurology,Post-Stroke Neuro Rehabilitation,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-chetan-padghan
+dr-chetan-padghan,Dr. Chetan Padghan,Neurology,Post-Stroke Neurological Care,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-chetan-padghan
+dr-rituparna-suresh-shinde,Dr. Rituparna Suresh Shinde,Cardiology,,no_specific_procedure_evidence,,https://lokmanyahospitals.com/doctors/dr-rituparna-suresh-shinde
+dr-rahul-prakash-wagh,Dr. Rahul Prakash Wagh,Surgical Oncology,Bile Duct Cancer Surgery,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-rahul-prakash-wagh
+dr-rahul-prakash-wagh,Dr. Rahul Prakash Wagh,Surgical Oncology,Bone Cancer Surgery,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-rahul-prakash-wagh
+dr-rahul-prakash-wagh,Dr. Rahul Prakash Wagh,Surgical Oncology,Breast Biopsy,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-rahul-prakash-wagh
+dr-rahul-prakash-wagh,Dr. Rahul Prakash Wagh,Surgical Oncology,Breast Biopsy Procedures,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-rahul-prakash-wagh
+dr-rahul-prakash-wagh,Dr. Rahul Prakash Wagh,Surgical Oncology,Breast Cancer Surgery,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-rahul-prakash-wagh
+dr-rahul-prakash-wagh,Dr. Rahul Prakash Wagh,Surgical Oncology,Breast Cancer Surgery.,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-rahul-prakash-wagh
+dr-shardul-soman,Dr. Shardul Soman,Spine Surgery,Minimally Invasive Spine Surgery,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-shardul-soman
+dr-shivani-baheti,Dr. Shivani Baheti,Gynecology,Advanced Obstetric Surgical Care,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-shivani-baheti
+dr-shivani-baheti,Dr. Shivani Baheti,Gynecology,Advanced Obstetric Surgical Care — Comprehensive care for high-risk obstetric cases,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-shivani-baheti
+dr-shivani-baheti,Dr. Shivani Baheti,Gynecology,Advanced Obstetric Surgical Care — Management of pregnancy and deliveries,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-shivani-baheti
+dr-shivani-baheti,Dr. Shivani Baheti,Gynecology,Advanced Obstetric Surgical Care — expert management of high-risk pregnancies and complex obstetric cases,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-shivani-baheti
+dr-shivani-baheti,Dr. Shivani Baheti,Gynecology,Hysterectomy,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-shivani-baheti
+dr-shivani-baheti,Dr. Shivani Baheti,Gynecology,Hysterectomy (Uterus Removal Surgery),verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-shivani-baheti
+dr-nikhil-likhate,Dr. Nikhil S. Likhate,Orthopedics,Arthroscopic Knee Surgery,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-nikhil-s-likhate
+dr-nikhil-likhate,Dr. Nikhil S. Likhate,Orthopedics,Arthroscopic Knee Surgery — Minimally invasive diagnostic and therapeutic knee procedures,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-nikhil-s-likhate
+dr-nikhil-likhate,Dr. Nikhil S. Likhate,Orthopedics,Arthroscopic Surgery,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-nikhil-s-likhate
+dr-nikhil-likhate,Dr. Nikhil S. Likhate,Orthopedics,Hip Replacement,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-nikhil-s-likhate
+dr-nikhil-likhate,Dr. Nikhil S. Likhate,Orthopedics,Knee Replacement,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-nikhil-s-likhate
+dr-nikhil-likhate,Dr. Nikhil S. Likhate,Orthopedics,Knee Replacement Surgery,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-nikhil-s-likhate
+dr-satish-kale,Dr. Satish kale,Orthopedics,Degenerative Disc Disease,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-satish-kale
+dr-satish-kale,Dr. Satish kale,Orthopedics,Degenerative Joint Disease,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-satish-kale
+dr-satish-kale,Dr. Satish kale,Orthopedics,Degenerative Joint Disease — Comprehensive management of joint degeneration,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-satish-kale
+dr-satish-kale,Dr. Satish kale,Orthopedics,Hip Replacement,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-satish-kale
+dr-satish-kale,Dr. Satish kale,Orthopedics,Knee Replacement,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-satish-kale
+dr-satish-kale,Dr. Satish kale,Orthopedics,Knee Replacement Surgery,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-satish-kale
+dr-rakshit-ahuja,Dr. Rakshit Ahuja,Urology,ESWL (Extracorporeal Shock Wave Lithotripsy) — laser treatment of ureteric stones,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-rakshit-ahuja
+dr-rakshit-ahuja,Dr. Rakshit Ahuja,Urology,HoLEP (Holmium Laser Enucleation),verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-rakshit-ahuja
+dr-rakshit-ahuja,Dr. Rakshit Ahuja,Urology,Kidney Stone Surgery,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-rakshit-ahuja
+dr-rakshit-ahuja,Dr. Rakshit Ahuja,Urology,Kidney Transplant Surgery,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-rakshit-ahuja
+dr-rakshit-ahuja,Dr. Rakshit Ahuja,Urology,Kidney Transplant Surgery (Living & Deceased Donor),verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-rakshit-ahuja
+dr-rakshit-ahuja,Dr. Rakshit Ahuja,Urology,"Kidney Transplant Surgery (Living Donor, Deceased Donor, and ABO-Incompatible)",verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-rakshit-ahuja
+dr-nilesh-yeole,Dr. Nilesh Yeole,Orthopedics,Arthroscopic Knee Surgery,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-nilesh-yeole
+dr-nilesh-yeole,Dr. Nilesh Yeole,Orthopedics,Arthroscopic Knee Surgery — Minimally invasive diagnostic and therapeutic knee procedures,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-nilesh-yeole
+dr-nilesh-yeole,Dr. Nilesh Yeole,Orthopedics,Arthroscopic Surgery,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-nilesh-yeole
+dr-nilesh-yeole,Dr. Nilesh Yeole,Orthopedics,Degenerative Joint Disease,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-nilesh-yeole
+dr-nilesh-yeole,Dr. Nilesh Yeole,Orthopedics,Degenerative Joint Disease — Comprehensive management of joint degeneration,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-nilesh-yeole
+dr-nilesh-yeole,Dr. Nilesh Yeole,Orthopedics,Hip Replacement,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-nilesh-yeole
+dr-mahima-kharbanda,Dr. Mahima Kharbanda,Medical Oncology,Cancer Immunotherapy,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-mahima-kharbanda
+dr-mahima-kharbanda,Dr. Mahima Kharbanda,Medical Oncology,Chemotherapy,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-mahima-kharbanda
+dr-mahima-kharbanda,Dr. Mahima Kharbanda,Medical Oncology,Chemotherapy (per cycle),verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-mahima-kharbanda
+dr-mahima-kharbanda,Dr. Mahima Kharbanda,Medical Oncology,Chemotherapy for Cancer,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-mahima-kharbanda
+dr-mahima-kharbanda,Dr. Mahima Kharbanda,Medical Oncology,Chemotherapy for Solid Tumors,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-mahima-kharbanda
+dr-mahima-kharbanda,Dr. Mahima Kharbanda,Medical Oncology,DNB — Medical Oncology,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-mahima-kharbanda
+dr-reshma-kshirsagar,Dr. Reshma Kshirsagar,Cardiology,,no_specific_procedure_evidence,,https://lokmanyahospitals.com/doctors/dr-reshma-kshirsagar
+dr-sujata-sai,Dr. Sujata Sai,Surgical Oncology,Bile Duct Cancer Surgery,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-sujata-sai
+dr-sujata-sai,Dr. Sujata Sai,Surgical Oncology,Bone Cancer Surgery,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-sujata-sai
+dr-sujata-sai,Dr. Sujata Sai,Surgical Oncology,Breast Cancer Surgery,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-sujata-sai
+dr-sujata-sai,Dr. Sujata Sai,Surgical Oncology,Breast Cancer Surgery.,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-sujata-sai
+dr-sujata-sai,Dr. Sujata Sai,Surgical Oncology,Breast Cyst Management,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-sujata-sai
+dr-sujata-sai,Dr. Sujata Sai,Surgical Oncology,Breast Cyst Treatment,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-sujata-sai
+dr-chandrakant-upadhyay,Dr. Chandrakant Upadhyay,Cardiology,ASD Device Closure,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-chandrakant-upadhyay
+dr-chandrakant-upadhyay,Dr. Chandrakant Upadhyay,Cardiology,ASD Device Closure — Vascular device closure procedures,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-chandrakant-upadhyay
+dr-chandrakant-upadhyay,Dr. Chandrakant Upadhyay,Cardiology,Arrhythmia Management,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-chandrakant-upadhyay
+dr-chandrakant-upadhyay,Dr. Chandrakant Upadhyay,Cardiology,Balloon Mitral Valvotomy,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-chandrakant-upadhyay
+dr-chandrakant-upadhyay,Dr. Chandrakant Upadhyay,Cardiology,CRT / CRT-D Implantation,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-chandrakant-upadhyay
+dr-chandrakant-upadhyay,Dr. Chandrakant Upadhyay,Cardiology,CRT-D / ICD Implantation,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-chandrakant-upadhyay
+dr-ahilya-aghav,Dr. Ahilya Aghav,Pulmonology,Chronic Obstructive Pulmonary Disease,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-ahilya-aghav
+dr-ahilya-aghav,Dr. Ahilya Aghav,Pulmonology,Chronic Obstructive Pulmonary Disease (COPD),verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-ahilya-aghav
+dr-ahilya-aghav,Dr. Ahilya Aghav,Pulmonology,Chronic Obstructive Pulmonary Disease (COPD) Management,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-ahilya-aghav
+dr-ahilya-aghav,Dr. Ahilya Aghav,Pulmonology,Obstructive Sleep Apnea,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-ahilya-aghav
+dr-ahilya-aghav,Dr. Ahilya Aghav,Pulmonology,Obstructive Sleep Apnea Evaluation,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-ahilya-aghav
+dr-ahilya-aghav,Dr. Ahilya Aghav,Pulmonology,Post-Tuberculosis Lung Disease,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-ahilya-aghav
+dr-prashant-chandrakant-mundhe,Dr. Prashant Chandrakant Mundhe,Orthopedics,Hip Replacement,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-prashant-chandrakant-mundhe
+dr-prashant-chandrakant-mundhe,Dr. Prashant Chandrakant Mundhe,Orthopedics,Knee Replacement,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-prashant-chandrakant-mundhe
+dr-prashant-chandrakant-mundhe,Dr. Prashant Chandrakant Mundhe,Orthopedics,Knee Replacement Surgery,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-prashant-chandrakant-mundhe
+dr-prashant-chandrakant-mundhe,Dr. Prashant Chandrakant Mundhe,Orthopedics,Shoulder Replacement,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-prashant-chandrakant-mundhe
+dr-prashant-chandrakant-mundhe,Dr. Prashant Chandrakant Mundhe,Orthopedics,Shoulder Replacement Surgery,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-prashant-chandrakant-mundhe
+dr-nitin-bhave,Dr. Nitin Bhave,Surgical Oncology,Bile Duct Cancer Surgery,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-nitin-bhave
+dr-nitin-bhave,Dr. Nitin Bhave,Surgical Oncology,Bone Cancer Surgery,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-nitin-bhave
+dr-nitin-bhave,Dr. Nitin Bhave,Surgical Oncology,Breast Cancer Surgery,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-nitin-bhave
+dr-nitin-bhave,Dr. Nitin Bhave,Surgical Oncology,Breast Cancer Surgery.,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-nitin-bhave
+dr-nitin-bhave,Dr. Nitin Bhave,Surgical Oncology,Breast Conserving Surgery,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-nitin-bhave
+dr-nitin-bhave,Dr. Nitin Bhave,Surgical Oncology,Breast Cyst Management,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-nitin-bhave
+dr-santosh-philip,Dr. Santosh Philip,Orthopedics,Carpal Tunnel Release,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-santosh-philip
+dr-santosh-philip,Dr. Santosh Philip,Orthopedics,Carpal Tunnel Release Surgery,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-santosh-philip
+dr-santosh-philip,Dr. Santosh Philip,Orthopedics,Carpal Tunnel Syndrome,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-santosh-philip
+dr-santosh-philip,Dr. Santosh Philip,Orthopedics,Carpal Tunnel Syndrome — Diagnosis and management of nerve compression conditions,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-santosh-philip
+dr-santosh-philip,Dr. Santosh Philip,Orthopedics,Degenerative Joint Disease,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-santosh-philip
+dr-santosh-philip,Dr. Santosh Philip,Orthopedics,Degenerative Joint Disease — Comprehensive management of joint degeneration,verified,lokmanya_official_profile_text,https://lokmanyahospitals.com/doctors/dr-santosh-philip

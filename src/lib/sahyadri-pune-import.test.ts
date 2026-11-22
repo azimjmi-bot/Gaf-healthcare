@@ -167,7 +167,8 @@ test("multi-campus doctors have structured hospitalSlugs and reciprocal faculty 
   const multi = ginger.doctors.filter(
     (row) => row.hospitalSlug.startsWith(SAHYADRI) && (row.hospitalSlugs?.length || 0) > 1,
   );
-  assert.equal(multi.length, 23);
+  // Includes Sahyadri multi-campus pairs plus later Manipal Baner / Lokmanya appends.
+  assert.equal(multi.length, 28);
   for (const seed of multi) {
     const doctor = catalogDoctors.find((row) => row.slug === seed.slug);
     assert.ok(doctor, seed.slug);

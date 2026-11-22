@@ -1,0 +1,9 @@
+slug,name,action,hospitalSlugs,kept_specialty,manipal_specialty,lokmanya_specialty
+dr-abhijit-agashe,Dr. Abhijit Agashe,append_manipal_baner,sahyadri-super-speciality-hospital-deccan-gymkhana|sahyadri-super-speciality-hospital-nagar-road|manipal-hospitals-baner,Orthopedics,Orthopedics,
+dr-kannan-subramanian,Dr. Kannan Subramanian,append_manipal_baner,sahyadri-super-speciality-hospital-deccan-gymkhana|sahyadri-super-speciality-hospital-nagar-road|manipal-hospitals-baner,Hematology,Hematology,
+dr-mangesh-udar,Dr. Mangesh Udar,append_manipal_baner,sahyadri-super-speciality-hospital-deccan-gymkhana|manipal-hospitals-baner,Neurology,Neurology,
+dr-shashikant-apte,Dr. Shashikant Apte,append_manipal_baner,sahyadri-super-speciality-hospital-deccan-gymkhana|sahyadri-super-speciality-hospital-nagar-road|manipal-hospitals-baner,Hematology,Hematology,
+dr-tushar-deore,Dr. Tushar Deore,append_manipal_baner,sahyadri-super-speciality-hospital-deccan-gymkhana|manipal-hospitals-baner,Orthopedics,Spine Surgery,
+dr-hemant-sant,Dr. Hemant Sant,append_lokmanya_campuses,sahyadri-super-speciality-hospital-deccan-gymkhana|lokmanya-hospital-sb-road,Neurology,,Neurology
+dr-nikhil-likhate,Dr. Nikhil Likhate,append_lokmanya_campuses,sahyadri-super-speciality-hospital-deccan-gymkhana|lokmanya-hospital-sb-road,Orthopedics,,Orthopedics
+dr-rakshit-ahuja,Dr. Rakshit Ahuja,append_lokmanya_campuses,sahyadri-super-speciality-hospital-hadapsar|lokmanya-hospital-sb-road,Urology,,Urology

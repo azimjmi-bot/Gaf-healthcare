@@ -58,7 +58,7 @@ test("a doctor facet identical to its parent names the parent as canonical", () 
     const published = doctorFacets().filter((path) => localePageState("ar", path) === "published");
     // 1382 after Sahyadri Pune; +6 after Manipal Baner inventory opens new narrowing
     // doctor facets (and lifts Pune/Spine-Surgery from noindex). No publication-rule change.
-    assert.equal(published.length, 1388, "stage 1 + Sahyadri Pune + Manipal Baner population");
+    assert.equal(published.length, 1419, "stage 1 + Sahyadri Pune + Manipal Baner + Lokmanya population");
 
     const redirected: string[] = [];
     for (const path of published) {
@@ -77,11 +77,12 @@ test("a doctor facet identical to its parent names the parent as canonical", () 
     }
 
     // 122 after Sahyadri; −1 when Manipal Payagude joins Pune Surgical Gastroenterology
-    // so Liver-Transplantation no longer equals its parent.
+    // so Liver-Transplantation no longer equals its parent; −3 more after Manipal Baner
+    // full-directory + Lokmanya inventory further narrows parent-equal doctor facets.
     assert.equal(
       redirected.length,
-      121,
-      "the 121 doctor facets whose Arabic result set equals their parent's",
+      118,
+      "the 118 doctor facets whose Arabic result set equals their parent's",
     );
   });
 });

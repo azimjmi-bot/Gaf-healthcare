@@ -41,7 +41,7 @@ test("Infertility-IVF stays noindex under the hospital overlap gate after Sahyad
   const displayMatches = filterHospitals(query, rows).length;
   const displayParent = filterHospitals(parent, rows).length;
   assert.equal(displayMatches, 40);
-  assert.equal(displayParent, 46);
+  assert.equal(displayParent, 49);
 
   const matches = hospitalsForServiceLinePublication(query, rows, true).length;
   const parentMatches = hospitalsForServiceLinePublication(parent, rows, true).length;
@@ -77,7 +77,7 @@ test("faculty affiliation alone cannot index hospital specialty or procedure lan
       { destination: "India", city: "Pune", specialty: "Medical Oncology" },
       hospitalsForLocale("en"),
     ).length,
-    3,
+    7,
   );
   assert.equal(
     hospitalsForServiceLinePublication(
