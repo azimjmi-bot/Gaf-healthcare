@@ -104,3 +104,16 @@ test("the sitemap index lists each locale file once with a valid lastmod", () =>
     assert.ok(item.lastmod === undefined || parseLastmod(item.lastmod) !== null, `${item.loc} lastmod`);
   }
 });
+
+test("nested pacemaker legacy path is absent from EN sitemap; flat successor is listed", () => {
+  const locs = new Set(parseSitemap(build("en")).items.map((item) => item.loc));
+  assert.equal(
+    locs.has(`${ORIGIN}/treatments/cardiology/pacemaker-implantation`),
+    false,
+    "redirected nested path must not appear in the sitemap",
+  );
+  assert.ok(
+    locs.has(`${ORIGIN}/treatments/pacemaker-implantation-in-india`),
+    "verified flat successor must remain sitemap-listed when published",
+  );
+});

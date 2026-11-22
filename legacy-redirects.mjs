@@ -39,4 +39,11 @@ export const legacyRedirects = [
     destination: "/hospitals/wockhardt-hospital",
     permanent: true,
   },
+  // Verified nested → flat treatment successor (SEO migration forensic PR #44).
+  // Clinical + search-intent equivalent; destination is the live curated page.
+  {
+    source: "/treatments/cardiology/pacemaker-implantation",
+    destination: "/treatments/pacemaker-implantation-in-india",
+    permanent: true,
+  },
 ];
