@@ -1,7 +1,7 @@
 # P0a / P3 — Lightweight Arabic Publication Index
 
 **Branch:** `cursor/seo-perf-ar-publication-index-6064`  
-**Status:** Implementation for review. **Not deployed** without separate approval.
+**Status:** Rebased onto production release `353d637` (PR #51 intact). Validation report: `docs/seo-perf-pr49-rebase-validation-report.md`. **Not merged/deployed** without separate approval.
 
 ## Root cause
 

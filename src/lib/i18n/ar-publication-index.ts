@@ -48,8 +48,12 @@ export function installArPublicationIndex(document: ArPublicationIndexDocument |
   if (parsed.version !== 1 || !Array.isArray(parsed.paths)) {
     throw new Error("ar-publication-index: unsupported document shape");
   }
+  if (!parsed.paths.every((path) => typeof path === "string")) {
+    throw new Error("ar-publication-index: paths must be strings");
+  }
+  // Assign only after validation so a corrupt document never leaves a half-loaded set.
   loaded = new Set(parsed.paths.map((path) => (path.split("?")[0] || "/")));
-  generatedAt = parsed.generatedAt;
+  generatedAt = typeof parsed.generatedAt === "string" ? parsed.generatedAt : null;
 }
 
 export function buildArPublicationIndexDocument(

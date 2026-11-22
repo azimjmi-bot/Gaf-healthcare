@@ -331,6 +331,59 @@ test("English catalogue routes skip AR hydrate when the packed publication index
   assert.equal(storage.isHydrated("ar"), true, "Arabic catalogue routes still hydrate AR");
 });
 
+test("missing or corrupt AR publication index falls back to full EN catalogue AR hydrate", async () => {
+  const next = nextStub();
+  const missing = makeEnv({ ASSETS: fakeAssets({ ...DEPLOY_ASSETS }) });
+  const workerMissing = createWorker(next.handler, quiet);
+  assert.equal(
+    (await workerMissing.fetch(new Request("https://staging.example/doctors"), missing, ctx())).status,
+    200,
+  );
+  assert.equal(workerMissing.storage()?.isHydrated("ar"), true, "missing index → full AR hydrate");
+
+  clearArPublicationIndex();
+  const corrupt = makeEnv({
+    ASSETS: fakeAssets({
+      ...DEPLOY_ASSETS,
+      "/_gaf/ar-publication-index.json": '{"version":1,"paths":null}',
+    }),
+  });
+  const workerCorrupt = createWorker(next.handler, quiet);
+  assert.equal(
+    (await workerCorrupt.fetch(new Request("https://staging.example/hospitals"), corrupt, ctx())).status,
+    200,
+  );
+  assert.equal(workerCorrupt.storage()?.isHydrated("ar"), true, "corrupt index → full AR hydrate");
+});
+
+test("lab: EN catalogue cold miss R2 object reads drop when AR index is present", async () => {
+  const next = nextStub();
+  const without = makeEnv();
+  const workerWithout = createWorker(next.handler, quiet);
+  await workerWithout.fetch(new Request("https://staging.example/doctors"), without, ctx());
+  const arGetsWithout = without.CONTENT.calls.filter(
+    (c) => c.op === "get" && String(c.key).startsWith("content/ar/"),
+  ).length;
+
+  clearArPublicationIndex();
+  const index = JSON.stringify({
+    version: 1,
+    generatedAt: "2026-11-22T00:00:00.000Z",
+    paths: ["/doctors"],
+  });
+  const withIndex = makeEnv({
+    ASSETS: fakeAssets({ ...DEPLOY_ASSETS, "/_gaf/ar-publication-index.json": index }),
+  });
+  const workerWith = createWorker(next.handler, quiet);
+  await workerWith.fetch(new Request("https://staging.example/doctors"), withIndex, ctx());
+  const arGetsWith = withIndex.CONTENT.calls.filter(
+    (c) => c.op === "get" && String(c.key).startsWith("content/ar/"),
+  ).length;
+
+  assert.ok(arGetsWithout > 0, `baseline EN catalogue should read AR R2 (got ${arGetsWithout})`);
+  assert.equal(arGetsWith, 0, "with index, EN /doctors must not read content/ar/*");
+});
+
 test("an unseeded or incomplete bucket is a 503 with Retry-After, and Next is never called", async () => {
   const logged: string[] = [];
   const next = nextStub();

@@ -35,6 +35,7 @@ import { CATALOG_SEED_KEY } from "@/lib/catalog-seed";
 import { SOURCE_LOCALE, TARGET_LOCALES } from "@/lib/i18n/languages";
 import {
   AR_PUBLICATION_INDEX_ASSET_PATH,
+  clearArPublicationIndex,
   hasArPublicationIndex,
   installArPublicationIndex,
 } from "@/lib/i18n/ar-publication-index";
@@ -820,6 +821,9 @@ export async function ensureArPublicationIndexLoaded(
     }
     installArPublicationIndex(await response.text());
   } catch (error) {
+    // Corrupt or unexpected payloads must not leave a partial index that would
+    // omit valid hreflang. Clear and fall back to full AR hydrate + live gates.
+    clearArPublicationIndex();
     log(`ar publication index load failed: ${error instanceof Error ? error.message : String(error)}`);
   }
 }
