@@ -1,6 +1,6 @@
 # PR #45 — Production Readiness
 
-**Release candidate SHA:** `816e706538d99ade5a5ad8247e36a2cd6b173fe4` (update if follow-up commits land)  
+**Release candidate tip:** tip of `cursor/seo-pacemaker-nested-redirect-6064` (PR #45). Record the SHA at merge time with `git rev-parse HEAD`.  
 **PR:** https://github.com/azimjmi-bot/Gaf-healthcare/pull/45  
 **Base:** `release/stage4-rsc-prod` @ `8eabd88`  
 **Verdict:** **APPROVE for owner-controlled merge/deploy** after local validation below. Agent must not merge or deploy.
