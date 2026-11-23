@@ -112,6 +112,24 @@ if (!existsSync(englishSitemap) || statSync(englishSitemap).size === 0) {
 }
 console.log(`[cf:build] locale sitemaps are Worker assets under /_gaf/sitemaps/ (${statSync(englishSitemap).size} bytes for en)`);
 
+const arPublicationIndex = path.join(assets, "_gaf", "ar-publication-index.json");
+const packedArIndex = spawnSync(tsx, ["scripts/cloudflare/pack-ar-publication-index.ts", arPublicationIndex], {
+  cwd: root,
+  stdio: "inherit",
+  env: { ...process.env, NODE_OPTIONS: "--max-old-space-size=4096 --conditions=react-server" },
+});
+if (packedArIndex.status !== 0) {
+  console.error("[cf:build] ar publication index pack failed");
+  process.exit(packedArIndex.status ?? 1);
+}
+if (!existsSync(arPublicationIndex) || statSync(arPublicationIndex).size === 0) {
+  console.error("[cf:build] ar publication index asset was not written");
+  process.exit(1);
+}
+console.log(
+  `[cf:build] ar publication index is a Worker asset (${statSync(arPublicationIndex).size} bytes under /_gaf/)`,
+);
+
 const NON_ASCII = /[^\x00-\x7f]/g;
 const toEscape = (ch) => `\\u${ch.charCodeAt(0).toString(16).padStart(4, "0")}`;
 

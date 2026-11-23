@@ -5,6 +5,7 @@ import { FakeR2Bucket } from "@/lib/storage/fake-r2-bucket";
 import { GROUP_LAYOUT, MANIFEST_KEY, VERSION_KEY, type ContentManifest } from "@/lib/storage/r2";
 import { COST_ARTICLES_KEY } from "@/data/cost-articles/asset";
 import { CATALOG_SEED_KEY } from "@/lib/catalog-seed";
+import { clearArPublicationIndex } from "@/lib/i18n/ar-publication-index";
 import {
   ASSET_KEYS,
   assetsWithUploads,
@@ -117,7 +118,10 @@ function nextStub(status = 200) {
 
 const quiet = { log: () => {}, versionCheckIntervalMs: 0 };
 
-afterEach(() => setContentStorage(undefined));
+afterEach(() => {
+  setContentStorage(undefined);
+  clearArPublicationIndex();
+});
 
 // --------------------------------------------------------------- policy
 
@@ -290,7 +294,9 @@ test("storage is installed before routing, is the storage the app sees, and load
     ["public/ar-ro-directory.css", CATALOG_SEED_KEY, COST_ARTICLES_KEY].sort(),
   );
   assert.deepEqual(
-    (env.ASSETS as ReturnType<typeof fakeAssets>).calls.sort(),
+    (env.ASSETS as ReturnType<typeof fakeAssets>).calls
+      .filter((path) => path !== "/_gaf/ar-publication-index.json")
+      .sort(),
     ["/ar-ro-directory.css", CATALOG_PATH, COST_ARTICLES_PATH].sort(),
   );
   assert.equal(env.CONTENT.calls.some((c) => c.key === CATALOG_SEED_KEY), false, "the catalog is never fetched from R2");
@@ -300,6 +306,82 @@ test("storage is installed before routing, is the storage the app sees, and load
   assert.equal(second.status, 200);
   assert.ok(storage.isHydrated("cms"), "a CMS request adds the CMS-only group");
   assert.equal(worker.storage(), storage, "one storage per isolate");
+});
+
+test("English catalogue routes skip AR hydrate when the packed publication index is present", async () => {
+  const index = JSON.stringify({
+    version: 1,
+    generatedAt: "2026-11-22T00:00:00.000Z",
+    paths: ["/", "/blogs/x", "/doctors"],
+  });
+  const env = makeEnv({
+    ASSETS: fakeAssets({ ...DEPLOY_ASSETS, "/_gaf/ar-publication-index.json": index }),
+  });
+  const next = nextStub();
+  const worker = createWorker(next.handler, quiet);
+  const response = await worker.fetch(new Request("https://staging.example/blogs/x"), env, ctx());
+  assert.equal(response.status, 200);
+  const storage = worker.storage();
+  assert.ok(storage);
+  assert.equal(storage.isHydrated("en"), true);
+  assert.equal(storage.isHydrated("ar"), false, "English catalogue miss must not pull Arabic R2");
+
+  const arabic = await worker.fetch(new Request("https://staging.example/ar/blogs/x"), env, ctx());
+  assert.equal(arabic.status, 200);
+  assert.equal(storage.isHydrated("ar"), true, "Arabic catalogue routes still hydrate AR");
+});
+
+test("missing or corrupt AR publication index falls back to full EN catalogue AR hydrate", async () => {
+  const next = nextStub();
+  const missing = makeEnv({ ASSETS: fakeAssets({ ...DEPLOY_ASSETS }) });
+  const workerMissing = createWorker(next.handler, quiet);
+  assert.equal(
+    (await workerMissing.fetch(new Request("https://staging.example/doctors"), missing, ctx())).status,
+    200,
+  );
+  assert.equal(workerMissing.storage()?.isHydrated("ar"), true, "missing index → full AR hydrate");
+
+  clearArPublicationIndex();
+  const corrupt = makeEnv({
+    ASSETS: fakeAssets({
+      ...DEPLOY_ASSETS,
+      "/_gaf/ar-publication-index.json": '{"version":1,"paths":null}',
+    }),
+  });
+  const workerCorrupt = createWorker(next.handler, quiet);
+  assert.equal(
+    (await workerCorrupt.fetch(new Request("https://staging.example/hospitals"), corrupt, ctx())).status,
+    200,
+  );
+  assert.equal(workerCorrupt.storage()?.isHydrated("ar"), true, "corrupt index → full AR hydrate");
+});
+
+test("lab: EN catalogue cold miss R2 object reads drop when AR index is present", async () => {
+  const next = nextStub();
+  const without = makeEnv();
+  const workerWithout = createWorker(next.handler, quiet);
+  await workerWithout.fetch(new Request("https://staging.example/doctors"), without, ctx());
+  const arGetsWithout = without.CONTENT.calls.filter(
+    (c) => c.op === "get" && String(c.key).startsWith("content/ar/"),
+  ).length;
+
+  clearArPublicationIndex();
+  const index = JSON.stringify({
+    version: 1,
+    generatedAt: "2026-11-22T00:00:00.000Z",
+    paths: ["/doctors"],
+  });
+  const withIndex = makeEnv({
+    ASSETS: fakeAssets({ ...DEPLOY_ASSETS, "/_gaf/ar-publication-index.json": index }),
+  });
+  const workerWith = createWorker(next.handler, quiet);
+  await workerWith.fetch(new Request("https://staging.example/doctors"), withIndex, ctx());
+  const arGetsWith = withIndex.CONTENT.calls.filter(
+    (c) => c.op === "get" && String(c.key).startsWith("content/ar/"),
+  ).length;
+
+  assert.ok(arGetsWithout > 0, `baseline EN catalogue should read AR R2 (got ${arGetsWithout})`);
+  assert.equal(arGetsWith, 0, "with index, EN /doctors must not read content/ar/*");
 });
 
 test("an unseeded or incomplete bucket is a 503 with Retry-After, and Next is never called", async () => {
