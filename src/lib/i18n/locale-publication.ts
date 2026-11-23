@@ -27,6 +27,25 @@ import { facetIsPublished, localeIsPublished } from "@/lib/i18n/locale-gating";
 import { canonicalFacetPath } from "@/lib/i18n/facet-canonical";
 import { arPathIsIndexedPublished, hasArPublicationIndex } from "@/lib/i18n/ar-publication-index";
 import { stripLocalePrefix } from "@/lib/i18n/path";
+import { contentStorage } from "@/lib/storage";
+
+/**
+ * When the packed AR publication index is loaded and the Arabic edition is
+ * not hydrated, English surfaces (language switcher, hreflang, renderability
+ * probes) must answer from the index. Reading `content/ar/catalog-cms.json`
+ * in that state throws StorageHydrationError (PR #49 production incident).
+ *
+ * Backends without group tracking (fs/memory) prefer the index whenever it is
+ * installed so unit tests stay coherent with the Worker skip-hydrate path.
+ * When the R2 backend has already hydrated `ar` (Arabic routes), live gates
+ * win so non-canonical published facets remain accurate.
+ */
+export function useArPublicationIndexForMetadata(): boolean {
+  if (!hasArPublicationIndex()) return false;
+  const storage = contentStorage() as { isHydrated?: (group: string) => boolean };
+  if (typeof storage.isHydrated !== "function") return true;
+  return !storage.isHydrated("ar");
+}
 
 /**
  * Three outcomes, not two.
@@ -259,11 +278,24 @@ export function localePageState(locale: AppLocale, path: string): LocalePageStat
 
 /** True only for pages that may be indexed, listed and linked in hreflang. */
 export function localePathIsPublished(locale: AppLocale, path: string) {
+  // English catalogue Workers skip AR hydrate when the index is present.
+  // Publication probes on that surface (especially the language switcher in
+  // `layout.tsx` / `site-header.tsx`) must not touch the Arabic catalog.
+  if (locale === "ar" && useArPublicationIndexForMetadata()) {
+    return arPathIsIndexedPublished(path);
+  }
   return localePageState(locale, path) === "published";
 }
 
 /** True for anything that should render rather than 404. */
 export function localePageIsRenderable(locale: AppLocale, path: string) {
+  if (locale === "ar" && useArPublicationIndexForMetadata()) {
+    // Without AR hydrate we cannot distinguish noindex from missing. The
+    // index only lists published self-canonical paths; treat those as the
+    // only AR URLs the English surface may treat as renderable equivalents.
+    // Arabic routes hydrate AR and never take this branch.
+    return arPathIsIndexedPublished(path);
+  }
   return localePageState(locale, path) !== "missing";
 }
 
@@ -283,10 +315,11 @@ export function publishedLocalesForPath(path: string) {
   // would force the Worker to hydrate editions that hreflang will discard.
   return LOCALES.filter((locale) => {
     if (isTargetLocale(locale) && !localeIsPublished(locale)) return false;
-    // When the build-time AR publication index is loaded (Workers), English
-    // catalogue hreflang must not force a full Arabic R2 hydrate. The index
-    // already stores only published + self-canonical AR paths.
-    if (locale === "ar" && hasArPublicationIndex()) {
+    // When the index is loaded and AR is not hydrated, hreflang membership
+    // comes from the index (published ∩ self-canonical). When AR is hydrated
+    // (Arabic routes), use live gates so non-canonical published facets stay
+    // accurate.
+    if (locale === "ar" && useArPublicationIndexForMetadata()) {
       return arPathIsIndexedPublished(path);
     }
     return localePathIsPublished(locale, path) && canonicalFacetPath(path, locale) === path;
