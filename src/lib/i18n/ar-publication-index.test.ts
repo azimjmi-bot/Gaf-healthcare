@@ -19,9 +19,36 @@ test("installArPublicationIndex enables indexed lookups and clears cleanly", () 
   assert.equal(hasArPublicationIndex(), true);
   assert.equal(arPathIsIndexedPublished("/"), true);
   assert.equal(arPathIsIndexedPublished("/treatments/pacemaker-implantation-in-india"), true);
+  assert.equal(arPathIsIndexedPublished("/doctors/India"), true);
+  assert.equal(arPathIsIndexedPublished("/doctors/india"), true);
   assert.equal(arPathIsIndexedPublished("/treatments/missing"), false);
   clearArPublicationIndex();
   assert.equal(hasArPublicationIndex(), false);
+});
+
+test("arPathIsIndexedPublished matches Title-Case pretty catalog paths against lowercase packed index", () => {
+  clearArPublicationIndex();
+  installArPublicationIndex(
+    buildArPublicationIndexDocument([
+      "/costs/india/radiation-oncology",
+      "/costs/india/medical-oncology/chemotherapy",
+      "/doctors/india/delhi-ncr",
+    ]),
+  );
+  assert.equal(arPathIsIndexedPublished("/costs/India/Radiation-Oncology"), true);
+  assert.equal(arPathIsIndexedPublished("/costs/India/Medical-Oncology/Chemotherapy"), true);
+  assert.equal(arPathIsIndexedPublished("/doctors/India/Delhi-NCR"), true);
+  assert.deepEqual(
+    publishedLocalesForPath("/costs/India/Radiation-Oncology"),
+    ["en", "ar"],
+    "Title-Case cost catalog paths must still resolve AR hreflang from lowercase index",
+  );
+  assert.deepEqual(
+    publishedLocalesForPath("/costs/India/Medical-Oncology/Chemotherapy"),
+    ["en", "ar"],
+    "Title-Case procedure cost paths must still resolve AR hreflang from lowercase index",
+  );
+  clearArPublicationIndex();
 });
 
 test("publishedLocalesForPath uses the AR index when loaded and does not require live AR hydrate", () => {
