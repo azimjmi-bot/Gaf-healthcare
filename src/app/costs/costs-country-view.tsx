@@ -17,41 +17,18 @@ import { JsonLd } from "@/components/json-ld";
 import { PseoTrust } from "@/components/pseo-trust";
 import type { CatalogQuery } from "@/lib/catalog";
 import {
-  costCountryPageIsPublishable,
   resolveCostCountryPage,
 } from "@/lib/cost-country-page";
 import { costsFilterPath } from "@/lib/catalog-links";
 import { costDestinationRows } from "@/lib/cost-article";
 import { costCountryRecords, costPlaceLabel } from "@/lib/cost-geo";
 import {
-  absoluteUrl,
   breadcrumbJsonLd,
   faqJsonLd,
   medicalWebPageJsonLd,
 } from "@/lib/seo";
 import type { AppLocale } from "@/lib/i18n/languages";
-import type { Metadata } from "next";
-
-export function costCountryMetadata(query: CatalogQuery): Metadata | undefined {
-  const resolved = resolveCostCountryPage(query);
-  if (!resolved) return undefined;
-  const { record, city, range, stay, path, heading, brief, specialty } = resolved;
-  const page = city?.editorial.page ?? record.row.page;
-  const place = costPlaceLabel(record.label, city?.city.name);
-  const title = page?.seoTitle ?? `${heading}: ${specialty} Prices & What to Confirm`;
-  const description =
-    page?.seoDescription ??
-    `${brief} planning cost in ${place}: ${range}, ${stay.toLowerCase()}. ${record.row.positioning ?? "Private self-pay market"}. Compare against the India band before you ask for a written quotation.`;
-  const url = absoluteUrl(path);
-  return {
-    title,
-    description,
-    robots: costCountryPageIsPublishable(resolved) ? undefined : { index: false, follow: true },
-    alternates: { canonical: url },
-    openGraph: { title, description, url, type: "website" },
-    twitter: { card: "summary_large_image", title, description },
-  };
-}
+export { costCountryMetadata } from "@/app/costs/country-metadata";
 
 function P({ children }: { children: React.ReactNode }) {
   return <p className="prose-gaf mt-4 leading-relaxed">{children}</p>;

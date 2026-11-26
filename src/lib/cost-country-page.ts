@@ -65,7 +65,7 @@ export function resolveCostCountryPage(query: CatalogQuery): CostCountryPage | u
   const city = query.city ? costCityRecord(article, record.country.name, query.city) : undefined;
   if (query.city && !city) return undefined;
 
-  const specialty = query.specialty || catalogSpecialtyName(treatment);
+  const specialty = catalogSpecialtyName(treatment);
   const brief = article.briefName || article.procedure;
   const cityPage = city?.editorial.page;
   const heading =
