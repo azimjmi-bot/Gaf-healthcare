@@ -31,15 +31,18 @@ export function withLightLocaleMetadata(
   if ([...states.values()].some((state) => state === undefined)) return null;
   const self = states.get(locale);
   const selfPublished = self === "published";
+  const explicitNoindex =
+    typeof meta.robots === "string" ? /\bnoindex\b/i.test(meta.robots) : meta.robots?.index === false;
   // Cost index paths are not doctor or hospital facets, so they stay self-canonical.
   const segments = englishPath.split("?")[0]?.split("/").filter(Boolean) ?? [];
   if (segments[0] === "doctors" || segments[0] === "hospitals") return null;
   const url = localizedAbsoluteUrl(englishPath, locale);
+  const inLanguageSet = selfPublished && !explicitNoindex;
   const published = new Set(
-    selfPublished ? availableLocales.filter((candidate) => states.get(candidate) === "published") : [],
+    inLanguageSet ? availableLocales.filter((candidate) => states.get(candidate) === "published") : [],
   );
   const alternateLocales = availableLocales.filter((candidate) => candidate !== locale && published.has(candidate));
-  const languages = selfPublished ? hreflangLanguages(englishPath, availableLocales.filter((candidate) => published.has(candidate))) : {};
+  const languages = inLanguageSet ? hreflangLanguages(englishPath, availableLocales.filter((candidate) => published.has(candidate))) : {};
   const og = meta.openGraph ? { ...meta.openGraph } : {};
   const twitter = meta.twitter ? { ...meta.twitter } : {};
   const robots = selfPublished ? meta.robots : { index: false, follow: true };

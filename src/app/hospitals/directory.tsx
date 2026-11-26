@@ -25,7 +25,7 @@ import {
 import { absoluteUrl } from "@/lib/seo";
 import { documentId } from "@/lib/jsonld";
 import { LOCALES } from "@/lib/i18n/languages";
-import { withLocaleMetadata } from "@/lib/i18n/metadata";
+import { withLocaleMetadata, withoutHreflang } from "@/lib/i18n/metadata";
 import { localePageIsRenderable } from "@/lib/i18n/locale-publication";
 import { hospitalsPath } from "@/lib/catalog-links";
 import type { Metadata } from "next";
@@ -47,7 +47,7 @@ export async function hospitalsDirectoryMetadata(
     );
     if (!hub) {
       const fallback = await catalogPageMetadata("hospitals", query);
-      return { ...fallback, robots: { index: false, follow: true } };
+      return withoutHreflang({ ...fallback, robots: { index: false, follow: true } });
     }
     const indexable = hospitalSpecialtyPageIndexable(page, hub.paging.total);
     return withLocaleMetadata(
