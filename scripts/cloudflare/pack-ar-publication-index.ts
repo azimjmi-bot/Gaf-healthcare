@@ -29,7 +29,7 @@ for (const entry of entries) {
       ? "/"
       : loc.slice(`${ORIGIN}/ar`.length) || "/";
   if (!localePathIsPublished("ar", englishPath)) continue;
-  if (canonicalFacetPath(englishPath, "ar") !== englishPath) continue;
+  if (canonicalFacetPath(englishPath, "ar").toLowerCase() !== englishPath.toLowerCase()) continue;
   paths.push(englishPath);
 }
 

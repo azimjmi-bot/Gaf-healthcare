@@ -51,6 +51,24 @@ test("arPathIsIndexedPublished matches Title-Case pretty catalog paths against l
   clearArPublicationIndex();
 });
 
+test("canonicalFacetPath case normalization includes lowercase doctor and hospital sitemap paths", async () => {
+  const { canonicalFacetPath } = await import("@/lib/i18n/facet-canonical");
+  for (const lowercasePath of [
+    "/doctors/india",
+    "/doctors/india/delhi-ncr",
+    "/doctors/india/radiation-oncology",
+    "/doctors/india/delhi-ncr/radiation-oncology",
+    "/hospitals/india",
+    "/hospitals/india/delhi-ncr",
+  ]) {
+    assert.equal(
+      canonicalFacetPath(lowercasePath, "ar").toLowerCase(),
+      lowercasePath,
+      `${lowercasePath} must remain self-canonical across case`,
+    );
+  }
+});
+
 test("publishedLocalesForPath uses the AR index when loaded and does not require live AR hydrate", () => {
   clearArPublicationIndex();
   installArPublicationIndex(buildArPublicationIndexDocument(["/treatments/pacemaker-implantation-in-india"]));

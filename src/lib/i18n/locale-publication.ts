@@ -347,6 +347,9 @@ export function publishedLocalesForPath(path: string) {
     if (locale === SOURCE_LOCALE && !sourceLocaleCostSpecialtyIsIndexable(path)) {
       return false;
     }
-    return localePathIsPublished(locale, path) && canonicalFacetPath(path, locale) === path;
+    return (
+      localePathIsPublished(locale, path) &&
+      canonicalFacetPath(path, locale).toLowerCase() === path.toLowerCase()
+    );
   });
 }

@@ -56,7 +56,7 @@ export function withLocaleMetadata(
   // englishPath unchanged for English and for anything that is not a duplicate
   // facet; see facet-canonical.ts for why English is excluded.
   const canonicalPath = canonicalFacetPath(englishPath, locale);
-  const canonicalizedAway = canonicalPath !== englishPath;
+  const canonicalizedAway = canonicalPath.toLowerCase() !== englishPath.toLowerCase();
   const enUrl = localizedAbsoluteUrl(englishPath, SOURCE_LOCALE);
   const selfUrl = localizedAbsoluteUrl(englishPath, locale);
   const explicitCanonical =
