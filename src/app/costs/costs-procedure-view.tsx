@@ -9,14 +9,12 @@ import { JsonLd } from "@/components/json-ld";
 import { cityResultCounts, filterTreatments, type CatalogQuery } from "@/lib/catalog";
 import { costsFilterPath } from "@/lib/catalog-links";
 import { catalogSpecialtyName, cityEditorial, doctorsToConsiderHeading, hospitalsToConsiderHeading, interpolateCostArticle } from "@/lib/cost-article";
-import { CostsCountryView, costCountryMetadata } from "@/app/costs/costs-country-view";
+import { CostsCountryView } from "@/app/costs/costs-country-view";
+export { costsProcedureMetadata } from "@/app/costs/procedure-metadata";
 import { hospitals, treatments } from "@/lib/data";
 import { getSpecialty, isPrimaryCountry } from "@/lib/taxonomy";
 import type { Treatment } from "@/lib/treatments";
 import {
-  absoluteUrl,
-  catalogMetadata,
-  costArticleMetadata,
   breadcrumbJsonLd,
   doctorItemListJsonLd,
   faqJsonLd,
@@ -24,65 +22,12 @@ import {
   medicalWebPageJsonLd,
 } from "@/lib/seo";
 import { getRequestLocale } from "@/lib/i18n/request";
-import type { Metadata } from "next";
 
 function treatmentForQuery(sheet: Treatment, query: CatalogQuery): Treatment {
   if (!query.specialty) return sheet;
   const specialty = getSpecialty(query.specialty);
   if (!specialty || !sheet.specialtySlugs.includes(specialty.slug)) return sheet;
   return { ...sheet, category: specialty.name, specialtySlug: specialty.slug };
-}
-
-export async function costsProcedureMetadata(query: CatalogQuery): Promise<Metadata> {
-  const locale = await getRequestLocale();
-  if (locale === "ar") {
-    const { arabicCostProcedureMetadata } = await import("@/lib/i18n/ar-cost-content");
-    return arabicCostProcedureMetadata(query);
-  }
-  const base = catalogMetadata("treatments", query);
-  const country = costCountryMetadata(query);
-  if (country) return country;
-  const source = query.procedure ? treatments.find((t) => t.name === query.procedure) : undefined;
-  if (!source) return base;
-  const sheet = treatmentForQuery(source, query);
-  const article = costArticleFor(sheet);
-  if (article && query.city) {
-    const cityPage = cityEditorial(article, query.city)?.page;
-    if (cityPage) {
-      const path = costsFilterPath({
-        destination: query.destination || "India",
-        city: query.city,
-        specialty: query.specialty || catalogSpecialtyName(sheet),
-        procedure: sheet.name,
-      });
-      return costArticleMetadata(
-        sheet,
-        {
-          seoTitle: cityPage.seoTitle,
-          seoDescription: cityPage.seoDescription,
-          lastUpdated: article.lastUpdated,
-        },
-        { path, image: article.figures?.[0]?.src, imageAlt: article.figures?.[0]?.alt },
-      );
-    }
-  }
-  return {
-    ...(article
-      ? costArticleMetadata(sheet, interpolateCostArticle(article, sheet), {
-          image: article.figures?.[0]?.src,
-          imageAlt: article.figures?.[0]?.alt,
-        })
-      : base),
-    alternates: {
-      canonical: absoluteUrl(
-        costsFilterPath({
-          destination: query.destination,
-          specialty: query.specialty || catalogSpecialtyName(sheet),
-          procedure: sheet.name,
-        }),
-      ),
-    },
-  };
 }
 
 export async function CostsProcedureView({ query }: { query: CatalogQuery }) {
