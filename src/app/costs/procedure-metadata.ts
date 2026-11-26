@@ -1,7 +1,9 @@
+import type { Metadata } from "next";
+import { costCountryMetadata } from "@/app/costs/country-metadata";
 import { getCostArticle } from "@/data/cost-articles";
 import type { CatalogQuery } from "@/lib/catalog";
-import { costsFilterPath } from "@/lib/catalog-links";
-import { catalogSpecialtyName, cityEditorial, interpolateCostArticle } from "@/lib/cost-article";
+import { catalogSpecialtyName, costsFilterPath } from "@/lib/catalog-links";
+import { cityEditorial, interpolateCostArticle } from "@/lib/cost-article";
 import { treatments } from "@/lib/data";
 import type { AppLocale } from "@/lib/i18n/languages";
 import { getRequestLocale } from "@/lib/i18n/request";
@@ -9,23 +11,22 @@ import { absoluteUrl, catalogMetadata, costArticleMetadata } from "@/lib/seo";
 import { getSpecialty } from "@/lib/taxonomy";
 import { withContextualTreatmentImages } from "@/lib/treatment-images";
 import type { Treatment } from "@/lib/treatments";
-import { costCountryMetadata } from "@/app/costs/country-metadata";
-import type { Metadata } from "next";
+
+function costArticleFor(treatment: Treatment) {
+  const cmsOverrides = Boolean(
+    treatment.replaceGuide && treatment.blocks && treatment.blocks.length > 0,
+  );
+  if (cmsOverrides) return undefined;
+  const raw = getCostArticle(treatment.slug);
+  if (!raw) return undefined;
+  return withContextualTreatmentImages(interpolateCostArticle(raw, treatment), treatment);
+}
 
 function treatmentForQuery(sheet: Treatment, query: CatalogQuery): Treatment {
   if (!query.specialty) return sheet;
   const specialty = getSpecialty(query.specialty);
   if (!specialty || !sheet.specialtySlugs.includes(specialty.slug)) return sheet;
   return { ...sheet, category: specialty.name, specialtySlug: specialty.slug };
-}
-
-function costArticleForMetadata(treatment: Treatment) {
-  const raw = getCostArticle(treatment.slug);
-  const cmsOverrides = Boolean(
-    treatment.replaceGuide && treatment.blocks && treatment.blocks.length > 0,
-  );
-  if (!raw || cmsOverrides) return undefined;
-  return withContextualTreatmentImages(interpolateCostArticle(raw, treatment), treatment);
 }
 
 export async function costsProcedureMetadata(
@@ -43,15 +44,16 @@ export async function costsProcedureMetadata(
   const source = query.procedure ? treatments.find((t) => t.name === query.procedure) : undefined;
   if (!source) return base;
   const sheet = treatmentForQuery(source, query);
-  const article = costArticleForMetadata(sheet);
+  const canonicalSpecialty = catalogSpecialtyName(source);
+  const article = costArticleFor(sheet);
   if (article && query.city) {
     const cityPage = cityEditorial(article, query.city)?.page;
     if (cityPage) {
       const path = costsFilterPath({
         destination: query.destination || "India",
         city: query.city,
-        specialty: query.specialty || catalogSpecialtyName(sheet),
-        procedure: sheet.name,
+        specialty: canonicalSpecialty,
+        procedure: source.name,
       });
       return costArticleMetadata(
         sheet,
@@ -64,21 +66,21 @@ export async function costsProcedureMetadata(
       );
     }
   }
+  const canonicalPath = costsFilterPath({
+    destination: query.destination,
+    specialty: canonicalSpecialty,
+    procedure: source.name,
+  });
+  const canonicalUrl = absoluteUrl(canonicalPath);
+  const meta = article
+    ? costArticleMetadata(sheet, interpolateCostArticle(article, sheet), {
+        image: article.figures?.[0]?.src,
+        imageAlt: article.figures?.[0]?.alt,
+      })
+    : base;
   return {
-    ...(article
-      ? costArticleMetadata(sheet, interpolateCostArticle(article, sheet), {
-          image: article.figures?.[0]?.src,
-          imageAlt: article.figures?.[0]?.alt,
-        })
-      : base),
-    alternates: {
-      canonical: absoluteUrl(
-        costsFilterPath({
-          destination: query.destination,
-          specialty: query.specialty || catalogSpecialtyName(sheet),
-          procedure: sheet.name,
-        }),
-      ),
-    },
+    ...meta,
+    alternates: { canonical: canonicalUrl },
+    openGraph: { ...meta.openGraph, url: canonicalUrl },
   };
 }

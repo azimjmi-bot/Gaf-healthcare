@@ -1,12 +1,13 @@
-import type { CatalogQuery } from "@/lib/catalog-options";
-import { costsFilterPath } from "@/lib/catalog-links";
+import type { Metadata } from "next";
 import { catalogMetadata } from "@/lib/catalog-metadata";
+import { costsFilterPath } from "@/lib/catalog-links";
+import type { CatalogQuery } from "@/lib/catalog-options";
 import { LOCALES, SOURCE_LOCALE, type AppLocale } from "@/lib/i18n/languages";
 import { withLightLocaleMetadata } from "@/lib/i18n/locale-metadata-light";
 import { getRequestLocale } from "@/lib/i18n/request";
 import { prettyCatalogPath } from "@/lib/pretty-catalog-path";
+import { absoluteUrl } from "@/lib/seo-url";
 import { getCity, getSpecialty, isPrimaryCountry, toSlug } from "@/lib/taxonomy";
-import type { Metadata } from "next";
 
 async function costsPageIsRenderable(locale: AppLocale, path: string) {
   // English catalog pages are published before any treatment catalog is read.
@@ -48,21 +49,21 @@ export async function costsDirectoryMetadata(
     if (locale === "ar") return meta;
     // Country views already carry their own canonical and country-specific copy.
     if (!isPrimaryCountry(query.destination)) return meta;
-    // Country-level procedure pages chose their own canonical but emitted no
-    // hreflang. The path they canonicalise to is the one this query builds.
-    if (!query.city) return withLocaleMetadata(meta, costsFilterPath(query), locale, LOCALES);
-    const wrapped = await directoryCatalogMetadata(query, locale);
-    const canonicalMismatch =
-      Boolean(meta.alternates?.canonical) &&
-      String(meta.alternates?.canonical) !== String(wrapped.alternates?.canonical);
-    const combined = {
+    const requestedPath = costsFilterPath(query);
+    const requestedUrl = absoluteUrl(requestedPath);
+    const canonicalUrl =
+      typeof meta.alternates?.canonical === "string"
+        ? meta.alternates.canonical
+        : requestedUrl;
+    if (canonicalUrl === requestedUrl) {
+      const localized = withLocaleMetadata(meta, requestedPath, locale, LOCALES);
+      return isNoindexRobots(localized.robots) ? withoutHreflang(localized) : localized;
+    }
+    return withoutHreflang({
       ...meta,
-      alternates: wrapped.alternates,
-      openGraph: { ...meta.openGraph, ...wrapped.openGraph },
-    };
-    return canonicalMismatch || isNoindexRobots(meta.robots)
-      ? withoutHreflang(combined)
-      : combined;
+      alternates: { canonical: canonicalUrl, languages: {} },
+      openGraph: { ...meta.openGraph, url: canonicalUrl, alternateLocale: [] },
+    });
   }
   const wrapped = await directoryCatalogMetadata(query, locale);
   const specialty = query.specialty ? getSpecialty(query.specialty) : undefined;

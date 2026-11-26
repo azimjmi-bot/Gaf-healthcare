@@ -1,11 +1,11 @@
-import type { CatalogQuery } from "@/lib/catalog";
+import type { Metadata } from "next";
 import {
   costCountryPageIsPublishable,
   resolveCostCountryPage,
 } from "@/lib/cost-country-page";
 import { costPlaceLabel } from "@/lib/cost-geo";
+import type { CatalogQuery } from "@/lib/catalog";
 import { absoluteUrl } from "@/lib/seo";
-import type { Metadata } from "next";
 
 export function costCountryMetadata(query: CatalogQuery): Metadata | undefined {
   const resolved = resolveCostCountryPage(query);

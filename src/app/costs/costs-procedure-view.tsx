@@ -8,9 +8,8 @@ import { CostArticleSection, costArticleData, costArticleFor } from "@/component
 import { JsonLd } from "@/components/json-ld";
 import { cityResultCounts, filterTreatments, type CatalogQuery } from "@/lib/catalog";
 import { costsFilterPath } from "@/lib/catalog-links";
-import { catalogSpecialtyName, cityEditorial, doctorsToConsiderHeading, hospitalsToConsiderHeading, interpolateCostArticle } from "@/lib/cost-article";
+import { catalogSpecialtyName, cityEditorial, doctorsToConsiderHeading, hospitalsToConsiderHeading } from "@/lib/cost-article";
 import { CostsCountryView } from "@/app/costs/costs-country-view";
-export { costsProcedureMetadata } from "@/app/costs/procedure-metadata";
 import { hospitals, treatments } from "@/lib/data";
 import { getSpecialty, isPrimaryCountry } from "@/lib/taxonomy";
 import type { Treatment } from "@/lib/treatments";
@@ -22,6 +21,7 @@ import {
   medicalWebPageJsonLd,
 } from "@/lib/seo";
 import { getRequestLocale } from "@/lib/i18n/request";
+export { costsProcedureMetadata } from "@/app/costs/procedure-metadata";
 
 function treatmentForQuery(sheet: Treatment, query: CatalogQuery): Treatment {
   if (!query.specialty) return sheet;

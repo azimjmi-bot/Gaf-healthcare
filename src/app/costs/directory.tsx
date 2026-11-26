@@ -22,7 +22,6 @@ import { directoryEmpty, directoryIntro, resultLabel } from "@/lib/i18n/director
 import { taxonomyLabel } from "@/lib/i18n/taxonomy-labels";
 import { getRequestLocale } from "@/lib/i18n/request";
 import { getCity, getSpecialty, toSlug } from "@/lib/taxonomy";
-
 export { costsDirectoryMetadata } from "@/app/costs/metadata";
 
 async function costsPageIsRenderable(locale: AppLocale, path: string) {

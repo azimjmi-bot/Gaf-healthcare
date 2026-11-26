@@ -26,7 +26,6 @@ import {
   medicalWebPageJsonLd,
 } from "@/lib/seo";
 import type { AppLocale } from "@/lib/i18n/languages";
-
 export { costCountryMetadata } from "@/app/costs/country-metadata";
 
 function P({ children }: { children: React.ReactNode }) {
