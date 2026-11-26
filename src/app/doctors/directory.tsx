@@ -24,7 +24,7 @@ import { doctorsForLocale } from "@/lib/locale-catalog";
 import { absoluteUrl, faqJsonLd } from "@/lib/seo";
 import { catalogPageMetadata } from "@/lib/i18n/page-meta";
 import { LOCALES } from "@/lib/i18n/languages";
-import { withLocaleMetadata } from "@/lib/i18n/metadata";
+import { withLocaleMetadata, withoutHreflang } from "@/lib/i18n/metadata";
 import { localizeFaqs, localizeMessages } from "@/lib/i18n/localize";
 import { directoryEmpty, directoryIntro, resultLabel } from "@/lib/i18n/directory-copy";
 import { arabicDoctorHub } from "@/lib/i18n/arabic-hub";
@@ -144,7 +144,7 @@ export async function doctorsDirectoryMetadata(
   }
   const wrapped = await catalogPageMetadata("doctors", query);
   if (!doctorListingIsIndexable(extras, page)) {
-    return { ...wrapped, robots: { index: false, follow: true } };
+    return withoutHreflang({ ...wrapped, robots: { index: false, follow: true } });
   }
   return wrapped;
 }

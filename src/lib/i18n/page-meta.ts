@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { prettyCatalogPath, type CatalogBasePath } from "@/lib/pretty-catalog-path";
 import type { CatalogQuery } from "@/lib/catalog-options";
-import { LOCALES } from "@/lib/i18n/languages";
-import { withLocaleMetadata } from "@/lib/i18n/metadata";
+import { LOCALES, type AppLocale } from "@/lib/i18n/languages";
+import { withLocaleMetadata, withoutHreflang } from "@/lib/i18n/metadata";
 import { getRequestLocale } from "@/lib/i18n/request";
 import { getCostArticle } from "@/data/cost-articles";
 import { getTreatment } from "@/lib/data";
@@ -27,10 +27,10 @@ export async function hospitalPageMetadata(slug: string): Promise<Metadata> {
   return withLocaleMetadata(hospitalMetadata(hospital, locale), `/hospitals/${slug}`, locale, LOCALES);
 }
 
-export async function costPageMetadata(slug: string): Promise<Metadata> {
+export async function costPageMetadata(slug: string, localeOverride?: AppLocale): Promise<Metadata> {
   const treatment = getTreatment(slug);
   if (!treatment) return { title: "Treatment Cost" };
-  const locale = await getRequestLocale();
+  const locale = localeOverride ?? (await getRequestLocale());
   const article = getCostArticle(treatment.slug);
   const english = article
     ? costArticleMetadata(treatment, interpolateCostArticle(article, treatment), {
@@ -39,11 +39,15 @@ export async function costPageMetadata(slug: string): Promise<Metadata> {
       })
     : treatmentMetadata(treatment);
   // The flat sheet keeps serving, but the country path is the canonical address.
-  return withLocaleMetadata(english, costPath(treatment.name), locale, LOCALES);
+  // A non-self-canonical alias must not emit hreflang links.
+  return withoutHreflang(withLocaleMetadata(english, costPath(treatment.name), locale, LOCALES));
 }
 
-export async function blogPageMetadata(post: NonNullable<ReturnType<typeof getPost>>): Promise<Metadata> {
-  const locale = await getRequestLocale();
+export async function blogPageMetadata(
+  post: NonNullable<ReturnType<typeof getPost>>,
+  localeOverride?: AppLocale,
+): Promise<Metadata> {
+  const locale = localeOverride ?? (await getRequestLocale());
   const title = post.seoTitle || post.title;
   const description = post.seoDescription || post.excerpt;
   const keywords = post.keywords?.length ? post.keywords : post.tags;

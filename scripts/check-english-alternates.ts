@@ -19,7 +19,7 @@ import { englishPathOf, mapLimit, publishedArabicPaths } from "./published-arabi
 const BASE = process.env.BASE_URL ?? "http://127.0.0.1:43127";
 const LOCALE_PREFIXED = /^https:\/\/gaf\.healthcare\/(ru|fr|ar|sw)(\/|$)/;
 
-type Head = { status: number; canonical: string | null; languages: Record<string, string> };
+type Head = { status: number; noindex: boolean; canonical: string | null; languages: Record<string, string> };
 
 async function readHead(path: string): Promise<Head> {
   const response = await fetch(BASE + path);
@@ -30,8 +30,10 @@ async function readHead(path: string): Promise<Head> {
   for (const match of head.matchAll(/<link rel="alternate" hrefLang="([^"]+)" href="([^"]+)"/g)) {
     languages[match[1]] = match[2];
   }
+  const robots = head.match(/<meta name="robots" content="([^"]+)"/)?.[1] ?? "";
   return {
     status: response.status,
+    noindex: /\bnoindex\b/i.test(robots),
     canonical: head.match(/<link rel="canonical" href="([^"]+)"/)?.[1] ?? null,
     languages,
   };
@@ -171,17 +173,27 @@ async function sweepPublishedArabic() {
     }
 
     // hreflang has to be reciprocal or Google discards the whole block.
+    // When the English counterpart is noindex, neither side may point hreflang at it.
     if (arabic.languages.ar !== selfCanonical) {
       problems.push(`Arabic page does not point hreflang=ar at itself`);
     }
-    if (english.languages.ar !== selfCanonical) {
-      problems.push(`English page does not advertise ar -> ${selfCanonical}`);
-    }
-    if (arabic.languages.en !== englishUrl) {
-      problems.push(`Arabic page does not point hreflang=en at the English URL`);
-    }
-    if (arabic.languages["x-default"] !== arabic.languages.en) {
-      problems.push("x-default does not match the en alternate");
+    if (english.noindex) {
+      if (Object.keys(english.languages).length > 0) {
+        problems.push(`noindex English page still emits hreflang`);
+      }
+      if (arabic.languages.en || arabic.languages["x-default"]) {
+        problems.push(`Arabic page points hreflang=en/x-default at a noindex English page`);
+      }
+    } else {
+      if (english.languages.ar !== selfCanonical) {
+        problems.push(`English page does not advertise ar -> ${selfCanonical}`);
+      }
+      if (arabic.languages.en !== englishUrl) {
+        problems.push(`Arabic page does not point hreflang=en at the English URL`);
+      }
+      if (arabic.languages["x-default"] !== arabic.languages.en) {
+        problems.push("x-default does not match the en alternate");
+      }
     }
     return { arabicPath, problems };
   });

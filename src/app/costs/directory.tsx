@@ -52,7 +52,7 @@ export async function costsDirectoryMetadata(query: CatalogQuery): Promise<Metad
   }
   if (query.procedure) {
     const { costsProcedureMetadata } = await import("./costs-procedure-view");
-    const { withLocaleMetadata } = await import("@/lib/i18n/metadata");
+    const { isNoindexRobots, withLocaleMetadata, withoutHreflang } = await import("@/lib/i18n/metadata");
     const meta = await costsProcedureMetadata(query);
     if (locale === "ar") return meta;
     // Country views already carry their own canonical and country-specific copy.
@@ -61,7 +61,11 @@ export async function costsDirectoryMetadata(query: CatalogQuery): Promise<Metad
     // hreflang. The path they canonicalise to is the one this query builds.
     if (!query.city) return withLocaleMetadata(meta, costsFilterPath(query), locale, LOCALES);
     const wrapped = await directoryCatalogMetadata(query);
-    return { ...meta, alternates: wrapped.alternates, openGraph: { ...meta.openGraph, ...wrapped.openGraph } };
+    const canonicalMismatch =
+      Boolean(meta.alternates?.canonical) &&
+      String(meta.alternates?.canonical) !== String(wrapped.alternates?.canonical);
+    const combined = { ...meta, alternates: wrapped.alternates, openGraph: { ...meta.openGraph, ...wrapped.openGraph } };
+    return canonicalMismatch || isNoindexRobots(meta.robots) ? withoutHreflang(combined) : combined;
   }
   const wrapped = await directoryCatalogMetadata(query);
   const specialty = query.specialty ? getSpecialty(query.specialty) : undefined;
@@ -120,7 +124,8 @@ export async function costsDirectoryMetadata(query: CatalogQuery): Promise<Metad
   }
   const facets = [query.city, query.specialty].filter(Boolean).length;
   if (facets > 1) {
-    return { ...wrapped, robots: { index: false, follow: true } };
+    const { withoutHreflang } = await import("@/lib/i18n/metadata");
+    return withoutHreflang({ ...wrapped, robots: { index: false, follow: true } });
   }
   return wrapped;
 }
