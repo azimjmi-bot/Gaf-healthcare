@@ -22,6 +22,26 @@ export function hreflangLanguages(englishPath: string, locales: readonly AppLoca
   return languages;
 }
 
+export function isNoindexRobots(robots: Metadata["robots"] | undefined): boolean {
+  if (!robots) return false;
+  if (typeof robots === "string") return /\bnoindex\b/i.test(robots);
+  return robots.index === false;
+}
+
+export function withoutHreflang(meta: Metadata): Metadata {
+  const alternates = meta.alternates ? { ...meta.alternates, languages: {} } : undefined;
+  const openGraph = meta.openGraph ? { ...meta.openGraph, alternateLocale: [] } : undefined;
+  return {
+    ...meta,
+    ...(alternates ? { alternates } : {}),
+    ...(openGraph ? { openGraph } : {}),
+  };
+}
+
+function normalizeUrlForComparison(value: string) {
+  return value.replace(/\/+$/, "");
+}
+
 export function withLocaleMetadata(
   meta: Metadata,
   englishPath: string,
@@ -29,6 +49,7 @@ export function withLocaleMetadata(
   availableLocales: readonly AppLocale[],
 ): Metadata {
   const selfPublished = localePageState(locale, englishPath) === "published";
+  const explicitNoindex = isNoindexRobots(meta.robots);
 
   // A facet that returns exactly its parent's records names the parent instead
   // of itself, so the duplicate consolidates rather than competing. Returns
@@ -36,14 +57,36 @@ export function withLocaleMetadata(
   // facet; see facet-canonical.ts for why English is excluded.
   const canonicalPath = canonicalFacetPath(englishPath, locale);
   const canonicalizedAway = canonicalPath !== englishPath;
-  const url = localizedAbsoluteUrl(canonicalPath, locale);
+  const enUrl = localizedAbsoluteUrl(englishPath, SOURCE_LOCALE);
+  const selfUrl = localizedAbsoluteUrl(englishPath, locale);
+  const explicitCanonical =
+    typeof meta.alternates?.canonical === "string"
+      ? meta.alternates.canonical
+      : meta.alternates?.canonical instanceof URL
+        ? meta.alternates.canonical.toString()
+        : undefined;
+  const normalizedExplicit = explicitCanonical ? normalizeUrlForComparison(explicitCanonical) : undefined;
+  // Base metadata builders (catalogMetadata, doctorMetadata, costArticleMetadata)
+  // default alternates.canonical to the English URL of the same path before
+  // withLocaleMetadata translates it to `locale`. Only treat an explicit
+  // canonical as an override when it points to a different path altogether.
+  const explicitCanonicalMismatch = Boolean(
+    normalizedExplicit &&
+      normalizedExplicit !== normalizeUrlForComparison(enUrl) &&
+      normalizedExplicit !== normalizeUrlForComparison(selfUrl),
+  );
+  const url = canonicalizedAway
+    ? localizedAbsoluteUrl(canonicalPath, locale)
+    : explicitCanonicalMismatch
+      ? explicitCanonical!
+      : selfUrl;
 
   // A noindex page is not part of any language set. Advertising alternates
   // from one is a claim Google discards for lack of reciprocity, so these
   // pages go bare: canonical and robots only. A page that points its canonical
   // at another URL is making the same non-claim about itself — hreflang belongs
   // on the canonical of a language set, not on a duplicate that defers to one.
-  const inLanguageSet = selfPublished && !canonicalizedAway;
+  const inLanguageSet = selfPublished && !explicitNoindex && !canonicalizedAway && !explicitCanonicalMismatch;
   const published = new Set(inLanguageSet ? publishedLocalesForPath(englishPath) : []);
   const alternateLocales = availableLocales.filter(
     (candidate) => candidate !== locale && published.has(candidate),
