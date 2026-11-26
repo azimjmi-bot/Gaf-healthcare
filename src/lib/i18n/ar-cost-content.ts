@@ -4,6 +4,7 @@ import { catalogSpecialtyName, costsFilterPath } from "@/lib/catalog-links";
 import { treatments } from "@/lib/data";
 import { taxonomyLabel } from "@/lib/i18n/taxonomy-labels";
 import { withLocaleMetadata } from "@/lib/i18n/metadata";
+import { prettyCatalogPath } from "@/lib/pretty-catalog-path";
 import { absoluteUrl } from "@/lib/seo-url";
 
 export function arabicCostCopy(query: CatalogQuery) {
@@ -20,6 +21,9 @@ export function arabicCostCopy(query: CatalogQuery) {
 
 export function arabicCostProcedureMetadata(query: CatalogQuery): Metadata {
   const copy = arabicCostCopy(query);
+  const requestedPath = query.specialty
+    ? copy.path
+    : prettyCatalogPath("/costs", query);
   const meta = withLocaleMetadata(
     {
       title: copy.title,
@@ -39,7 +43,7 @@ export function arabicCostProcedureMetadata(query: CatalogQuery): Metadata {
       },
       twitter: { card: "summary_large_image", title: copy.title, description: copy.description },
     },
-    copy.path,
+    requestedPath,
     "ar",
     ["en", "ar"],
   );
@@ -51,7 +55,7 @@ export function arabicCostProcedureMetadata(query: CatalogQuery): Metadata {
         specialty: catalogSpecialtyName(source),
         procedure: source.name,
       });
-      if (canonicalPath !== copy.path) {
+      if (canonicalPath !== requestedPath) {
         const canonicalUrl = absoluteUrl(canonicalPath, "ar");
         return {
           ...meta,

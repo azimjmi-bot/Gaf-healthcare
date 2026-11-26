@@ -49,7 +49,9 @@ export async function costsDirectoryMetadata(
     if (locale === "ar") return meta;
     // Country views already carry their own canonical and country-specific copy.
     if (!isPrimaryCountry(query.destination)) return meta;
-    const requestedPath = costsFilterPath(query);
+    const requestedPath = query.specialty
+      ? costsFilterPath(query)
+      : prettyCatalogPath("/costs", query);
     const requestedUrl = absoluteUrl(requestedPath);
     const canonicalUrl =
       typeof meta.alternates?.canonical === "string"
