@@ -2,9 +2,11 @@ import "server-only";
 import { loadCatalogCms } from "@/lib/cms/catalog-store";
 import { translationStatus } from "@/lib/cms/catalog-types";
 import { directoryCostRows } from "@/lib/cost-directory-index";
+import { arPathIsIndexedPublished, hasArPublicationIndex } from "@/lib/i18n/ar-publication-index";
 import { localeIsPublished } from "@/lib/i18n/locale-gating";
 import { isTargetLocale, SOURCE_LOCALE, type AppLocale } from "@/lib/i18n/languages";
 import { stripLocalePrefix } from "@/lib/i18n/path";
+import { contentStorage } from "@/lib/storage";
 
 /**
  * Whether a locale publishes the bare /costs index.
@@ -61,6 +63,12 @@ function segmentsFor(path: string) {
   return stripLocalePrefix(path).pathname.split("/").filter(Boolean);
 }
 
+function useArIndexForCostIndex(): boolean {
+  if (!hasArPublicationIndex()) return false;
+  const storage = contentStorage() as { isHydrated?: (group: string) => boolean };
+  return typeof storage.isHydrated !== "function" || !storage.isHydrated("ar");
+}
+
 /**
  * Publication for paths that do not need the treatment catalog.
  * Undefined means the caller has to ask the full locale-publication module.
@@ -71,6 +79,11 @@ export function lightLocalePageState(locale: AppLocale, path: string): "publishe
   if (locale === SOURCE_LOCALE) return "published";
   if (!isTargetLocale(locale)) return undefined;
   if (!(segments[0] === "costs" && segments.length === 1)) return undefined;
+  if (locale === "ar" && useArIndexForCostIndex()) {
+    const state = arPathIsIndexedPublished("/costs") ? "published" : "missing";
+    if (!localeIsPublished(locale)) return state === "published" ? "noindex" : state;
+    return state;
+  }
   const state = costIndexHasRows(locale) ? "published" : "missing";
   if (!localeIsPublished(locale)) return state === "published" ? "noindex" : state;
   return state;
