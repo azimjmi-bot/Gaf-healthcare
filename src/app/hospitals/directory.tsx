@@ -10,7 +10,6 @@ import { JsonLd } from "@/components/json-ld";
 import { cityResultCounts, filterHospitals, type CatalogQuery } from "@/lib/catalog";
 import { paginateHospitals } from "@/lib/hospitals";
 import { faqJsonLd } from "@/lib/seo";
-import { catalogPageMetadata } from "@/lib/i18n/page-meta";
 import { localizeFaqs, localizeMessages } from "@/lib/i18n/localize";
 import { directoryEmpty, directoryIntro, resultLabel } from "@/lib/i18n/directory-copy";
 import { arabicHospitalHub } from "@/lib/i18n/arabic-hub";
@@ -19,80 +18,13 @@ import { hospitalsForLocale } from "@/lib/locale-catalog";
 import { doctorsForLocale } from "@/lib/locale-catalog";
 import {
   buildHospitalSpecialtyHub,
-  hospitalSpecialtyPageIndexable,
   isHospitalSpecialtyScope,
 } from "@/lib/radiation-hospital-page";
 import { absoluteUrl } from "@/lib/seo";
 import { documentId } from "@/lib/jsonld";
-import { LOCALES } from "@/lib/i18n/languages";
-import { withLocaleMetadata, withoutHreflang } from "@/lib/i18n/metadata";
 import { localePageIsRenderable } from "@/lib/i18n/locale-publication";
 import { hospitalsPath } from "@/lib/catalog-links";
-import type { Metadata } from "next";
-
-export async function hospitalsDirectoryMetadata(
-  query: CatalogQuery,
-  page = 1,
-): Promise<Metadata> {
-  const locale = await getRequestLocale();
-  if (!localePageIsRenderable(locale, hospitalsPath(query))) {
-    return { robots: { index: false, follow: false } };
-  }
-  if (locale === "en" && isHospitalSpecialtyScope(query)) {
-    const hub = buildHospitalSpecialtyHub(
-      query,
-      page,
-      hospitalsForLocale(locale),
-      doctorsForLocale(locale),
-    );
-    if (!hub) {
-      const fallback = await catalogPageMetadata("hospitals", query);
-      return withoutHreflang({ ...fallback, robots: { index: false, follow: true } });
-    }
-    const indexable = hospitalSpecialtyPageIndexable(page, hub.paging.total);
-    return withLocaleMetadata(
-      {
-        title: hub.title,
-        description: hub.description,
-        robots: indexable ? undefined : { index: false, follow: true },
-        openGraph: {
-          title: hub.title,
-          description: hub.description,
-          url: absoluteUrl(hub.path),
-          type: "website",
-        },
-        twitter: {
-          card: "summary_large_image",
-          title: hub.title,
-          description: hub.description,
-        },
-      },
-      hub.path,
-      locale,
-      LOCALES,
-    );
-  }
-  const hub = arabicHospitalHub(query, locale);
-  if (hub) {
-    return withLocaleMetadata(
-      {
-        title: hub.title,
-        description: hub.description,
-        robots: page === 1 ? undefined : { index: false, follow: true },
-        openGraph: {
-          title: hub.title,
-          description: hub.description,
-          url: absoluteUrl(hospitalsPath(query), locale),
-          type: "website",
-        },
-      },
-      hospitalsPath(query),
-      locale,
-      LOCALES,
-    );
-  }
-  return catalogPageMetadata("hospitals", query);
-}
+export { hospitalsDirectoryMetadata } from "@/app/hospitals/metadata";
 
 export async function HospitalsDirectory({
   query,
