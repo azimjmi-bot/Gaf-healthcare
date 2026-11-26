@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { prettyCatalogPath, type CatalogBasePath } from "@/lib/pretty-catalog-path";
 import type { CatalogQuery } from "@/lib/catalog-options";
-import { LOCALES } from "@/lib/i18n/languages";
+import { LOCALES, type AppLocale } from "@/lib/i18n/languages";
 import { withLocaleMetadata } from "@/lib/i18n/metadata";
 import { getRequestLocale } from "@/lib/i18n/request";
 import { getCostArticle } from "@/data/cost-articles";
@@ -69,8 +69,9 @@ export async function blogPageMetadata(post: NonNullable<ReturnType<typeof getPo
 export async function catalogPageMetadata(
   entity: "doctors" | "hospitals" | "treatments",
   query: CatalogQuery,
+  localeOverride?: AppLocale,
 ): Promise<Metadata> {
-  const locale = await getRequestLocale();
+  const locale = localeOverride ?? (await getRequestLocale());
   const base: CatalogBasePath = entity === "doctors" ? "/doctors" : entity === "hospitals" ? "/hospitals" : "/costs";
   const englishPath = prettyCatalogPath(base, query);
   if (locale === "ar") {
