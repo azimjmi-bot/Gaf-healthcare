@@ -131,12 +131,28 @@ test("withLocaleMetadata emits the parent URL and drops hreflang on a duplicate"
   });
 });
 
-test("English facets keep self-canonical regardless of overlap", () => {
-  // 1,161 English facets are set-identical to their parent and every one is
-  // live and self-canonical. Retargeting them is not part of adding Arabic.
-  for (const path of doctorFacets()) {
-    assert.equal(canonicalFacetPath(path, "en"), path, path);
+test("English procedure duplicates canonicalise to their parent while hubs stay self-canonical", () => {
+  const docPaths = doctorFacets();
+  const docCanonicalised = docPaths.filter((path) => canonicalFacetPath(path, "en") !== path);
+  assert.equal(
+    docCanonicalised.length,
+    118,
+    "the 118 parent-identical English doctor facets canonicalise to their parent",
+  );
+  for (const path of docCanonicalised) {
+    const canonical = canonicalFacetPath(path, "en");
+    assert.equal(canonicalFacetPath(canonical, "en"), canonical, `fixed point for ${path}`);
+    assert.equal(localePageState("en", canonical), "published", canonical);
+    const meta = withLocaleMetadata({}, path, "en", ["en", "ar"]);
+    assert.equal(meta.alternates?.canonical, localizedAbsoluteUrl(canonical, "en"));
+    assert.deepEqual(meta.alternates?.languages, {});
   }
+
+  // City+specialty hospital hubs keep their own self-canonical URLs because they
+  // render dedicated HospitalSpecialtyHub content.
+  const bengaluruRadOnc = "/hospitals/India/Bengaluru/Radiation-Oncology";
+  assert.equal(canonicalFacetPath(bengaluruRadOnc, "en"), bengaluruRadOnc);
+
   const meta = withLocaleMetadata({}, "/doctors/India/Radiation-Oncology", "en", ["en", "ar"]);
   assert.equal(
     meta.alternates?.canonical,

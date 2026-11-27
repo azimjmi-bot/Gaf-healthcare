@@ -225,13 +225,17 @@ function englishIntro(kind: DirectoryKind, query: CatalogQuery) {
       ? `${query.procedure} cost in ${place}`
       : query.specialty
         ? `${query.specialty} cost in ${place}`
-        : "Oncology, ENT and GI treatment cost in India";
+        : query.city
+          ? `Treatment costs in ${place}`
+          : "Oncology, ENT and GI treatment cost in India";
   return {
     eyebrow: "India planning ranges",
     heading,
     lede: home
       ? "Explore indicative treatment costs by procedure, country, and location, and understand what may be included before choosing where to receive care."
-      : "US cash-pay beside partner ranges across Delhi NCR, Mumbai, Bengaluru, Chennai, Hyderabad and Pune. Filter by destination, city, specialty or procedure. Figures are planning ranges, not quotations.",
+      : query.city && !query.specialty && !query.procedure
+        ? `Compare indicative planning ranges and partner hospital availability in ${place} across 23 specialties before requesting a written quotation.`
+        : "US cash-pay beside partner ranges across Delhi NCR, Mumbai, Bengaluru, Chennai, Hyderabad and Pune. Filter by destination, city, specialty or procedure. Figures are planning ranges, not quotations.",
   };
 }
 

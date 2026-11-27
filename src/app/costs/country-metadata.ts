@@ -18,12 +18,19 @@ export function costCountryMetadata(query: CatalogQuery): Metadata | undefined {
     page?.seoDescription ??
     `${brief} planning cost in ${place}: ${range}, ${stay.toLowerCase()}. ${record.row.positioning ?? "Private self-pay market"}. Compare against the India band before you ask for a written quotation.`;
   const url = absoluteUrl(path);
+  const publishable = costCountryPageIsPublishable(resolved);
   return {
     title,
     description,
-    robots: costCountryPageIsPublishable(resolved) ? undefined : { index: false, follow: true },
-    alternates: { canonical: url },
-    openGraph: { title, description, url, type: "website" },
+    robots: publishable ? undefined : { index: false, follow: true },
+    alternates: publishable ? { canonical: url } : { canonical: url, languages: {} },
+    openGraph: {
+      title,
+      description,
+      url,
+      type: "website",
+      ...(publishable ? {} : { alternateLocale: [] }),
+    },
     twitter: { card: "summary_large_image", title, description },
   };
 }
