@@ -72,12 +72,17 @@ export function arPublicationIndexGeneratedAt() {
   return registry().generatedAt;
 }
 
+function normalizeIndexedPath(raw: string): string {
+  const withoutQuery = raw.split("?")[0] ?? "";
+  const trimmed = withoutQuery.length > 1 ? withoutQuery.replace(/\/+$/, "") : withoutQuery;
+  return (trimmed || "/").toLowerCase();
+}
+
 /** True when the index is loaded and lists this English path. */
 export function arPathIsIndexedPublished(englishPath: string) {
   const paths = registry().paths;
   if (!paths) return false;
-  const path = englishPath.split("?")[0] || "/";
-  return paths.has(path === "" ? "/" : path);
+  return paths.has(normalizeIndexedPath(englishPath));
 }
 
 export function installArPublicationIndex(document: ArPublicationIndexDocument | string) {
@@ -91,7 +96,7 @@ export function installArPublicationIndex(document: ArPublicationIndexDocument |
   }
   // Assign only after validation so a corrupt document never leaves a half-loaded set.
   const reg = registry();
-  reg.paths = new Set(parsed.paths.map((path) => path.split("?")[0] || "/"));
+  reg.paths = new Set(parsed.paths.map(normalizeIndexedPath));
   reg.generatedAt = typeof parsed.generatedAt === "string" ? parsed.generatedAt : null;
 }
 
@@ -99,6 +104,6 @@ export function buildArPublicationIndexDocument(
   paths: Iterable<string>,
   generatedAtIso = new Date().toISOString(),
 ): ArPublicationIndexDocument {
-  const unique = [...new Set([...paths].map((path) => path.split("?")[0] || "/"))].sort();
+  const unique = [...new Set([...paths].map(normalizeIndexedPath))].sort();
   return { version: 1, generatedAt: generatedAtIso, paths: unique };
 }

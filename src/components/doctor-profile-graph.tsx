@@ -5,11 +5,14 @@ import {
   radiationOncologyInternationalNote,
   radiationOncologyQuestionsToAsk,
 } from "@/data/doctor-pages/radiation-oncology";
-import { costsFilterPath, doctorsPath } from "@/lib/catalog-links";
+import { doctorsPath } from "@/lib/catalog-links";
 import {
   doctorQuickFacts,
+  doctorRelatedTreatmentsHeading,
   doctorRelevanceCopy,
+  doctorSpecialtyCostLink,
   relatedCostTreatments,
+  relatedCuratedTreatments,
   relatedDoctorBlogs,
   similarDoctors,
 } from "@/lib/doctor-discovery";
@@ -25,19 +28,17 @@ export function DoctorProfileGraph({
 }) {
   const similar = similarDoctors(doctor, pool);
   const costs = relatedCostTreatments(doctor);
+  const curatedTreatments = relatedCuratedTreatments(doctor, "en");
   const blogs = relatedDoctorBlogs(doctor);
   const facts = doctorQuickFacts(doctor);
   const isRadiation = doctor.specialtySlug === "radiation-oncology";
+  const treatmentsHeading = doctorRelatedTreatmentsHeading(doctor);
   const specialtyHref = doctorsPath({
     destination: "India",
     city: doctor.city,
     specialty: doctor.specialty,
   });
-  const specialtyCostHref = costsFilterPath({
-    destination: "India",
-    city: doctor.city,
-    specialty: doctor.specialty,
-  });
+  const specialtyCostLink = doctorSpecialtyCostLink(doctor);
 
   return (
     <div className="mt-12 space-y-12">
@@ -69,7 +70,7 @@ export function DoctorProfileGraph({
 
       {doctor.procedures.length > 0 ? (
         <section>
-          <h2 className="font-heading text-3xl">Related radiation treatments</h2>
+          <h2 className="font-heading text-3xl">{treatmentsHeading}</h2>
           <p className="mt-2 text-sm text-muted-foreground">
             Short context only. Technique explanations stay on existing GAF treatment pages.
           </p>
@@ -85,6 +86,21 @@ export function DoctorProfileGraph({
                   className="underline-offset-4 hover:underline"
                 >
                   {name} specialists in India
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ) : null}
+
+      {curatedTreatments.length > 0 ? (
+        <section>
+          <h2 className="font-heading text-3xl">Treatment guides</h2>
+          <ul className="mt-4 space-y-2 text-sm">
+            {curatedTreatments.map((row) => (
+              <li key={row.slug}>
+                <Link href={row.href} className="underline-offset-4 hover:underline">
+                  {row.name}
                 </Link>
               </li>
             ))}
@@ -117,8 +133,8 @@ export function DoctorProfileGraph({
         <h2 className="font-heading text-3xl">Related GAF treatment guides</h2>
         <ul className="mt-4 space-y-2 text-sm">
           <li>
-            <Link href={specialtyCostHref} className="underline-offset-4 hover:underline">
-              {doctor.specialty} treatment in {doctor.city}, India
+            <Link href={specialtyCostLink.href} className="underline-offset-4 hover:underline">
+              {specialtyCostLink.label}
             </Link>
           </li>
           {blogs.map((row) => (

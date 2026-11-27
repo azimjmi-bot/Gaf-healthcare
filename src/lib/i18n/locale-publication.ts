@@ -25,6 +25,9 @@ import { facetIsPublished, localeIsPublished } from "@/lib/i18n/locale-gating";
 // the hreflang set needs to know what canonicalises away. Both are function
 // declarations used at call time, so neither sees a half-initialised module.
 import { canonicalFacetPath } from "@/lib/i18n/facet-canonical";
+import { getSpecialtyPage } from "@/data/specialty-pages";
+import { buildSpecialtyPageData, specialtyPageMeetsQualityThreshold } from "@/lib/specialty-page";
+import { getCity, getSpecialty, toSlug } from "@/lib/taxonomy";
 import { arPathIsIndexedPublished, hasArPublicationIndex } from "@/lib/i18n/ar-publication-index";
 import { stripLocalePrefix } from "@/lib/i18n/path";
 import { contentStorage } from "@/lib/storage";
@@ -233,9 +236,10 @@ function targetLocaleState(locale: AppLocale, segments: string[]): LocalePageSta
   if (segments[0] === "blogs") {
     const posts = listPublishedPosts(locale);
     if (segments.length === 1) return posts.length > 0 ? "published" : "missing";
-    return segments.length === 2 && posts.some((post) => post.slug === segments[1])
-      ? "published"
-      : "missing";
+    if (segments.length !== 2) return "missing";
+    const post = posts.find((row) => row.slug === segments[1]);
+    if (!post) return "missing";
+    return post.allowIndex ? "published" : "noindex";
   }
 
   // Specialty editorials remain unpublished until their locale-specific CMS
@@ -254,6 +258,10 @@ export function localePageState(locale: AppLocale, path: string): LocalePageStat
   }
 
   if (locale === SOURCE_LOCALE) {
+    if (segments[0] === "blogs" && segments.length === 2) {
+      const post = listPublishedPosts(SOURCE_LOCALE).find((row) => row.slug === segments[1]);
+      if (post && !post.allowIndex) return "noindex";
+    }
     // English historically publishes every renderable path. Empty supported
     // city facets are the exception: keep them crawlable for filter UX, but
     // noindex until inventory exists so chip links do not create thin indexed
@@ -310,6 +318,20 @@ export function localePageIsRenderable(locale: AppLocale, path: string) {
  * and Google discards hreflang that is not reciprocated, taking the rest of
  * the block's credibility with it.
  */
+function sourceLocaleCostSpecialtyIsIndexable(path: string): boolean {
+  const segments = segmentsFor(path);
+  if (segments[0] !== "costs" || segments.length < 2) return true;
+  const query = parsePrettyCatalogSegments(segments.slice(1));
+  if (!query || query.procedure || !query.specialty || !query.destination) return true;
+  const specialty = getSpecialty(query.specialty);
+  const city = query.city ? getCity(query.city) : undefined;
+  if (!specialty || (query.city && !city)) return true;
+  const profile = getSpecialtyPage(toSlug(query.destination), specialty.slug);
+  if (!profile) return true;
+  const data = buildSpecialtyPageData(profile, city?.slug);
+  return Boolean(data && specialtyPageMeetsQualityThreshold(data)) && profile.allowIndex && profile.status === "published";
+}
+
 export function publishedLocalesForPath(path: string) {
   // Unpublished target locales can never be "published", and probing them
   // would force the Worker to hydrate editions that hreflang will discard.
@@ -322,6 +344,12 @@ export function publishedLocalesForPath(path: string) {
     if (locale === "ar" && useArPublicationIndexForMetadata()) {
       return arPathIsIndexedPublished(path);
     }
-    return localePathIsPublished(locale, path) && canonicalFacetPath(path, locale) === path;
+    if (locale === SOURCE_LOCALE && !sourceLocaleCostSpecialtyIsIndexable(path)) {
+      return false;
+    }
+    return (
+      localePathIsPublished(locale, path) &&
+      canonicalFacetPath(path, locale).toLowerCase() === path.toLowerCase()
+    );
   });
 }

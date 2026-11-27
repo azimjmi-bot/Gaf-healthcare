@@ -1,10 +1,13 @@
 import type { CatalogQuery } from "@/lib/catalog-options";
 import type { Doctor } from "@/lib/doctors";
 import { getCostArticle } from "@/data/cost-articles";
+import { getSpecialtyPage } from "@/data/specialty-pages";
 import { baseSpecialtyProfileFor } from "@/data/specialty-pages/base-profiles";
 import { listPublishedPosts } from "@/lib/blogs";
-import { costPath, doctorsPath } from "@/lib/catalog-links";
+import { publishedCuratedTreatments } from "@/lib/cms/curated-treatment-store";
+import { costPath, costsFilterPath, doctorsPath } from "@/lib/catalog-links";
 import { doctorHasProcedure, filterDoctors } from "@/lib/catalog";
+import { buildSpecialtyPageData, specialtyPageMeetsQualityThreshold } from "@/lib/specialty-page";
 import { getTreatment } from "@/lib/treatments";
 import { radiationOncologyContentInventory } from "@/data/doctor-pages/radiation-oncology";
 import type { AppLocale } from "@/lib/i18n/languages";
@@ -181,6 +184,99 @@ export function relatedCostTreatments(doctor: Doctor) {
       href: costPath(treatment.name),
       partnerRange: treatment.partnerRange,
     }));
+}
+
+export function doctorRelatedTreatmentsHeading(doctor: Doctor) {
+  return doctor.specialtySlug === "radiation-oncology"
+    ? "Related radiation treatments"
+    : `Related ${doctor.specialty} treatments`;
+}
+
+export function doctorSpecialtyCostLink(doctor: Doctor): {
+  href: string;
+  label: string;
+  scope: "city" | "national" | "country";
+} {
+  const profile = getSpecialtyPage("india", doctor.specialtySlug);
+  const cityData = profile && doctor.citySlug ? buildSpecialtyPageData(profile, doctor.citySlug) : undefined;
+  const cityIndexable = Boolean(
+    profile &&
+      cityData &&
+      profile.allowIndex &&
+      profile.status === "published" &&
+      specialtyPageMeetsQualityThreshold(cityData),
+  );
+  if (cityIndexable) {
+    return {
+      href: costsFilterPath({
+        destination: "India",
+        city: doctor.city,
+        specialty: doctor.specialty,
+      }),
+      label: `${doctor.specialty} treatment in ${doctor.city}, India`,
+      scope: "city",
+    };
+  }
+  const nationalData = profile ? buildSpecialtyPageData(profile) : undefined;
+  const nationalIndexable = Boolean(
+    profile &&
+      nationalData &&
+      profile.allowIndex &&
+      profile.status === "published" &&
+      specialtyPageMeetsQualityThreshold(nationalData),
+  );
+  if (nationalIndexable || !profile) {
+    return {
+      href: costsFilterPath({
+        destination: "India",
+        specialty: doctor.specialty,
+      }),
+      label: `${doctor.specialty} treatment cost in India`,
+      scope: "national",
+    };
+  }
+  return {
+    href: "/costs/india",
+    label: "Treatment costs in India",
+    scope: "country",
+  };
+}
+
+export function relatedCuratedTreatments(
+  doctor: Doctor,
+  locale: AppLocale = "en",
+  limit = 6,
+) {
+  const doctorCostSlugs = new Set(doctor.treatmentSlugs);
+  const doctorProcSlugs = new Set(doctor.procedureSlugs);
+  return publishedCuratedTreatments(locale)
+    .map((treatment) => {
+      let score = 0;
+      if (treatment.doctorSlugs.includes(doctor.slug)) score += 8;
+      for (const costSlug of treatment.costPageSlugs) {
+        if (doctorCostSlugs.has(costSlug) || doctorProcSlugs.has(costSlug)) score += 4;
+      }
+      if (treatment.specialtySlug === doctor.specialtySlug) score += 1;
+      const name = treatment.translations[locale]?.name || treatment.baseName;
+      return {
+        slug: treatment.slug,
+        name,
+        href: `/treatments/${treatment.slug}`,
+        score,
+        featured: treatment.featured,
+        sortOrder: treatment.sortOrder,
+      };
+    })
+    .filter((row) => row.score > 0 && row.name.trim().length > 0)
+    .sort(
+      (a, b) =>
+        b.score - a.score ||
+        Number(b.featured) - Number(a.featured) ||
+        a.sortOrder - b.sortOrder ||
+        a.name.localeCompare(b.name),
+    )
+    .slice(0, limit)
+    .map(({ slug, name, href }) => ({ slug, name, href }));
 }
 
 export function relatedDoctorBlogs(doctor: Doctor) {

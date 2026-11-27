@@ -226,11 +226,13 @@ export const ENGLISH_ALTERNATES_BASELINE: AlternatesBaseline[] = [
     published: ["en"],
   },
   // Serves 200 and points its canonical at the hierarchical country path
-  // rather than at itself. That cross-canonical is deliberate.
+  // rather than at itself. That cross-canonical is deliberate; non-canonical
+  // aliases must not emit hreflang.
   {
     label: "flat cost sheet alias",
     path: "/costs/external-beam-radiotherapy-ebrt",
     published: ["en"],
+    served: "canonical-only",
   },
 
   { label: "treatments index", path: "/treatments", published: ["en", "ar"] },
