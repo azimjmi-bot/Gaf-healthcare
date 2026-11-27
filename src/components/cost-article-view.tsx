@@ -1,12 +1,6 @@
 import "@/styles/cost-page.css";
 import Image from "next/image";
 import { LocaleLink as Link } from "@/components/locale-link";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
 import { CostAttribution } from "@/components/cost-page/cost-attribution";
 import { CostDoctorCard, CostHospitalCard } from "@/components/cost-page/cost-care-cards";
 import { PseoEstimateCta } from "@/components/pseo-estimate-cta";
@@ -664,13 +658,14 @@ export function CostArticleView({
           differs between the five cities we list.
         </P>
       ) : null}
-      <Accordion type="single" collapsible className="mt-6">
+      <div className="mt-6 divide-y divide-border border-y border-border">
         {cityRows.map((row) => (
-          <AccordionItem key={row.citySlug} value={row.citySlug} id={`city-${row.citySlug}`}>
-            <AccordionTrigger className="text-start font-heading text-xl md:text-2xl">
-              {article.procedure} cost in {row.city}
-            </AccordionTrigger>
-            <AccordionContent className="text-[1.05rem] leading-relaxed text-muted-foreground">
+          <details key={row.citySlug} id={`city-${row.citySlug}`} className="group py-4">
+            <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-start font-heading text-xl md:text-2xl [&::-webkit-details-marker]:hidden">
+              <span>{article.procedure} cost in {row.city}</span>
+              <span aria-hidden className="text-base text-muted-foreground transition-transform group-open:rotate-180">▾</span>
+            </summary>
+            <div className="pt-3 text-[1.05rem] leading-relaxed text-muted-foreground">
               <p>{row.ecosystem}</p>
               <p className="mt-3">{row.logistics}</p>
               <p className="mt-3 text-sm">
@@ -686,10 +681,10 @@ export function CostArticleView({
                 {" · "}
                 <Link href={row.costPath}>Cost in {row.city}</Link>
               </p>
-            </AccordionContent>
-          </AccordionItem>
+            </div>
+          </details>
         ))}
-      </Accordion>
+      </div>
 
       <H2 id="total-pathway">
         What should international patients budget beyond the {isHematology ? "hematology procedure or treatment" : isMedicalOncology ? "treatment medicine" : isCardiology ? "cardiac procedure" : isEnt ? "ENT procedure" : isGastroenterology ? "gastroenterology procedure" : isNeurosurgery ? "neurosurgery procedure" : isNephrology ? "nephrology treatment" : isNeurology ? "neurology treatment" : isGynecology ? "gynecology procedure" : isOphthalmology ? "ophthalmology procedure" : isPulmonology ? "pulmonology procedure" : isUrology ? "urology procedure" : "surgery"}?

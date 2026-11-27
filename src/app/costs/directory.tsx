@@ -55,10 +55,10 @@ export async function CostsDirectory({ query }: { query: CatalogQuery }) {
   }
   const messages = await localizeMessages(locale);
   const faqs = await localizeFaqs("costs", locale);
-  const bareDirectory = locale === "en" && !query.destination && !query.city;
+  const bareDirectory = !query.destination && !query.city;
   let specialtyPages: DirectoryCostGroup[];
   let chipStats: CityChipStats | null = null;
-  if (bareDirectory) {
+  if (bareDirectory && locale === "en") {
     const { loadCatalogCms } = await import("@/lib/cms/catalog-store");
     const cms = loadCatalogCms("en");
     specialtyPages = listDirectoryCostGroups(
@@ -66,6 +66,22 @@ export async function CostsDirectory({ query }: { query: CatalogQuery }) {
         treatmentsDeleted: cms.treatmentsDeleted,
         treatmentOverrides: cms.treatmentOverrides,
         treatmentsAdded: cms.treatmentsAdded,
+      }),
+    );
+  } else if (bareDirectory) {
+    const { localeTreatmentSlice, treatmentPatchIsPublished } = await import("@/lib/locale-treatment-slice");
+    const slice = localeTreatmentSlice(locale);
+    const authored = directoryCostRows.filter((row) =>
+      treatmentPatchIsPublished(slice.treatmentOverrides[row.slug] as Record<string, unknown> | undefined),
+    );
+    const publishedAdded = (slice.treatmentsAdded as Record<string, unknown>[]).filter((row) =>
+      treatmentPatchIsPublished(row),
+    );
+    specialtyPages = listDirectoryCostGroups(
+      overlayDirectoryRows(authored, {
+        treatmentsDeleted: slice.treatmentsDeleted,
+        treatmentOverrides: slice.treatmentOverrides,
+        treatmentsAdded: publishedAdded,
       }),
     );
   } else {

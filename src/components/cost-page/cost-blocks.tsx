@@ -12,12 +12,6 @@ import {
   Stethoscope,
   Wallet,
 } from "lucide-react";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
 import type { CostArticle } from "@/data/cost-articles/types";
 import { formatUsd, parseUsdBand, type CostCityRow, type CostDestinationRow } from "@/lib/cost-article";
 import type { Treatment } from "@/lib/treatments";
@@ -143,17 +137,16 @@ export function CostBreakdown({ article }: { article: CostArticle }) {
 export function PriceFactors({ article }: { article: CostArticle }) {
   return (
     <div className="mt-6">
-      <Accordion type="single" collapsible>
-        <AccordionItem value="why-quotes-differ">
-          <AccordionTrigger className="text-start text-base">
-            Why can two hospitals quote different prices?
-          </AccordionTrigger>
-          <AccordionContent className="text-[1.05rem] leading-relaxed text-muted-foreground">
-            {article.whyQuotesDiffer ||
-              "Campus tier, the named specialist, clinical complexity, room or day-care category, diagnostics and what is excluded from the package all move a bill more than the city name does. The list below is the clinical and commercial detail behind that spread — not a menu to shop from."}
-          </AccordionContent>
-        </AccordionItem>
-      </Accordion>
+      <details className="group border-b border-border pb-4">
+        <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-start text-base font-medium [&::-webkit-details-marker]:hidden">
+          <span>Why can two hospitals quote different prices?</span>
+          <span aria-hidden className="text-sm text-muted-foreground transition-transform group-open:rotate-180">▾</span>
+        </summary>
+        <p className="pt-3 text-[1.05rem] leading-relaxed text-muted-foreground">
+          {article.whyQuotesDiffer ||
+            "Campus tier, the named specialist, clinical complexity, room or day-care category, diagnostics and what is excluded from the package all move a bill more than the city name does. The list below is the clinical and commercial detail behind that spread — not a menu to shop from."}
+        </p>
+      </details>
       <dl className="cost-drivers">
         {article.costDrivers.map((item) => (
           <div key={item.label}>
@@ -258,7 +251,7 @@ export function CityCostGrid({
   return (
     <>
       <p className="cost-scroll-hint">Swipe to compare Indian cities →</p>
-      <div className="cost-scroll mt-2 hidden md:block">
+      <div className="cost-scroll mt-2">
         <table>
           <caption className="sr-only">Approximate treatment cost and stay by Indian city</caption>
           <thead>
@@ -307,31 +300,6 @@ export function CityCostGrid({
             ))}
           </tbody>
         </table>
-      </div>
-      <div className="cost-citygrid mt-6 md:hidden">
-        {rows.map((row) => (
-          <article key={row.citySlug} className="cost-city">
-            <h3>
-              <Link href={row.costPath}>{row.city}</Link>
-            </h3>
-            <p className="cost-city__range">{row.range}</p>
-            {row.rangeIsInherited ? (
-              <p className="mt-1 text-xs text-muted-foreground">India planning band — not a city quote</p>
-            ) : null}
-            <p className="mt-2 text-sm text-muted-foreground">Typical stay {row.stay}</p>
-            <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{row.costNote}</p>
-            <p className="mt-3 text-sm text-muted-foreground">
-              {row.hospitalCount} {row.hospitalCount === 1 ? "hospital" : "hospitals"}
-              {" · "}
-              {row.doctorCount > 0
-                ? `${row.doctorCount} ${row.doctorCount === 1 ? "doctor" : "doctors"}`
-                : "consultant match on request"}
-            </p>
-            <p className="mt-auto pt-4 text-sm font-medium">
-              <Link href={row.costPath}>Explore {row.city} →</Link>
-            </p>
-          </article>
-        ))}
       </div>
     </>
   );

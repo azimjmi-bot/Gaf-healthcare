@@ -397,3 +397,25 @@ test("uploads go to the static bucket, assets are read-only Worker files, anythi
   assert.throws(() => storage.read("public/robots.txt"), StorageKeyError);
   assert.throws(() => storage.write("next.config.mjs", "x"), StorageKeyError);
 });
+
+test("pre-compressed .pack assets are held without double-deflating and preserve exact bytes", async () => {
+  const content = seededBucket();
+  const packedBytes = new Uint8Array(8192);
+  for (let i = 0; i < packedBytes.length; i++) packedBytes[i] = (i * 31) & 0xff;
+  const assets = {
+    fetch: async (input: string | URL | Request) => {
+      if (String(input).endsWith("/cost-articles.pack")) {
+        return new Response(packedBytes, { headers: { etag: '"pack-1"' } });
+      }
+      return new Response("nope", { status: 404 });
+    },
+  };
+  const storage = isolate(content, new FakeR2Bucket(), {
+    assets,
+    assetKeys: { "content/cost-articles.pack": "/_gaf/cost-articles.pack" },
+  });
+  await storage.ensureHydrated("en");
+  const out = storage.readBytes("content/cost-articles.pack");
+  assert.ok(out);
+  assert.deepEqual(out, packedBytes);
+});

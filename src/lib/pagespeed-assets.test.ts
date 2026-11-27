@@ -150,3 +150,23 @@ test("homepage estimate CTA stays off the LocaleLink client graph", () => {
   assert.doesNotMatch(source, /"use client"/);
 });
 
+test("cost pages and catalog filters avoid unnecessary client hydration and duplicate doctor Cache-Control rules", () => {
+  const config = readFileSync(join(process.cwd(), "next.config.mjs"), "utf8");
+  assert.doesNotMatch(config, /source:\s*"\/doctors\/:path\*"/);
+  assert.doesNotMatch(config, /source:\s*"\/ar\/doctors\/:path\*"/);
+
+  for (const file of [
+    "src/components/cost-page/cost-attribution.tsx",
+    "src/components/cost-article-view.tsx",
+    "src/components/cost-page/cost-blocks.tsx",
+  ]) {
+    const source = readFileSync(join(process.cwd(), file), "utf8");
+    assert.doesNotMatch(source, /^"use client";/m, file);
+  }
+  const articleView = readFileSync(join(process.cwd(), "src/components/cost-article-view.tsx"), "utf8");
+  assert.doesNotMatch(articleView, /@\/components\/ui\/accordion/);
+  const blocks = readFileSync(join(process.cwd(), "src/components/cost-page/cost-blocks.tsx"), "utf8");
+  assert.doesNotMatch(blocks, /@\/components\/ui\/accordion/);
+  assert.doesNotMatch(blocks, /cost-citygrid/);
+});
+

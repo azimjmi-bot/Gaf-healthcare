@@ -137,6 +137,8 @@ export function wwwToApexRedirect(request: Request): Response | null {
 export function sameHostHttpsRedirect(request: Request): Response | null {
   const url = new URL(request.url);
   if (url.protocol !== "http:") return null;
+  const host = url.hostname.toLowerCase();
+  if (host === "127.0.0.1" || host === "localhost" || host === "[::1]") return null;
   url.protocol = "https:";
   return new Response(null, {
     status: 301,
@@ -144,6 +146,46 @@ export function sameHostHttpsRedirect(request: Request): Response | null {
       location: url.toString(),
       "cache-control": "public, max-age=300",
     },
+  });
+}
+
+function dedupeHeaderDirectives(raw: string): string {
+  const parts = raw
+    .split(",")
+    .map((part) => part.trim())
+    .filter(Boolean);
+  const seen = new Set<string>();
+  const unique: string[] = [];
+  for (const part of parts) {
+    const key = part.toLowerCase();
+    if (seen.has(key)) continue;
+    seen.add(key);
+    unique.push(part);
+  }
+  return unique.join(", ");
+}
+
+export function dedupeCacheHeaders(response: Response): Response {
+  let changed = false;
+  for (const name of ["cache-control", "cdn-cache-control"] as const) {
+    const raw = response.headers.get(name);
+    if (!raw || !raw.includes(",")) continue;
+    const deduped = dedupeHeaderDirectives(raw);
+    if (deduped !== raw) {
+      changed = true;
+      break;
+    }
+  }
+  if (!changed) return response;
+  const headers = new Headers(response.headers);
+  for (const name of ["cache-control", "cdn-cache-control"] as const) {
+    const raw = headers.get(name);
+    if (raw && raw.includes(",")) headers.set(name, dedupeHeaderDirectives(raw));
+  }
+  return new Response(NULL_BODY_STATUS.has(response.status) ? null : response.body, {
+    status: response.status,
+    statusText: response.statusText,
+    headers,
   });
 }
 
@@ -707,21 +749,26 @@ const ENGLISH_HOME_CACHE = "public, max-age=0, s-maxage=120, stale-while-revalid
 const LOCALE_HOME = /^\/(ar|fr|ru|sw)$/;
 
 function restoreLocaleHomeCache(pathname: string, response: Response) {
-  if (!LOCALE_HOME.test(pathname)) return response;
-  const current = response.headers.get("cache-control");
-  if (!current?.includes(ENGLISH_HOME_CACHE)) return response;
-  const restored = current
-    .replace(`, ${ENGLISH_HOME_CACHE}`, "")
-    .replace(`${ENGLISH_HOME_CACHE}, `, "")
-    .trim();
-  if (!restored || restored === current) return response;
-  const headers = new Headers(response.headers);
-  headers.set("cache-control", restored);
-  return new Response(response.body, {
-    status: response.status,
-    statusText: response.statusText,
-    headers,
-  });
+  let result = response;
+  if (LOCALE_HOME.test(pathname)) {
+    const current = result.headers.get("cache-control");
+    if (current?.includes(ENGLISH_HOME_CACHE)) {
+      const restored = current
+        .replace(`, ${ENGLISH_HOME_CACHE}`, "")
+        .replace(`${ENGLISH_HOME_CACHE}, `, "")
+        .trim();
+      if (restored && restored !== current) {
+        const headers = new Headers(result.headers);
+        headers.set("cache-control", restored);
+        result = new Response(result.body, {
+          status: result.status,
+          statusText: result.statusText,
+          headers,
+        });
+      }
+    }
+  }
+  return pathname === "/" ? result : dedupeCacheHeaders(result);
 }
 
 function createRenderGate(limit: number, timeoutMs: () => number, onPeak?: (peak: number) => void) {
@@ -1043,6 +1090,9 @@ export function createWorker(next: FetchHandler, options: WorkerRuntimeOptions =
   ) {
     const url = new URL(request.url);
     try {
+      // Ensure the AR publication index is ready before groupsForRequest runs
+      // so English catalogue misses can skip full Arabic hydration.
+      await ensureArPublicationIndexLoaded(nextEnv.ASSETS, log);
       await Promise.all(groupsForRequest(url.pathname).map((group) => active.ensureHydrated(group)));
       await active.refreshIfStale();
     } catch (error) {
@@ -1261,9 +1311,6 @@ export function createWorker(next: FetchHandler, options: WorkerRuntimeOptions =
       const redirect = sameHostHttpsRedirect(request);
       if (redirect) return withStagingRobots(redirect, env);
       const { storage, envForNext } = install(env);
-      // Ensure the AR publication index is ready before groupsForRequest runs
-      // so English catalogue misses can skip full Arabic hydration.
-      await ensureArPublicationIndexLoaded(env.ASSETS, log);
       const url = new URL(request.url);
 
       if (isUploadPath(url.pathname)) return withStagingRobots(await serveUpload(request, env, ctx, url), env);

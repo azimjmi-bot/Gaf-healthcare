@@ -1,28 +1,19 @@
-"use client";
-
 import "@/styles/cost-page.css";
 
-import { useState } from "react";
 import { COST_ATTRIBUTION, type CostAttributionPerson } from "@/data/cost-attribution";
 
 function AttributionCard({ person }: { person: CostAttributionPerson }) {
-  const [open, setOpen] = useState(false);
-
   return (
     <article className="cost-attr__card">
       <div className="cost-attr__bio">
-        <p>
-          {person.bio}
-          {open ? ` ${person.more}` : null}
-        </p>
-        <button
-          type="button"
-          className="cost-attr__more"
-          aria-expanded={open}
-          onClick={() => setOpen((value) => !value)}
-        >
-          {open ? "View less" : "View more"}
-        </button>
+        <p>{person.bio}</p>
+        <details className="cost-attr__details group">
+          <summary className="cost-attr__more">
+            <span className="group-open:hidden">View more</span>
+            <span className="hidden group-open:inline">View less</span>
+          </summary>
+          <p className="mt-2">{person.more}</p>
+        </details>
       </div>
       <div className="cost-attr__identity">
         <div>

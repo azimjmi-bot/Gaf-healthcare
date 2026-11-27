@@ -5,14 +5,18 @@ import {
   TREATMENT_OVERLAY_KEYS,
   pickHospitalPatch,
   pickOverlay,
-  pickTreatmentPatch,
   translationStatus,
   type CatalogCms,
   type HospitalPatch,
   type RadiationProcedurePagePatch,
-  type TreatmentPatch,
 } from "@/lib/cms/catalog-types";
 import { applyCatalogLayer, catalogCmsKey, getCatalogGeneration } from "@/lib/cms/catalog-store";
+import {
+  clearLocaleTreatmentSliceCache,
+  localeRadiationProcedureOverride,
+  localeTreatmentSlice,
+  treatmentPatchIsPublished,
+} from "@/lib/locale-treatment-slice";
 import { listingBio } from "@/lib/doctor-profile";
 import {
   doctors as englishDoctors,
@@ -60,18 +64,6 @@ function hospitalPatchIsPublished(patch: Record<string, unknown> | undefined) {
     patch &&
       translationStatus(patch) === "published" &&
       (hasText(patch.bio) || hasText(patch.summary)),
-  );
-}
-
-function treatmentPatchIsPublished(patch: Record<string, unknown> | undefined) {
-  return Boolean(
-    patch &&
-      translationStatus(patch) === "published" &&
-      hasText(patch.summary) &&
-      hasText(patch.notes) &&
-      hasText(patch.stay) &&
-      Array.isArray(patch.includes) &&
-      patch.includes.length > 0,
   );
 }
 
@@ -131,10 +123,6 @@ type PublicSlice = {
   hospitalOverrides: Record<string, HospitalPatch>;
   hospitalsAdded: CatalogCms["hospitalsAdded"];
   hospitalsDeleted: string[];
-  treatmentOverrides: Record<string, TreatmentPatch>;
-  treatmentsAdded: CatalogCms["treatmentsAdded"];
-  treatmentsDeleted: string[];
-  radiationProcedurePageOverrides: CatalogCms["radiationProcedurePageOverrides"];
 };
 
 /**
@@ -312,12 +300,6 @@ function mapHospitalOverrides(map: Record<string, HospitalPatch> | undefined) {
   return next;
 }
 
-function mapTreatmentOverrides(map: Record<string, TreatmentPatch> | undefined) {
-  const next: Record<string, TreatmentPatch> = {};
-  for (const [slug, patch] of Object.entries(map || {})) next[slug] = ownUnknown(pickTreatmentPatch(patch));
-  return next;
-}
-
 function listingEducation(value: unknown): string[] {
   if (!Array.isArray(value)) return [];
   return value.filter((line): line is string => typeof line === "string" && Boolean(line)).slice(0, 3);
@@ -382,10 +364,6 @@ function sliceFrom(token: string, data: Partial<CatalogCms>, hospitalOverrides: 
     hospitalOverrides,
     hospitalsAdded: ownUnknown(data.hospitalsAdded ?? []),
     hospitalsDeleted: ownUnknown(data.hospitalsDeleted ?? []),
-    treatmentOverrides: mapTreatmentOverrides(data.treatmentOverrides),
-    treatmentsAdded: ownUnknown(data.treatmentsAdded ?? []),
-    treatmentsDeleted: ownUnknown(data.treatmentsDeleted ?? []),
-    radiationProcedurePageOverrides: ownUnknown(data.radiationProcedurePageOverrides ?? {}),
   };
 }
 
@@ -557,9 +535,7 @@ export function hospitalsInCityLocale(citySlug: string, locale: AppLocale) {
 export function treatmentsForLocale(locale: AppLocale): Treatment[] {
   const base = materialize(englishTreatments);
   if (locale === "en") return base;
-  ensureEdition(locale);
-  const slice = slices.get(locale);
-  if (!slice) return [];
+  const slice = localeTreatmentSlice(locale);
   const authored = base.filter((row) =>
     treatmentPatchIsPublished(slice.treatmentOverrides[row.slug] as Record<string, unknown> | undefined),
   );
@@ -580,12 +556,12 @@ export function getTreatmentForLocale(slug: string, locale: AppLocale) {
 
 /** Arabic radiation-procedure editorial, without retaining doctor overrides. */
 export function arabicRadiationProcedureOverride(slug: string): RadiationProcedurePagePatch | undefined {
-  ensureEdition("ar");
-  return slices.get("ar")?.radiationProcedurePageOverrides?.[slug];
+  return localeRadiationProcedureOverride("ar", slug);
 }
 
 /** Test hook. Drops the public index and profile LRU; CMS generation is unchanged. */
 export function clearLocaleCatalogCache() {
+  clearLocaleTreatmentSliceCache();
   slices.clear();
   doctorLists.clear();
   hospitalLists.clear();

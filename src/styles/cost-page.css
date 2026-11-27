@@ -548,6 +548,11 @@
   line-height: 1.7;
   color: var(--muted-foreground);
 }
+.cost-attr__details {
+  display: flex;
+  flex-direction: column-reverse;
+  margin-top: auto;
+}
 .cost-attr__more {
   align-self: flex-end;
   margin-top: auto;
@@ -558,6 +563,10 @@
   font-size: 0.95rem;
   font-weight: 500;
   cursor: pointer;
+  list-style: none;
+}
+.cost-attr__more::-webkit-details-marker {
+  display: none;
 }
 .cost-attr__more:hover {
   text-decoration: underline;
