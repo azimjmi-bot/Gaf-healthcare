@@ -66,11 +66,12 @@ test("untranslated routes stay unpublished", () => {
     true,
   );
   assert.equal(localePathIsPublished("ru", "/doctors"), false);
-  assert.equal(localePathIsPublished("ar", "/consult"), false);
+  assert.equal(localePathIsPublished("ar", "/consult"), true);
+  assert.equal(localePathIsPublished("ru", "/consult"), false);
   assert.equal(localePathIsPublished("ar", "/costs"), true);
   assert.equal(localePathIsPublished("ar", "/costs/India"), true);
   assert.equal(localePathIsPublished("ar", "/specialties"), false);
-  assert.deepEqual(publishedLocalesForPath("/consult"), ["en"]);
+  assert.deepEqual(publishedLocalesForPath("/consult"), ["en", "ar"]);
   assert.deepEqual(publishedLocalesForPath("/specialties"), ["en"]);
 });
 
@@ -145,7 +146,8 @@ test("UI dictionaries do not fill missing translations with English", () => {
 test("navigation hides routes without authored locale content", () => {
   assert.equal(surfaceIsAvailable("ar", "doctors"), true);
   assert.equal(surfaceIsAvailable("ar", "costs"), true);
-  assert.equal(surfaceIsAvailable("ar", "consult"), false);
+  assert.equal(surfaceIsAvailable("ar", "consult"), true);
+  assert.equal(surfaceIsAvailable("fr", "consult"), false);
   assert.equal(surfaceIsAvailable("fr", "hospitals"), false);
   assert.equal(surfaceIsAvailable("en", "costs"), true);
   // Arabic treatments are authored published translations, so the nav follows

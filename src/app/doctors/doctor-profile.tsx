@@ -87,7 +87,7 @@ export async function DoctorProfile({ slug }: { slug: string }) {
       <article className="mx-auto max-w-3xl px-4 py-10 sm:px-5 md:px-8 md:py-20">
         <h3 className="text-sm tracking-[0.2em] text-gold uppercase">{t["profile.about"].replace("{name}", d.name)}</h3>
         <h2 className="mt-3 font-heading text-3xl">{t["profile.summary"]}</h2>
-        <MarkdownBody source={publicMarkdown(d.bio)} className="md-body--profile mt-5" />
+        <MarkdownBody source={publicMarkdown(d.bio)} className="md-body--profile mt-5" locale={locale} />
         {affiliatedHospitals.length > 0 ? (
           <div className="mt-10 space-y-6">
             {affiliatedHospitals.map((campus) => (

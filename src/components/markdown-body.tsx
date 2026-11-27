@@ -4,7 +4,8 @@ import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { cn } from "cn";
 import { WhatsAppCtaLabel } from "@/components/whatsapp-icon";
-import { consultToWhatsappHref } from "@/lib/site";
+import type { AppLocale } from "@/lib/i18n/languages";
+import { isInternalHref, localePath } from "@/lib/i18n/path";
 
 const ALLOWED = [
   "p",
@@ -34,20 +35,21 @@ const ALLOWED = [
   "td",
 ];
 
-function markdownComponents(inline = false): Components {
+function markdownComponents(inline = false, locale: AppLocale = "en"): Components {
   return {
   h1: ({ children }) => <h2>{children}</h2>,
   ...(inline ? { p: ({ children }) => <>{children}</> } : {}),
   a: ({ href, children }) => {
-    const raw = typeof href === "string" && /^(https?:|mailto:|\/|#)/i.test(href) ? href : undefined;
-    const safe = raw ? consultToWhatsappHref(raw) : raw;
+    const raw = typeof href === "string" && /^(https?:|mailto:|tel:|\/|#)/i.test(href) ? href : undefined;
+    const safe = raw && isInternalHref(raw) ? localePath(raw, locale) : raw;
     const cta = typeof safe === "string" && /^https:\/\/wa\.me\//i.test(safe);
+    const external = typeof safe === "string" && /^https?:\/\//i.test(safe);
     return (
       <a
         href={safe}
         className={cta ? "md-cta" : undefined}
-        target={safe?.startsWith("http") ? "_blank" : undefined}
-        rel="noreferrer noopener"
+        target={external ? "_blank" : undefined}
+        rel={external ? "noreferrer noopener" : undefined}
       >
         {cta ? <WhatsAppCtaLabel>{children}</WhatsAppCtaLabel> : children}
       </a>
@@ -68,11 +70,13 @@ export function MarkdownBody({
   source,
   className,
   inline = false,
+  locale = "en",
 }: {
   source: string;
   className?: string;
   /** Render without a paragraph wrapper, for links inside a list item or caption. */
   inline?: boolean;
+  locale?: AppLocale;
 }) {
   const text = source.trim();
   if (!text) return null;
@@ -81,7 +85,7 @@ export function MarkdownBody({
       <ReactMarkdown
         allowedElements={ALLOWED}
         unwrapDisallowed
-        components={markdownComponents(inline)}
+        components={markdownComponents(inline, locale)}
         remarkPlugins={[remarkGfm]}
       >
         {text}

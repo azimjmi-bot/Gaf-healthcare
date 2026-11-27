@@ -55,7 +55,13 @@ export async function SiteFooter() {
           <p className="mt-6 text-sm text-ivory/60">
             {site.email}
             <br />
-            {site.phone}
+            <a
+              href={`tel:${site.phone.replace(/\s+/g, "")}`}
+              className="underline underline-offset-4 hover:text-ivory"
+              data-ga-placement="footer"
+            >
+              {site.phone}
+            </a>
             {locale === "en" ? (
               <>
                 <br />

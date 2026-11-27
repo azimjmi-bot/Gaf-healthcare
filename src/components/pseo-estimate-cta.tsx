@@ -2,26 +2,35 @@ import type { ComponentProps, ReactNode } from "react";
 import Link from "next/link";
 import { consultToWhatsappHref } from "@/lib/site";
 import type { AppLocale } from "@/lib/i18n/languages";
+import { isInternalHref, localePath } from "@/lib/i18n/path";
 
 function EstimateCtaLink({
   href,
   className,
   children,
+  ctaKind,
 }: {
   href: string;
   className: string;
   children: ReactNode;
+  ctaKind: "consult" | "whatsapp";
 }) {
   const external = /^(https?:|mailto:)/i.test(href);
   if (external) {
     return (
-      <a href={href} className={className} target="_blank" rel="noreferrer noopener">
+      <a
+        href={href}
+        className={className}
+        target="_blank"
+        rel="noreferrer noopener"
+        data-ga-cta={ctaKind}
+      >
         {children}
       </a>
     );
   }
   return (
-    <Link href={href} className={className}>
+    <Link href={href} className={className} data-ga-cta={ctaKind}>
       {children}
     </Link>
   );
@@ -131,10 +140,9 @@ export function PseoEstimateCta({
   locale?: AppLocale;
 }) {
   const copy = (locale === "ar" ? COPY_AR : COPY)[variant];
-  const primaryHref = consultToWhatsappHref(
-    consultHref,
-    `Please review my medical records and share a case-specific estimate for ${subject} in ${place}.`,
-  );
+  const primaryHref = isInternalHref(consultHref)
+    ? localePath(consultHref, locale)
+    : consultHref;
   const nextHref = consultToWhatsappHref(
     secondaryHref || consultHref,
     `I would like to speak with GAF Healthcare about ${subject} in ${place}.`,
@@ -150,12 +158,13 @@ export function PseoEstimateCta({
         {copy.body(subject, place)}
       </p>
       <div className="mt-6 flex flex-wrap gap-3">
-        <EstimateCtaLink href={primaryHref} className="cost-btn cost-btn--primary">
+        <EstimateCtaLink href={primaryHref} className="cost-btn cost-btn--primary" ctaKind="consult">
           {copy.primary}
         </EstimateCtaLink>
         <EstimateCtaLink
           href={nextHref}
           className="cost-btn border border-ivory/25 text-ivory hover:bg-white/5"
+          ctaKind="whatsapp"
         >
           {copy.secondary(subject, place)}
         </EstimateCtaLink>

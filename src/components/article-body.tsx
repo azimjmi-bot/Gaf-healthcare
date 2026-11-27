@@ -12,7 +12,8 @@ import {
   stripCtaMarkdown,
 } from "@/lib/article-ctas";
 import type { AppLocale } from "@/lib/i18n/languages";
-import { blogEstimateWhatsapp, consultToWhatsappHref } from "@/lib/site";
+import { isInternalHref, localePath } from "@/lib/i18n/path";
+import { blogEstimateWhatsapp } from "@/lib/site";
 
 export function CoverImage({
   src,
@@ -59,8 +60,10 @@ function BlogEstimatePanel({
 }) {
   const found = blocks.flatMap(ctaLinksFromBlock);
   const fallback = blogEstimateWhatsapp(subject, place);
-  const primary = found[0]?.href || fallback.primary;
-  const secondary = found[1]?.href || fallback.secondary;
+  const consultLink = found.find((item) => /^\/consult(?:\?|$)/i.test(item.href));
+  const waLink = found.find((item) => /^https:\/\/wa\.me\//i.test(item.href));
+  const primary = consultLink?.href || "/consult";
+  const secondary = waLink?.href || fallback.secondary;
   return (
     <PseoEstimateCta
       subject={subject}
@@ -85,11 +88,12 @@ function renderStandardBlock(
   block: ArticleBlock,
   title: string | undefined,
   used: Map<string, number>,
+  locale: AppLocale = "en",
 ) {
   if (block.type === "paragraph") {
     const source = withoutDuplicateTitle(block.text, title);
     return source.trim() ? (
-      <MarkdownBody key={block.id} source={source} />
+      <MarkdownBody key={block.id} source={source} locale={locale} />
     ) : null;
   }
   if (block.type === "heading") {
@@ -101,7 +105,7 @@ function renderStandardBlock(
   if (block.type === "quote") {
     return (
       <blockquote key={block.id}>
-        {block.text.includes("](") ? <MarkdownBody source={block.text} /> : <p>{block.text}</p>}
+        {block.text.includes("](") ? <MarkdownBody source={block.text} locale={locale} /> : <p>{block.text}</p>}
         {block.cite ? <cite>{block.cite}</cite> : null}
       </blockquote>
     );
@@ -112,7 +116,7 @@ function renderStandardBlock(
       <Tag key={block.id}>
         {block.items.filter(Boolean).map((item, i) => (
           <li key={`${block.id}-${i}`}>
-            {item.includes("](") ? <MarkdownBody source={item} inline /> : item}
+            {item.includes("](") ? <MarkdownBody source={item} inline locale={locale} /> : item}
           </li>
         ))}
       </Tag>
@@ -124,7 +128,7 @@ function renderStandardBlock(
         <CoverImage src={block.src} alt={block.alt} />
         {block.caption ? (
           <figcaption>
-            {block.caption.includes("](") ? <MarkdownBody source={block.caption} inline /> : block.caption}
+            {block.caption.includes("](") ? <MarkdownBody source={block.caption} inline locale={locale} /> : block.caption}
           </figcaption>
         ) : null}
       </figure>
@@ -137,7 +141,7 @@ function renderStandardBlock(
     return <hr key={block.id} />;
   }
   if (block.type === "button") {
-    const href = consultToWhatsappHref(block.href);
+    const href = isInternalHref(block.href) ? localePath(block.href, locale) : block.href;
     const cta = /^https:\/\/wa\.me\//i.test(href);
     return (
       <p key={block.id}>
@@ -177,7 +181,7 @@ export function ArticleBlocks({
   if (!whatsappCtas) {
     return (
       <div className="article-body">
-        {blocks.map((block) => renderStandardBlock(block, title, used))}
+        {blocks.map((block) => renderStandardBlock(block, title, used, locale))}
       </div>
     );
   }
@@ -193,7 +197,7 @@ export function ArticleBlocks({
       const rest = stripCtaMarkdown(source);
       if (links.length) {
         if (rest) {
-          rendered.push(<MarkdownBody key={`${block.id}-copy`} source={rest} />);
+          rendered.push(<MarkdownBody key={`${block.id}-copy`} source={rest} locale={locale} />);
         }
         const group: ArticleBlock[] = [block];
         index += 1;

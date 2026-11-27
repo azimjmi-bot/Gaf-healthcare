@@ -38,8 +38,10 @@ test("the client component no longer imports the catalog modules", () => {
 
 test("the page hands the server-computed options to the form", () => {
   const page = readFileSync("src/app/consult/page.tsx", "utf8");
-  assert.match(page, /treatmentOptions=\{consultTreatmentOptions\(\)\}/);
-  assert.match(page, /hospitalOptions=\{consultHospitalOptions\(\)\}/);
+  assert.match(page, /consultTreatmentOptions\(/);
+  assert.match(page, /consultHospitalOptions\(/);
+  assert.match(page, /treatmentOptions=\{treatmentOptions\}/);
+  assert.match(page, /hospitalOptions=\{hospitalOptions\}/);
 });
 
 test("the form renders with the options as props and its defaults preselected", () => {

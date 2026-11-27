@@ -17,7 +17,6 @@ import {
 import type { CatalogQuery } from "@/lib/catalog";
 import { localePath } from "@/lib/i18n/path";
 import { SITE_ORIGIN } from "@/lib/i18n/metadata";
-import { consultToWhatsappHref } from "@/lib/site";
 import { toSlug } from "@/lib/taxonomy";
 import { TtlLru } from "@/lib/ttl-lru";
 
@@ -162,7 +161,7 @@ function consultHrefFor(query: CatalogQuery) {
   if (query.procedure) params.set("treatment", toSlug(query.procedure));
   else if (query.specialty) params.set("specialty", toSlug(query.specialty));
   const qs = params.toString();
-  return consultToWhatsappHref(qs ? `/consult?${qs}` : "/consult");
+  return localePath(qs ? `/consult?${qs}` : "/consult", "ar");
 }
 
 export function wrapArabicRadiationDocument(data: ArabicRadiationDirectoryData, bodyHtml: string) {
@@ -171,7 +170,7 @@ export function wrapArabicRadiationDocument(data: ArabicRadiationDirectoryData, 
       title: data.title,
       description: data.description,
       meta: arabicDocumentMeta(data.path),
-      consultHref: consultToWhatsappHref("/consult?specialty=radiation-oncology"),
+      consultHref: localePath("/consult?specialty=radiation-oncology", "ar"),
     },
     bodyHtml,
   );

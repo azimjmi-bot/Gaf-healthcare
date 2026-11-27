@@ -305,7 +305,7 @@ export function HospitalProfileView({
           <div>
             <p className="eyebrow">{t["hp.overview"]}</p>
             <h2>{t["hp.about"]}</h2>
-            <MarkdownBody source={publicMarkdown(hospital.bio)} className="hp-prose md-body--profile" />
+            <MarkdownBody source={publicMarkdown(hospital.bio)} className="hp-prose md-body--profile" locale={locale} />
             <Button asChild variant="outline" className="mt-6 rounded-full">
               <a href="#procedures">
                 {sahyadri

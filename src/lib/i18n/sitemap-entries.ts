@@ -185,6 +185,15 @@ export function buildLocaleSitemap(locale: AppLocale): MetadataRoute.Sitemap {
         localized.push(sitemapEntry(`/blogs/${post.slug}`, locale, blogPostSitemapOpts(post)));
       }
     }
+    if (localePathIsPublished(locale, "/consult")) {
+      localized.push(
+        sitemapEntry("/consult", locale, {
+          lastModified: now,
+          changeFrequency: "monthly",
+          priority: 0.5,
+        }),
+      );
+    }
     return dedupeSitemap(localized);
   }
 
