@@ -22,6 +22,7 @@ import {
   treatmentsForLocale,
 } from "@/lib/locale-catalog";
 import { publishedCuratedTreatments } from "@/lib/cms/curated-treatment-store";
+import { canonicalFacetPath } from "@/lib/i18n/facet-canonical";
 import { publishedFacetPaths } from "@/lib/i18n/facet-candidates";
 import { localePathIsPublished } from "@/lib/i18n/locale-publication";
 import {
@@ -467,16 +468,20 @@ export function buildLocaleSitemap(locale: AppLocale): MetadataRoute.Sitemap {
   }
 
   for (const path of doctorSpecialtySitemapPaths(doctors)) {
+    if (!localePathIsPublished(locale, path)) continue;
+    if (canonicalFacetPath(path, locale) !== path) continue;
     const depth = path.split("/").filter(Boolean).length;
     urls.push(sitemapEntry(path, locale, { priority: depth === 3 ? 0.75 : 0.65 }));
   }
 
   if (locale === "en") {
     // Legacy EN hospital-specialty emitter predates the Arabic publishedFacetPaths
-    // gate. Filter through localePathIsPublished so faculty-affiliated-only
-    // specialty/procedure landings (noindex) are not advertised in the sitemap.
+    // gate. Filter through localePathIsPublished and canonicalFacetPath so
+    // faculty-affiliated-only landings (noindex) and parent-identical procedure
+    // duplicates are not advertised in the sitemap.
     for (const path of hospitalSpecialtySitemapPaths(hospitals, doctors)) {
       if (!localePathIsPublished(locale, path)) continue;
+      if (canonicalFacetPath(path, locale) !== path) continue;
       const depth = path.split("/").filter(Boolean).length;
       urls.push(sitemapEntry(path, locale, { priority: depth === 3 ? 0.8 : 0.7 }));
     }

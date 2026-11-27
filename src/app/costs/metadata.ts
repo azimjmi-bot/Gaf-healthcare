@@ -127,5 +127,13 @@ export async function costsDirectoryMetadata(
     const { withoutHreflang } = await import("@/lib/i18n/metadata");
     return withoutHreflang({ ...wrapped, robots: { index: false, follow: true } });
   }
+  if (query.destination && !isPrimaryCountry(query.destination)) {
+    const { filterTreatments } = await import("@/lib/catalog");
+    const { treatmentsForLocale } = await import("@/lib/locale-catalog");
+    if (filterTreatments(query, treatmentsForLocale(locale)).length === 0) {
+      const { withoutHreflang } = await import("@/lib/i18n/metadata");
+      return withoutHreflang({ ...wrapped, robots: { index: false, follow: true } });
+    }
+  }
   return wrapped;
 }

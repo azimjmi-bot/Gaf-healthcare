@@ -23,10 +23,11 @@ import { stripLocalePrefix } from "@/lib/i18n/path";
  * judgement about editorial value. This is an identity claim: the two URLs
  * render the same thing, so only exact equality justifies it.
  *
- * English is untouched on purpose. 1,161 English facets are set-identical to
- * their parent and all of them are live, indexed and self-canonical today;
- * retargeting them is a decision about a ranking site, not a side effect of
- * adding Arabic.
+ * Both Arabic and English procedure-level duplicate facets whose entity set
+ * equals their parent's canonicalise to that parent so redundant filter URLs
+ * consolidate rather than competing. In English, city+specialty hospital hubs
+ * (`!query.procedure`) are preserved as self-canonical because they render a
+ * dedicated `HospitalSpecialtyHub` (~85% distinct content vs city directory).
  */
 
 type CatalogEntity = "doctors" | "hospitals";
@@ -62,14 +63,15 @@ function sameSlugs(a: Set<string>, b: Set<string>) {
  * canonical chain but discounts it, and each step up here is provably the same
  * set of records, so there is nothing to lose by skipping the intermediate.
  *
- * Returns `path` unchanged for English, for pages that are not facets, and for
- * facets that are not published — a noindex page is making no indexing claim,
- * so it has no canonical decision to get wrong yet. Both of those cases are
- * decided by the caller's own publication check as well; this function is safe
- * to call on anything.
+ * For English hospital facets, non-procedure city+specialty hubs are preserved
+ * (`!query.procedure`), and procedure-level duplicates stop at their specialty
+ * hub parent rather than collapsing into a generic city/country hospital list.
+ *
+ * Returns `path` unchanged for pages that are not facets and for facets that
+ * are not published — a noindex page is making no indexing claim, so it has no
+ * canonical decision to get wrong yet.
  */
 export function canonicalFacetPath(path: string, locale: AppLocale): string {
-  if (locale === SOURCE_LOCALE) return path;
   if (!localePathIsPublished(locale, path)) return path;
 
   const facet = facetOf(path);
@@ -77,6 +79,10 @@ export function canonicalFacetPath(path: string, locale: AppLocale): string {
 
   const { entity } = facet;
   let query = facet.query;
+  if (locale === SOURCE_LOCALE && entity === "hospitals" && !query.procedure) {
+    return path;
+  }
+
   let own = resultSlugs(entity, query, locale);
   // An empty facet does not render at all, so it cannot be a duplicate.
   if (own.size === 0) return path;
@@ -91,6 +97,9 @@ export function canonicalFacetPath(path: string, locale: AppLocale): string {
     if (!sameSlugs(own, parentSlugs)) break;
     query = parent;
     own = parentSlugs;
+    if (locale === SOURCE_LOCALE && entity === "hospitals" && !query.procedure) {
+      break;
+    }
   }
 
   const resolved = prettyCatalogPath(`/${entity}`, query);

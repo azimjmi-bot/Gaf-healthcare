@@ -27,7 +27,7 @@ import { facetIsPublished, localeIsPublished } from "@/lib/i18n/locale-gating";
 import { canonicalFacetPath } from "@/lib/i18n/facet-canonical";
 import { getSpecialtyPage } from "@/data/specialty-pages";
 import { buildSpecialtyPageData, specialtyPageMeetsQualityThreshold } from "@/lib/specialty-page";
-import { getCity, getSpecialty, toSlug } from "@/lib/taxonomy";
+import { getCity, getSpecialty, isPrimaryCountry, toSlug } from "@/lib/taxonomy";
 import { arPathIsIndexedPublished, hasArPublicationIndex } from "@/lib/i18n/ar-publication-index";
 import { stripLocalePrefix } from "@/lib/i18n/path";
 import { contentStorage } from "@/lib/storage";
@@ -247,6 +247,16 @@ function targetLocaleState(locale: AppLocale, segments: string[]): LocalePageSta
   return "missing";
 }
 
+function sourceLocaleNonPrimaryCostState(segments: string[]): LocalePageState | undefined {
+  if (segments[0] !== "costs" || segments.length < 2) return undefined;
+  const query = parsePrettyCatalogSegments(segments.slice(1));
+  if (!query || !query.destination || isPrimaryCountry(query.destination)) return undefined;
+  if (query.procedure) return undefined;
+  return filterTreatments(query, treatmentsForLocale(SOURCE_LOCALE)).length === 0
+    ? "noindex"
+    : undefined;
+}
+
 export function localePageState(locale: AppLocale, path: string): LocalePageState {
   const segments = segmentsFor(path);
 
@@ -267,10 +277,12 @@ export function localePageState(locale: AppLocale, path: string): LocalePageStat
     // noindex until inventory exists so chip links do not create thin indexed
     // landing pages. Populated city facets (including a future populated
     // Pune) continue to publish. Hospital specialty/procedure facets with only
-    // faculty-affiliated evidence are held at noindex (see helper above).
+    // faculty-affiliated evidence and empty non-India cost directories are held
+    // at noindex (see helpers above).
     return (
       sourceLocaleEmptyCityFacetState(segments) ??
       sourceLocaleHospitalServiceLineFacetState(segments) ??
+      sourceLocaleNonPrimaryCostState(segments) ??
       "published"
     );
   }
