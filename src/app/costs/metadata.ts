@@ -19,7 +19,7 @@ async function costsPageIsRenderable(locale: AppLocale, path: string) {
 async function directoryCatalogMetadata(query: CatalogQuery, localeOverride?: AppLocale) {
   const locale = localeOverride ?? (await getRequestLocale());
   const englishPath = prettyCatalogPath("/costs", query);
-  if (englishPath === "/costs") {
+  if (locale === SOURCE_LOCALE && englishPath === "/costs") {
     const light = withLightLocaleMetadata(
       catalogMetadata("treatments", query),
       englishPath,
