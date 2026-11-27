@@ -1,0 +1,5 @@
+referring_domain_or_url,points_to,current_destination_status,issue,priority,recommended_action,evidence_status
+DATA UNAVAILABLE — domain AS/RD only,gaf.healthcare aggregate,—,Cannot map 513 RD / 7.1K BL to URLs,—,Export GSC Links + SEMrush referring pages for .in and .healthcare,MISSING
+gafhealthcare.in inbound (expected),path-preserving 301 to gaf.healthcare{path},Depends on path,Many destinations 404 (nested/RU/legacy) → equity dead-ends,HIGH,After Links export: 301 only to verified successors; else 410,Domain hop CONFIRMED; URL equity UNKNOWN
+Unknown high-impr /ru URLs,404 noindex,Soft-404,Impressions without clicks; possible residual links,MEDIUM,GSC Links before mass 410,Impr known; links MISSING
+Protected 40 GONE + 4×308,as implemented,410/308,Do not alter without equity contradiction,PROTECTED,Keep,CONFIRMED

@@ -1,0 +1,18 @@
+old_url,new_url,http_status_observed,classification,category,evidence,notes
+https://gafhealthcare.in/,https://gaf.healthcare/,301,Correctly migrated,domain,Live probe 2026-11-22,Apex path-preserving domain hop
+https://gafhealthcare.in/doctors,https://gaf.healthcare/doctors,301,Redirected to equivalent content,domain,Live probe,Section hub exists
+https://www.gafhealthcare.in/,https://gaf.healthcare/,301,Correctly migrated,domain,Live probe,www .in → apex
+https://www.gaf.healthcare/,https://gaf.healthcare/,301,Correctly migrated,host_split,Live probe,www→apex fixed PR #27
+http://gaf.healthcare/,https://gaf.healthcare/,301,Correctly migrated,protocol,Live probe,HTTP→HTTPS
+https://gaf.healthcare/doctors/dr-meet-kumar,https://gaf.healthcare/doctors/dr-meet-kumar-1,308,Redirected to equivalent content,doctor,Live probe; PR #34,Protected approved 308
+https://gaf.healthcare/doctors/dr-omar-maqbool,,410,Incorrectly retired? NO — approved obsolete,doctor,Live 410; PR #34 protected set,Do not reopen without equity proof
+https://gaf.healthcare/treatments/cardiology/pacemaker-implantation,https://gaf.healthcare/treatments/pacemaker-implantation-in-india,404,Missing redirect,treatment_nested,Live 404; verified successor exists,HIGH: equity not transferred
+https://gaf.healthcare/treatments/bone-marrow/leukemia-treatment,https://gaf.healthcare/treatments/leukemia-treatment-in-india,404,Missing redirect (candidate),treatment_nested,Prior audit candidate,Needs human intent verify before 301
+https://gaf.healthcare/resources/blog/cancer-treatment-success-rates-india,,404,Incorrectly retired? Soft-404 residue,blog_legacy,Live 404; proposed 410,Should be hard 410 not soft 404
+https://gaf.healthcare/ru/doctors,,404,Not indexed / unpublished locale,locale_ru,Live 404 noindex; sitemap-ru empty,~331 URLs / 792 impr in GSC 28d top1000
+https://gaf.healthcare/ru/,,200,Not indexed (noindex),locale_ru,"Live 200 noindex,follow",Locale root published as noindex
+https://gaf.healthcare/treatments/ivf-treatment-in-india,self,200,Correctly migrated / current,treatment_flat,Live self-canonical SSR,Money URL healthy
+https://gaf.healthcare/hospitals/manipal-hospitals-baner,self,200,Correctly migrated / current,hospital,Live 2026-11-22,Post PR42
+https://gaf.healthcare/specialities/oncology,https://gaf.healthcare/specialties,301,Redirected to hub (specificity loss),specialty,legacy-redirects.mjs,Documented hub dump risk
+AGGREGATE: GSC Not-found ~1000 URL export,various,404-dominant,Mixed — mostly Incorrectly retired soft-404 / Missing hard 410,mixed,gsc-404-analysis,Doctor facets 328; nested treatments 130; RU 215; blogs 67
+AGGREGATE: Proposed 807×410 prior audit,,404→planned 410,Insufficient evidence for mass action without Links,legacy,MASTER-RETIREMENT-AUDIT,Only 40 exact 410 shipped (PR34)
