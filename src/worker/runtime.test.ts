@@ -2293,3 +2293,32 @@ test("lab microbench: negative HIT avoids re-render versus disabled miss path", 
   assert.equal(on.entries, 1);
   assert.ok(on.p50 < off.p50, `enabled p50 ${on.p50} should beat disabled p50 ${off.p50}`);
 });
+
+test("dedupeCacheHeaders removes duplicate cache-control directives on non-root paths while preserving /", async () => {
+  const env = makeEnv();
+  const duplicated = "public, s-maxage=300, stale-while-revalidate=86400, public, s-maxage=300, stale-while-revalidate=86400";
+  const expected = "public, s-maxage=300, stale-while-revalidate=86400";
+  const worker = createWorker(
+    async () =>
+      new Response("ok", {
+        status: 200,
+        headers: {
+          "content-type": "text/html; charset=utf-8",
+          "cache-control": duplicated,
+          "cdn-cache-control": duplicated,
+        },
+      }),
+    quiet,
+  );
+
+  const doctorsRes = await worker.fetch(new Request("https://gaf.healthcare/doctors"), env, ctx());
+  assert.equal(doctorsRes.headers.get("cache-control"), expected);
+  assert.equal(doctorsRes.headers.get("cdn-cache-control"), expected);
+
+  const arDoctorsRes = await worker.fetch(new Request("https://gaf.healthcare/ar/doctors"), env, ctx());
+  assert.equal(arDoctorsRes.headers.get("cache-control"), expected);
+  assert.equal(arDoctorsRes.headers.get("cdn-cache-control"), expected);
+
+  const rootRes = await worker.fetch(new Request("https://gaf.healthcare/"), env, ctx());
+  assert.equal(rootRes.headers.get("cache-control"), duplicated);
+});

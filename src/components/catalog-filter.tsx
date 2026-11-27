@@ -17,8 +17,9 @@ type Props = {
 
 /**
  * The directory filter is real HTML, not a select that appears after
- * hydration. The effect covers client navigations, where an inline script
- * from the previous document does not run again.
+ * hydration. Keeping this boundary as a client component ensures Next.js
+ * serializes only the compact query/chip props in the RSC flight payload
+ * instead of 150+ `<option>` VDOM nodes.
  */
 export function CatalogFilter(props: Props) {
   const locale = useLocale();

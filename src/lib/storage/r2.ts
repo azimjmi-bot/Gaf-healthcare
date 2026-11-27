@@ -138,9 +138,9 @@ type Op =
 
 const PACK_THRESHOLD = 1024;
 
-function pack(bytes: Uint8Array): Body {
-  if (bytes.byteLength < PACK_THRESHOLD) return { packed: false, data: bytes };
-  return { packed: true, data: new Uint8Array(deflateRawSync(bytes)), size: bytes.byteLength };
+function pack(bytes: Uint8Array, skipPack = false): Body {
+  if (skipPack || bytes.byteLength < PACK_THRESHOLD) return { packed: false, data: bytes };
+  return { packed: true, data: new Uint8Array(deflateRawSync(bytes, { level: 1 })), size: bytes.byteLength };
 }
 
 /** A fresh copy the caller may keep or mutate. */
@@ -270,7 +270,7 @@ export class R2ContentStorage implements ContentStorage {
     this.assets = options.assets;
     this.assetKeys = new Map(Object.entries(options.assetKeys ?? {}).map(([key, path]) => [normaliseKey(key), path]));
     this.versionCheckIntervalMs = options.versionCheckIntervalMs ?? 1000;
-    this.concurrency = options.concurrency ?? 16;
+    this.concurrency = options.concurrency ?? 32;
     this.log = options.log ?? ((message) => console.warn(`[gaf] ${message}`));
     this.onStaticChange = options.onStaticChange;
     this.onContentPublished = options.onContentPublished;
@@ -669,11 +669,21 @@ export class R2ContentStorage implements ContentStorage {
 
   private async readAssets(group: EditionGroup) {
     if (!this.assets) throw new StorageHydrationError(group, "asset keys configured without an assets binding");
-    for (const [key, path] of this.assetKeys) {
-      const response = await this.assets.fetch(new URL(path, "https://assets.invalid").toString());
-      if (!response.ok) throw new StorageHydrationError(group, `asset ${path} → ${response.status}`);
-      const bytes = new Uint8Array(await response.arrayBuffer());
-      const entry: Entry = { body: pack(bytes), etag: response.headers.get("etag") ?? `asset:${bytes.byteLength}` };
+    const assets = this.assets;
+    const loaded = await Promise.all(
+      [...this.assetKeys].map(async ([key, path]) => {
+        const response = await assets.fetch(new URL(path, "https://assets.invalid").toString());
+        if (!response.ok) throw new StorageHydrationError(group, `asset ${path} → ${response.status}`);
+        const bytes = new Uint8Array(await response.arrayBuffer());
+        // Pre-compressed `.pack` blobs are already raw-deflated at build time.
+        const entry: Entry = {
+          body: pack(bytes, key.endsWith(".pack")),
+          etag: response.headers.get("etag") ?? `asset:${bytes.byteLength}`,
+        };
+        return [key, entry] as const;
+      }),
+    );
+    for (const [key, entry] of loaded) {
       this.entries.set(key, entry);
       this.committed.set(key, entry);
     }
@@ -683,22 +693,24 @@ export class R2ContentStorage implements ContentStorage {
   private async hydrate(group: EditionGroup) {
     const layout = GROUP_LAYOUT[group];
     let manifest: ContentManifest;
+    let listed: string[];
     try {
-      manifest = await this.loadManifest(group);
-      await this.baselineVersion();
-      await this.loadAssets(group);
+      const [loadedManifest, , , listedGroups] = await Promise.all([
+        this.loadManifest(group),
+        this.baselineVersion(),
+        this.loadAssets(group),
+        Promise.all(layout.prefixes.map((prefix) => this.listAll(prefix))).catch((error) => {
+          throw new StorageHydrationError(group, "listing the bucket failed", { cause: error });
+        }),
+      ]);
+      manifest = loadedManifest;
+      listed = listedGroups.flat();
     } catch (error) {
       if (error instanceof StorageHydrationError) throw error;
       throw new StorageHydrationError(group, "bucket unreachable", { cause: error });
     }
 
-    let keys: string[];
-    try {
-      const listed = (await Promise.all(layout.prefixes.map((prefix) => this.listAll(prefix)))).flat();
-      keys = [...new Set([...layout.keys, ...listed])];
-    } catch (error) {
-      throw new StorageHydrationError(group, "listing the bucket failed", { cause: error });
-    }
+    const keys = [...new Set([...layout.keys, ...listed])];
 
     const required = manifest.keys.filter((key) => groupForKey(key) === group);
     const listedSet = new Set(keys);
