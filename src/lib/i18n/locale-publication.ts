@@ -161,7 +161,7 @@ function treatmentsIndexState(locale: AppLocale): LocalePageState {
 
 function targetLocaleState(locale: AppLocale, segments: string[]): LocalePageState {
   if (segments.length === 0) return "published";
-  if (segments[0] === "consult") return "missing";
+  if (segments[0] === "consult") return locale === "ar" ? "published" : "missing";
 
   if (segments[0] === "doctors") {
     if (segments[1] === "compare") return "missing";

@@ -44,6 +44,11 @@ import { stripLocalePrefix } from "@/lib/i18n/path";
 import { SITEMAP_HEADERS } from "@/lib/i18n/sitemap-xml";
 import { setContentStorage, type ContentStorage } from "@/lib/storage";
 import {
+  R2ConsultStore,
+  setConsultNotificationConfig,
+  setConsultStore,
+} from "@/lib/consult-store";
+import {
   contentTypeFor,
   EDITION_GROUPS,
   R2ContentStorage,
@@ -828,9 +833,14 @@ export async function ensureArPublicationIndexLoaded(
   }
 }
 
-/** Deploy-time files the Worker reads itself (`ASSET_KEYS`) and must not serve. */
+/** Deploy-time files the Worker reads itself (`ASSET_KEYS`) and private R2 storage prefixes that must never be served publicly. */
 export function isPrivateAssetPath(pathname: string) {
-  return pathname === PRIVATE_ASSETS_PATH.slice(0, -1) || pathname.startsWith(PRIVATE_ASSETS_PATH);
+  return (
+    pathname === PRIVATE_ASSETS_PATH.slice(0, -1) ||
+    pathname.startsWith(PRIVATE_ASSETS_PATH) ||
+    pathname === "/private" ||
+    pathname.startsWith("/private/")
+  );
 }
 
 export function isUploadPath(pathname: string) {
@@ -1011,6 +1021,23 @@ export function createWorker(next: FetchHandler, options: WorkerRuntimeOptions =
           onStaticChange: hooks.onStaticChange,
         });
     setContentStorage(storage);
+    const consultSecret =
+      typeof env.CONSULT_ENCRYPTION_KEY === "string" && env.CONSULT_ENCRYPTION_KEY
+        ? env.CONSULT_ENCRYPTION_KEY
+        : typeof env.CMS_SESSION_SECRET === "string" && env.CMS_SESSION_SECRET
+          ? env.CMS_SESSION_SECRET
+          : typeof env.CMS_PASSWORD === "string" && env.CMS_PASSWORD
+            ? env.CMS_PASSWORD
+            : undefined;
+    if (env.STATIC) {
+      setConsultStore(new R2ConsultStore({ bucket: env.STATIC, encryptionSecret: consultSecret }));
+    }
+    setConsultNotificationConfig({
+      webhookUrl: typeof env.CONSULT_WEBHOOK_URL === "string" ? env.CONSULT_WEBHOOK_URL : undefined,
+      resendApiKey: typeof env.RESEND_API_KEY === "string" ? env.RESEND_API_KEY : undefined,
+      notifyEmail: typeof env.CONSULT_NOTIFY_EMAIL === "string" ? env.CONSULT_NOTIFY_EMAIL : undefined,
+      fromEmail: typeof env.CONSULT_FROM_EMAIL === "string" ? env.CONSULT_FROM_EMAIL : undefined,
+    });
     // Next's image optimizer resolves `/`-rooted sources through ASSETS; make
     // it see media that lives only in the static bucket.
     envForNext = { ...env, ASSETS: assetsWithUploads(env) };

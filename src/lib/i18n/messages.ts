@@ -343,6 +343,11 @@ export const UI_MESSAGE_FIELDS: Record<string, string> = {
   "consult.notes": "What should we know?",
   "consult.notesPlaceholder":
     "Prior procedures, imaging you already have, constraints on travel, companion needs…",
+  "consult.reports": "Medical reports (optional)",
+  "consult.reportsHint":
+    "Upload up to 3 files (PDF, JPG, PNG or WebP, max 5 MB each). Files are encrypted and accessible only to your assigned coordinator — never public.",
+  "consult.reportsChoose": "Attach medical reports",
+  "consult.reportsRemove": "Remove",
   "consult.consent":
     "I understand GAF Healthcare is not a hospital, that this is not medical advice, and that my details will be used only to prepare a confidential dossier.",
   "consult.submit": "Request my dossier",
@@ -355,9 +360,17 @@ export const UI_MESSAGE_FIELDS: Record<string, string> = {
   "consult.error.invalidRequest": "We could not read that request. Please try again.",
   "consult.error.name": "Please share your name.",
   "consult.error.email": "Please share a valid email.",
-  "consult.error.phone": "Please share a phone number.",
+  "consult.error.phone": "Please share a valid phone number.",
+  "consult.error.country": "Please share your home country.",
   "consult.error.selection": "Please choose a treatment interest and a travel window.",
   "consult.error.consent": "Consent is required to prepare a dossier.",
+  "consult.error.fileType": "Only PDF, JPG, PNG or WebP medical reports are allowed.",
+  "consult.error.fileSize": "Each report must be 5 MB or less (12 MB total).",
+  "consult.error.fileCount": "Please attach at most 3 medical reports.",
+  "consult.error.duplicate": "A similar consultation request was already received. Keep your existing reference or adjust your details.",
+  "consult.error.rateLimit": "Too many consultation requests in a short window. Please wait a few minutes and try again.",
+  "consult.error.spam": "Submission rejected by spam protection. Please reload the page and try again.",
+  "consult.error.storageUnavailable": "Consultation storage is temporarily unavailable. Please try again shortly or message us on WhatsApp.",
   "consult.error.submit": "We could not submit your brief. Please try again.",
   "consult.error.unknown": "Something went wrong. Please try again.",
 

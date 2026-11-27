@@ -1,5 +1,4 @@
 import type { ArticleBlock } from "@/lib/cms/types";
-import { consultToWhatsappHref } from "@/lib/site";
 
 const CTA_MARKDOWN =
   /\[([^\]]+)\]\(((?:\/consult(?:\?[^)]*)?|https:\/\/wa\.me\/[^)]+))\)/gi;
@@ -15,7 +14,7 @@ export function extractCtaLinks(text: string) {
   while ((match = pattern.exec(text))) {
     links.push({
       label: match[1].trim(),
-      href: consultToWhatsappHref(match[2]),
+      href: match[2],
     });
   }
   return links;
@@ -41,7 +40,7 @@ export function isCtaOnlyBlock(block: ArticleBlock) {
 
 export function ctaLinksFromBlock(block: ArticleBlock) {
   if (block.type === "button" && isCtaHref(block.href)) {
-    return [{ label: block.label, href: consultToWhatsappHref(block.href) }];
+    return [{ label: block.label, href: block.href }];
   }
   if (block.type === "paragraph") return extractCtaLinks(block.text);
   return [];

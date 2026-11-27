@@ -28,17 +28,23 @@ export default async function ConsultPage({
   const locale = await getRequestLocale();
   if (!localePageIsRenderable(locale, "/consult")) notFound();
   const t = await localizeMessages(locale);
+  const treatmentOptions =
+    locale === "en" ? consultTreatmentOptions() : consultTreatmentOptions(locale);
+  const hospitalOptions =
+    locale === "en" ? consultHospitalOptions() : consultHospitalOptions(locale);
+
   return (
     <>
       <PageIntro eyebrow={t["consult.eyebrow"]} title={t["consult.title"]} lede={t["consult.lede"]} />
       <section className="mx-auto grid max-w-7xl gap-8 px-4 py-8 sm:px-5 md:grid-cols-12 md:gap-12 md:px-8 md:py-16">
         <div className="md:col-span-7">
           <ConsultForm
-            treatmentOptions={consultTreatmentOptions()}
-            hospitalOptions={consultHospitalOptions()}
+            treatmentOptions={treatmentOptions}
+            hospitalOptions={hospitalOptions}
             defaultTreatment={q.treatment}
             defaultHospital={q.hospital}
             defaultDoctor={q.doctor}
+            locale={locale}
           />
         </div>
         <aside className="md:col-span-5">
@@ -50,7 +56,14 @@ export default async function ConsultPage({
               <li>{t["consult.step3"]}</li>
             </ol>
             <p className="mt-8 text-sm text-ivory/55">
-              {t["consult.speak"]} {site.phone}
+              {t["consult.speak"]}{" "}
+              <a
+                href={`tel:${site.phone.replace(/\s+/g, "")}`}
+                className="underline underline-offset-4 hover:text-ivory"
+                data-ga-placement="consult_sidebar"
+              >
+                {site.phone}
+              </a>
               <br />
               {site.hours}
             </p>

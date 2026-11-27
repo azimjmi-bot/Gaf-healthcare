@@ -10,6 +10,7 @@ import {
   FileText,
   FolderTree,
   ImageIcon,
+  Inbox,
   Radiation,
   LayoutDashboard,
   LogOut,
@@ -21,6 +22,7 @@ import {
 
 const NAV = [
   { href: "/cms", label: "Dashboard", icon: LayoutDashboard },
+  { href: "/cms/leads", label: "Consult leads", icon: Inbox },
   { href: "/cms/studio", label: "AI Content Studio", icon: Sparkles },
   { href: "/cms/articles", label: "Articles", icon: FileText },
   { href: "/cms/doctors", label: "Doctors", icon: Stethoscope },

@@ -348,6 +348,11 @@ export const UI: TranslationFields = {
   "consult.notes": "ما الذي ينبغي أن نعرفه؟",
   "consult.notesPlaceholder":
     "إجراءات سابقة، صور أشعة متوفرة لديك، قيود على السفر، احتياجات المرافق…",
+  "consult.reports": "التقارير الطبية (اختياري)",
+  "consult.reportsHint":
+    "يمكنك إرفاق حتى 3 ملفات (PDF أو JPG أو PNG أو WebP، بحد أقصى 5 ميجابايت للملف). يتم تشفير الملفات ولا يطلع عليها سوى المنسق المختص ولا تُنشر علنًا أبدًا.",
+  "consult.reportsChoose": "إرفاق تقارير طبية",
+  "consult.reportsRemove": "إزالة",
   "consult.consent":
     "أفهم أن GAF Healthcare ليست مستشفى، وأن هذا ليس نصيحة طبية، وأن بياناتي ستُستخدم فقط لإعداد ملف سري.",
   "consult.submit": "اطلب ملفي",
@@ -360,9 +365,17 @@ export const UI: TranslationFields = {
   "consult.error.invalidRequest": "لم نتمكن من قراءة الطلب. حاول مرة أخرى.",
   "consult.error.name": "يرجى كتابة اسمك.",
   "consult.error.email": "يرجى كتابة بريد إلكتروني صحيح.",
-  "consult.error.phone": "يرجى كتابة رقم هاتف.",
+  "consult.error.phone": "يرجى كتابة رقم هاتف صحيح.",
+  "consult.error.country": "يرجى كتابة بلد الإقامة.",
   "consult.error.selection": "يرجى اختيار العلاج المطلوب وفترة السفر.",
   "consult.error.consent": "الموافقة مطلوبة لإعداد الملف.",
+  "consult.error.fileType": "يُسمح فقط بملفات التقارير الطبية بصيغة PDF أو JPG أو PNG أو WebP.",
+  "consult.error.fileSize": "يجب ألا يتجاوز حجم كل تقرير 5 ميجابايت (12 ميجابايت إجمالًا).",
+  "consult.error.fileCount": "يرجى إرفاق 3 تقارير طبية كحد أقصى.",
+  "consult.error.duplicate": "تم استلام طلب استشارة مماثل بالفعل. احتفظ بالرقم المرجعي السابق أو عدّل بياناتك.",
+  "consult.error.rateLimit": "تم إرسال عدة طلبات خلال وقت قصير. يرجى الانتظار بضع دقائق ثم المحاولة مجددًا.",
+  "consult.error.spam": "تم رفض الإرسال لحماية المنصة من الرسائل الآلية. حدّث الصفحة وحاول مرة أخرى.",
+  "consult.error.storageUnavailable": "خدمة حفظ الطلبات غير متاحة مؤقتًا. يرجى المحاولة بعد قليل أو مراسلتنا عبر واتساب.",
   "consult.error.submit": "لم نتمكن من إرسال طلبك. حاول مرة أخرى.",
   "consult.error.unknown": "حدث خطأ ما. حاول مرة أخرى.",
 

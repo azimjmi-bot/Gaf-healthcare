@@ -13,7 +13,6 @@ import { medicalPhrase } from "@/lib/i18n/medical-phrases";
 import { localePath } from "@/lib/i18n/path";
 import { taxonomyLabel } from "@/lib/i18n/taxonomy-labels";
 import { prettyCatalogPath, type CatalogBasePath } from "@/lib/pretty-catalog-path";
-import { consultToWhatsappHref } from "@/lib/site";
 
 export function arHref(path: string) {
   return localePath(path, "ar");
@@ -33,7 +32,7 @@ export function ArabicDoctorSsrCard({ doctor }: { doctor: Doctor }) {
   const messages = uiCatalogFor("ar");
   const profileHref = arHref(`/doctors/${doctor.slug}`);
   const hospitalHref = arHref(`/hospitals/${doctor.hospitalSlug}`);
-  const consultHref = consultToWhatsappHref(`/consult?doctor=${doctor.slug}`);
+  const consultHref = arHref(`/consult?doctor=${doctor.slug}`);
   const bio = listingBio(doctor);
   const procedures = keyProcedureLabels(doctor).map((item) => medicalPhrase(item, "ar"));
   const shown = procedures.slice(0, 6);

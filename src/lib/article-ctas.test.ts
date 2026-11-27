@@ -31,7 +31,8 @@ test("detects CTA-only paragraphs and leaves prose", () => {
     "[Ask](/consult?treatment=Breast%20Reconstruction) · [WhatsApp](https://wa.me/919044346292?text=Hi)",
   );
   assert.equal(links.length, 2);
-  assert.match(links[0].href, /wa\.me\/919044346292/);
+  assert.equal(links[0].href, "/consult?treatment=Breast%20Reconstruction");
+  assert.match(links[1].href, /wa\.me\/919044346292/);
   assert.equal(
     isCtaOnlyBlock({
       id: "b",
@@ -62,7 +63,8 @@ test("splits editorial Markdown so CTA paragraphs become estimate-card slots", (
   assert.equal(chunks[1]?.type, "cta");
   if (chunks[1]?.type === "cta") {
     assert.equal(chunks[1].links.length, 2);
-    assert.match(chunks[1].links[0].href, /wa\.me\/919044346292/);
+    assert.equal(chunks[1].links[0].href, "/consult?treatment=proton-beam-therapy-in-india");
+    assert.match(chunks[1].links[1].href, /wa\.me\/919044346292/);
   }
   assert.equal(chunks[2]?.type, "markdown");
   if (chunks[2]?.type === "markdown") {

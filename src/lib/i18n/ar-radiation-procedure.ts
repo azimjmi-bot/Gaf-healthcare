@@ -20,7 +20,7 @@ import { taxonomyLabel } from "@/lib/i18n/taxonomy-labels";
 import { arabicRadiationProcedureOverride, doctorsForLocale, hospitalsForLocale } from "@/lib/locale-catalog";
 import type { RadiationProcedurePagePatch } from "@/lib/cms/catalog-types";
 import { getProcedure } from "@/lib/taxonomy";
-import { consultToWhatsappHref } from "@/lib/site";
+import { localePath } from "@/lib/i18n/path";
 import { treatments } from "@/lib/data";
 import { arabicStoredStayParts } from "@/lib/i18n/radiation-glance";
 
@@ -183,7 +183,7 @@ export function buildArabicRadiationProcedure(
     meta,
     path,
     parentPath,
-    consultHref: consultToWhatsappHref(`/consult?specialty=radiation-oncology`),
+    consultHref: localePath("/consult?specialty=radiation-oncology", "ar"),
     selectionNote: RADIATION_ONCOLOGY_SELECTION_NOTE_AR,
     review: RADIATION_PROCEDURE_REVIEW_AR,
     doctorCount: matched.length,

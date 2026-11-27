@@ -30,10 +30,8 @@ test("renders CMS Markdown with GFM elements", () => {
   assert.match(html, /<ul>/);
   assert.match(html, /<table>/);
   assert.match(html, /<del>Outdated<\/del>/);
-  assert.match(html, /https:\/\/wa\.me\/919044346292\?text=/);
-  assert.doesNotMatch(html, /href="\/consult"/);
-  assert.match(html, /class="md-cta"/);
-  assert.match(html, /class="wa-icon"/);
+  assert.match(html, /href="\/consult"/);
+  assert.doesNotMatch(html, /https:\/\/wa\.me\//);
 });
 
 test("removes a duplicate Markdown title from a blog body", () => {
@@ -53,7 +51,7 @@ test("removes a duplicate Markdown title from a blog body", () => {
   assert.match(html, /<p>Body paragraph.<\/p>/);
 });
 
-test("rewrites consult CTAs to WhatsApp when requested", () => {
+test("renders estimate CTA panels with internal /consult primary CTA and intentional WhatsApp secondary CTA", () => {
   const html = renderToStaticMarkup(
     createElement(ArticleBlocks, {
       whatsappCtas: true,
@@ -76,12 +74,12 @@ test("rewrites consult CTAs to WhatsApp when requested", () => {
   assert.match(html, /cost-panel/);
   assert.match(html, /Need a case-specific Breast Reconstruction After Mastectomy estimate/);
   assert.match(html, /Request a personalized treatment estimate/);
+  assert.match(html, /href="\/consult\?treatment=Lumpectomy"/);
   assert.match(html, /https:\/\/wa\.me\/919044346292\?text=/);
-  assert.doesNotMatch(html, /href="\/consult/);
   assert.doesNotMatch(html, /md-cta/);
 });
 
-test("turns treatment Markdown CTAs into navy estimate cards", () => {
+test("turns treatment Markdown CTAs into navy estimate cards with internal consult and WhatsApp links", () => {
   const html = renderToStaticMarkup(
     createElement(MarkdownWithEstimateCtas, {
       subject: "Proton Beam Therapy",
@@ -102,9 +100,9 @@ test("turns treatment Markdown CTAs into navy estimate cards", () => {
   assert.match(html, /Need a case-specific Proton Beam Therapy estimate/);
   assert.match(html, /Request a personalized treatment estimate/);
   assert.match(html, /Speak with GAF Healthcare about Proton Beam Therapy in India/);
-  assert.match(html, /https:\/\/wa\.me\/919044346292\?text=/);
+  assert.match(html, /href="\/consult\?treatment=proton-beam-therapy-in-india"/);
+  assert.match(html, /https:\/\/wa\.me\/919044346292/);
   assert.match(html, /<h2>How it works<\/h2>/);
-  assert.doesNotMatch(html, /href="\/consult/);
   assert.doesNotMatch(html, /md-cta/);
 });
 

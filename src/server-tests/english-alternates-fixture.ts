@@ -246,7 +246,7 @@ export const ENGLISH_ALTERNATES_BASELINE: AlternatesBaseline[] = [
   { label: "specialties index", path: "/specialties", published: ["en"] },
   { label: "blogs index", path: "/blogs", published: ["en", "ar"] },
   { label: "blog post", path: "/blogs/imrt-vs-3d-crt", published: ["en", "ar"] },
-  { label: "consult", path: "/consult", published: ["en"] },
+  { label: "consult", path: "/consult", published: ["en", "ar"] },
   {
     label: "algeria treatment in India hub",
     path: "/algeria/treatment-in-india",

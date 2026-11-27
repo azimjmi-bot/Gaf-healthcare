@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import { classifyPageType, trackGaEvent } from "@/lib/analytics";
 
 declare global {
   interface Window {
@@ -33,13 +34,52 @@ export function DeferredAnalytics({ id }: { id: string }) {
       script.async = true;
       document.head.appendChild(script);
     };
+
+    const onClick = (event: MouseEvent) => {
+      const target = event.target;
+      if (!(target instanceof Element)) return;
+      const anchor = target.closest("a[href]");
+      if (!(anchor instanceof HTMLAnchorElement)) return;
+      const href = anchor.getAttribute("href") || "";
+      const pathname = window.location.pathname || "/";
+      const locale = pathname.startsWith("/ar") ? "ar" : "en";
+      const pageType = classifyPageType(pathname);
+      const placement =
+        anchor.dataset.gaPlacement ||
+        (anchor.classList.contains("wa-float")
+          ? "floating_widget"
+          : anchor.closest("header")
+            ? "header"
+            : anchor.closest("footer")
+              ? "footer"
+              : "content");
+
+      if (/^https:\/\/wa\.me\//i.test(href)) {
+        trackGaEvent("whatsapp_click", {
+          locale,
+          placement,
+          page_type: pageType,
+          cta_target: "whatsapp",
+        });
+      } else if (/^tel:/i.test(href)) {
+        trackGaEvent("phone_click", {
+          locale,
+          placement,
+          page_type: pageType,
+          cta_target: "phone",
+        });
+      }
+    };
+
     const events = ["pointerdown", "keydown", "scroll", "touchstart"] as const;
     for (const event of events) {
       window.addEventListener(event, load, { once: true, passive: true });
     }
+    document.addEventListener("click", onClick, { passive: true });
     const timer = window.setTimeout(load, 10_000);
     return () => {
       window.clearTimeout(timer);
+      document.removeEventListener("click", onClick);
       for (const event of events) window.removeEventListener(event, load);
     };
   }, [id]);

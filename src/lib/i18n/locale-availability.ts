@@ -42,7 +42,7 @@ export function localeSurfaceIsAvailable(
   }
   if (locale === "en" || surface === "home") return true;
   if (locale === "ar") {
-    return surface === "doctors" || surface === "hospitals";
+    return surface === "doctors" || surface === "hospitals" || surface === "consult";
   }
   return false;
 }

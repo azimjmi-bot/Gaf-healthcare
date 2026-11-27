@@ -4,7 +4,6 @@ import NextLink from "next/link";
 import type { ComponentProps } from "react";
 import { useLocale } from "@/components/locale-provider";
 import { localePath, isInternalHref } from "@/lib/i18n/path";
-import { consultToWhatsappHref } from "@/lib/site";
 
 type Props = ComponentProps<typeof NextLink> & {
   locale?: string;
@@ -27,9 +26,8 @@ export function LocaleLink({
   ...props
 }: Props) {
   const locale = useLocale();
-  const resolved = typeof href === "string" ? consultToWhatsappHref(href) : href;
-  if (typeof resolved === "string" && /^https:\/\/wa\.me\//i.test(resolved)) {
-    return <a href={resolved} target="_blank" rel="noreferrer noopener" {...props} />;
+  if (typeof href === "string" && /^https?:\/\//i.test(href)) {
+    return <a href={href} target="_blank" rel="noreferrer noopener" {...props} />;
   }
   return (
     <NextLink
